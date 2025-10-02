@@ -1,39 +1,30 @@
 ## How to Participate in Hacktoberfest 2025: Rewards, Repos & Beginner’s Guide
 
-
 ## Beginner-Friendly Repositories to Contribute
 
-Here are my curated list of repositories that are perfect for beginners to start contributing to. Whether you want to improve your coding skills, design templates, or work on fun projects, these repos have something for everyone!
+This is a community-driven list of beginner-friendly repositories.  
+If you know any good repository for beginners, feel free to add it to this table by creating a pull request.  
+
+| Repo Name | URL | Tech Stack |
+|-----------|-----|------------|
+| Profile README Templates | [Link](https://github.com/avinash201199/profile-readme-templates) | HTML, CSS, Markdown |
+| Stopwatch | [Link](https://github.com/avinash201199/stopwatch) | HTML, CSS, JavaScript |
+| Login-Signup Templates | [Link](https://github.com/avinash201199/Login-Signup-templates) | HTML, CSS |
+| Meme Generator | [Link](https://github.com/avinash201199/MemeGenerator) | HTML, CSS, JavaScript |
+| Weather App | [Link](https://github.com/avinash201199/weather-app) | HTML, CSS, JavaScript, API |
+| My Gallery 4u | [Link](https://github.com/avinash201199/My-Gallery-4u) | HTML, CSS, JavaScript |
+| Memory Game | [Link](https://github.com/avinash201199/Memory-Game) | HTML, CSS, JavaScript |
+| Free Programming Books | [Link](https://github.com/avinash201199/Free-programming-books) | Various |
 
 ---
 
-### 📚 List of Repositories
+💡 **How to contribute:**  
+1. Fork this repository.  
+2. Add your repository in the table above.  
+3. Create a pull request.  
 
-1. **[Profile README Templates](https://github.com/avinash201199/profile-readme-templates)**  
-   Beautiful and customizable README templates for GitHub profiles.
+Let's build a helpful resource for beginners together! 
 
-2. **[Stopwatch](https://github.com/avinash201199/stopwatch)**  
-   A simple stopwatch application to practice JavaScript and UI development.
-
-3. **[Login-Signup Templates](https://github.com/avinash201199/Login-Signup-templates)**  
-   Pre-made login and signup form templates to enhance your frontend skills.
-
-4. **[Meme Generator](https://github.com/avinash201199/MemeGenerator)**  
-   Create your own memes with a simple and fun web app.
-
-5. **[Weather App](https://github.com/avinash201199/weather-app)**  
-   A weather forecast application using APIs — great for learning API integration.
-
-6. **[My Gallery 4u](https://github.com/avinash201199/My-Gallery-4u)**  
-   A personal gallery project to display images with styling and effects.
-
-7. **[Memory Game](https://github.com/avinash201199/Memory-Game)**  
-   A classic memory card matching game to practice JavaScript logic.
-
-8. **[Free Programming Books](https://github.com/avinash201199/Free-programming-books)**  
-   A collection of free programming books for learning different languages and technologies.
-
-9. **[Explore more repos on my GitHub profile](https://github.com/avinash201199?tab=repositories)**
 
 ---
 
