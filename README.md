@@ -1,4 +1,27 @@
-## How to Participate in Hacktoberfest 2025: Rewards, Repos & Beginner’s Guide
+<!-- ...existing content... -->
+
+> View this README as a website: <a href="index.html">Open site</a>
+
+
+---
+
+> Website branch: A branch named `website-pages` contains the static site and assets for GitHub Pages deployment.
+
+## View this README as a website
+
+You can open the repository README as a static website we've added at `index.html`.
+
+To view locally (macOS / zsh):
+
+```bash
+# from the repository root
+python3 -m http.server 8000
+# then open http://localhost:8000 in your browser
+```
+
+To publish on GitHub Pages: enable Pages in your repository settings and select the `website` branch (or `main`) and `/` as the root; GitHub will serve `index.html` automatically.
+
+> To view locally: run a simple static server (example: `python3 -m http.server 8000`) and open http://localhost:8000
 
 
 ### [👉Contribute by adding your or others' Beginner-Friendly Repositories here](https://github.com/avinash201199/Hacktoberfest2025/blob/main/BeginnersFriendlyRepositories.md)
