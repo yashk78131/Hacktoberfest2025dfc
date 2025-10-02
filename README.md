@@ -1,5 +1,7 @@
 ## How to Participate in Hacktoberfest 2025: Rewards, Repos & Beginner’s Guide
 
+### [Contribute by adding your or others' Beginner-Friendly Repositories here](https://github.com/avinash201199/Hacktoberfest2025/blob/main/BeginnersFriendlyRepositories.md)
+
 💡 **How to contribute:**  
 1. Fork this repository.  
 2. Add your repository in the table above.  
@@ -188,9 +190,6 @@ Here are essential resources and repositories to kickstart your Hacktoberfest jo
 - [First Timers Only](https://www.firsttimersonly.com/) — Guides and issues for first-time contributors.  
 - [Contribute.dev](https://contribute.dev/) — Discover projects and their beginner-friendly issues.  
 
-
-**Join [Telegram group](https://t.me/linkforlets_code) for more resources & discussions!**
-
 ## Quick Git Commands for Hacktoberfest
 
 For beginners who are new to Git and GitHub, here are essential commands to get started:
@@ -238,14 +237,3 @@ git merge upstream/main
 git push origin main
 ```
 
-### 🧰 Useful Resources for Your Placement Prep
-
-- ✅ [Free Mock Test](https://www.lets-code.co.in/dashboard/mocktest/)
-- ✅ [ATS Score Checker & Resume Optimizer](https://www.lets-code.co.in/dashboard/optimizeresume/)
-- ✅ [Previous Year Coding Questions (PYQs)](https://lets-code.co.in/previousyearcodingquestion/pyqs/)
-- ✅ [Roadmaps](https://lets-code.co.in/articles/roadmap/)
-- ✅ [Interview Questions](https://lets-code.co.in/interview/interviewquestions/)
-- ✅ [Interview Experience](https://www.lets-code.co.in/interview-experience/)
-- ✅ [Resume Templates](https://www.lets-code.co.in/articles/resume/)
-- ✅ [Free Placement Materials (Google Drive)](https://www.lets-code.co.in/articles/free-placement-google-drive-links/)
-- ✅ [3000+ Startups List for job seekers](https://www.lets-code.co.in/startups-list/)
