@@ -1,33 +1,17 @@
 ## How to Participate in Hacktoberfest 2025: Rewards, Repos & Beginner’s Guide
 
-## Beginner-Friendly### 3. **Make Pull or Merge Requests**
+### [Contribute by adding your or others' Beginner-Friendly Repositories here](https://github.com/avinash201199/Hacktoberfest2025/blob/main/BeginnersFriendlyRepositories.md)
 
-- Fork or clone the repo  
-- Create a new branch  
-- Make your changes or additions  
-- Submit a PR (or merge request)  
-- Be sure to follow the project's contribution guidelines  
-- Maintain good PR hygiene: clear commit messages, description of what you did, link to issue (if any)  
-- Engage with maintainers: respond to feedback and revise if needed  
+💡 **How to contribute:**  
+1. Fork this repository.  
+2. Add your repository in the table above.  
+3. Create a pull request.
 
-### 3.1 **Non-Code Contribution Ideas**
+----
 
-Hacktoberfest isn't just for programmers! Here are ways non-coders can contribute:
-
-- **Documentation**: Write tutorials, improve README files, create user guides
-- **Translation**: Translate projects to different languages
-- **Design**: Create logos, icons, UI mockups, or graphics
-- **Testing**: Report bugs, test features, write test cases
-- **Content Writing**: Blog posts, technical articles, project descriptions
-- **Community Management**: Moderate forums, answer questions, organize events
-- **Accessibility**: Review projects for accessibility compliance
-- **Data Entry**: Organize datasets, clean data, create CSV files
-
-### 4. **Ensure PRs Are Accepted / Approved**es to Contribute
-
-This is a community-driven list of beginner-friendly repositories.  
-If you know any good repository for beginners, feel free to add it to this table by creating a pull request.  
-
+## My Beginners friendly repo's to contribute!
+Here’s a curated list of repositories that are perfect for beginners to start contributing to. Whether you want to improve your coding skills, design templates, or work on fun projects — these repos have something for everyone!
+ 
 | Repo Name | URL | Tech Stack |
 |-----------|-----|------------|
 | Profile README Templates | [Link](https://github.com/avinash201199/profile-readme-templates) | HTML, CSS, Markdown |
@@ -39,12 +23,8 @@ If you know any good repository for beginners, feel free to add it to this table
 | Memory Game | [Link](https://github.com/avinash201199/Memory-Game) | HTML, CSS, JavaScript |
 | Free Programming Books | [Link](https://github.com/avinash201199/Free-programming-books) | Various |
 
----
 
-💡 **How to contribute:**  
-1. Fork this repository.  
-2. Add your repository in the table above.  
-3. Create a pull request.  
+---
 
 Let's build a helpful resource for beginners together! 
 
