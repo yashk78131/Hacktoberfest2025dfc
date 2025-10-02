@@ -1,209 +1,256 @@
-## How to Participate in Hacktoberfest 2025: Rewards, Repos & Beginner’s Guide
+# 🌍 Hacktoberfest 2025 – Beginner’s Guide, Rewards & Repositories
 
-## Beginner-Friendly Repositories to Contribute
-
-This is a community-driven list of beginner-friendly repositories.  
-If you know any good repository for beginners, feel free to add it to this table by creating a pull request.  
-
-| Repo Name | URL | Tech Stack |
-|-----------|-----|------------|
-| Profile README Templates | [Link](https://github.com/avinash201199/profile-readme-templates) | HTML, CSS, Markdown |
-| Stopwatch | [Link](https://github.com/avinash201199/stopwatch) | HTML, CSS, JavaScript |
-| Login-Signup Templates | [Link](https://github.com/avinash201199/Login-Signup-templates) | HTML, CSS |
-| Meme Generator | [Link](https://github.com/avinash201199/MemeGenerator) | HTML, CSS, JavaScript |
-| Weather App | [Link](https://github.com/avinash201199/weather-app) | HTML, CSS, JavaScript, API |
-| My Gallery 4u | [Link](https://github.com/avinash201199/My-Gallery-4u) | HTML, CSS, JavaScript |
-| Memory Game | [Link](https://github.com/avinash201199/Memory-Game) | HTML, CSS, JavaScript |
-| Free Programming Books | [Link](https://github.com/avinash201199/Free-programming-books) | Various |
+![Hacktoberfest](https://img.shields.io/badge/Hacktoberfest-2025-blueviolet?style=for-the-badge&logo=hackthebox)  
+![Open Source](https://img.shields.io/badge/Open--Source-💻-success?style=for-the-badge)  
+![Contributions Welcome](https://img.shields.io/badge/Contributions-Welcome-brightgreen?style=for-the-badge&logo=github)
 
 ---
 
-💡 **How to contribute:**  
-1. Fork this repository.  
-2. Add your repository in the table above.  
-3. Create a pull request.  
+## 🚀 Quick Start – How to Contribute
 
-Let's build a helpful resource for beginners together! 
+1. _Fork_ this repository
+2. _Add_ your beginner-friendly repository link in the table below
+3. _Submit a Pull Request (PR)_
+4. Celebrate your first open-source contribution 🎉
 
+👉 [Add your repo here](https://github.com/avinash201199/Hacktoberfest2025/blob/main/BeginnersFriendlyRepositories.md)
 
 ---
 
+## 📂 My Beginner-Friendly Repositories
 
-## What Is Hacktoberfest?
+Here’s a curated list of projects where you can start contributing:
 
-Hacktoberfest is a month-long celebration of open source, organized annually by DigitalOcean (in partnership with community sponsors) to encourage people (developers, designers, writers, and non-coders too) to get involved in open-source projects. 
+| ⭐ Repo Name             | 🔗 URL                                                            | ⚡ Tech Stack              |
+| ------------------------ | ----------------------------------------------------------------- | -------------------------- |
+| Profile README Templates | [Link](https://github.com/avinash201199/profile-readme-templates) | HTML, CSS, Markdown        |
+| Stopwatch                | [Link](https://github.com/avinash201199/stopwatch)                | HTML, CSS, JavaScript      |
+| Login-Signup Templates   | [Link](https://github.com/avinash201199/Login-Signup-templates)   | HTML, CSS                  |
+| Meme Generator           | [Link](https://github.com/avinash201199/MemeGenerator)            | HTML, CSS, JavaScript      |
+| Weather App              | [Link](https://github.com/avinash201199/weather-app)              | HTML, CSS, JavaScript, API |
+| My Gallery 4u            | [Link](https://github.com/avinash201199/My-Gallery-4u)            | HTML, CSS, JavaScript      |
+| Memory Game              | [Link](https://github.com/avinash201199/Memory-Game)              | HTML, CSS, JavaScript      |
+| Free Programming Books   | [Link](https://github.com/avinash201199/Free-programming-books)   | Various                    |
 
-Since its inception, the mission remains simple:
+---
 
-- Encourage contributions to open projects  
-- Bring in new contributors  
-- Celebrate open source communities and maintainers  
-- Provide incentives (digital badges, T-shirts, recognition) 
-Over the years, Hacktoberfest has grown from just hundreds of participants to tens of thousands. 
+## 🎉 What is Hacktoberfest?
 
-## Timeline: When & How It Runs
+Hacktoberfest is a _month-long open-source celebration_ organized every October by _DigitalOcean_ (with community sponsors).  
+It encourages developers, designers, writers, and everyone in tech to contribute to _open-source projects_.
 
-<table>
-  <thead>
-    <tr>
-      <th>Phase</th>
-      <th>What Happens</th>
-      <th>Notes</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>Pre-September (“Preptember”)</strong></td>
-      <td>Get ready: find projects, add <code>hacktoberfest</code> topic, brush up on Git</td>
-      <td>The official site encourages prep in September.</td>
-    </tr>
-    <tr>
-      <td><strong>October 1 – October 31</strong></td>
-      <td>Main event: submit pull/merge requests, community events</td>
-      <td>Your PRs must be accepted/merged/approved during this window (or within the review window).</td>
-    </tr>
-    <tr>
-      <td><strong>Review window / wrap-up</strong></td>
-      <td>Some PRs may be accepted within a grace window; organizers finalize awards</td>
-      <td>Maintainers may label PRs or merge them within a few days after October.</td>
-    </tr>
-    <tr>
-      <td><strong>Afterwards</strong></td>
-      <td>Prize distribution, badges, reflection, stories</td>
-      <td>T-shirts, digital badges, contributor features, etc.</td>
-    </tr>
-  </tbody>
-</table>
+✨ Goals:
 
-### Key Dates in 2025
+- Encourage _meaningful contributions_ to open source
+- Introduce _new contributors_ to OSS
+- Reward contributors with _swag, badges & recognition_
+- Grow global _developer communities_ 🌐
 
-- Hacktoberfest 2025 is officially open. 
-- The global kickoff “From Code to Community” is on **October 1st**, virtual gathering. 
-- Events (satellite sessions, workshops, meetups) are held throughout October. 
+---
 
+## 📅 Hacktoberfest 2025 Timeline
 
-## How to Participate: Step by Step
+| 🗓 Phase                      | 📌 What Happens                                         | 🔑 Notes                     |
+| ---------------------------- | ------------------------------------------------------- | ---------------------------- |
+| _Pre-September (Preptember)_ | Find projects, add hacktoberfest topic, prep Git basics | Start early 📚               |
+| _Oct 1 – Oct 31_             | Submit PRs, attend community events                     | PRs must be merged/accepted  |
+| _Review Window_              | PRs reviewed & merged by maintainers                    | A few days grace after Oct   |
+| _Afterwards_                 | Swag & badge distribution 🎁                            | Stories, blogs & celebration |
 
-Here’s how you can get involved and make the most of Hacktoberfest:
+👉 _Kickoff:_ October 1st, 2025 – Global virtual event _“From Code to Community”_ 🎙
 
-### 1. **Register / Sign Up**
+---
 
-Go to [Hacktoberfest.com](https://hacktoberfest.com) and connect your GitHub account. This links your contributions to your profile.
-Once you register, you’ll get a digital badge (or “pin”) that upgrades as you complete accepted PRs. 
+## 🛠 How to Participate
 
-### 2. **Find Suitable Projects**
+### 1️⃣ **Register / Sign Up**
 
-- Only repositories that have opted in (i.e. have the `hacktoberfest` topic) count as eligible. 
-- Many projects label beginner-friendly issues as **“good first issue”** or **“help wanted”**. These are great for newcomers. 
-- You can contribute to non-code areas as well: docs, translation, design, writing, tutorials, etc. 
-- Keep your eyes on Hacktoberfest’s official event listings and community shared project lists. 
+- Visit [Hacktoberfest.com](https://hacktoberfest.com)
+- Sign in with GitHub / GitLab
+- Start earning your _digital badge_
 
-### 3. **Make Pull or Merge Requests**
+### 2️⃣ **Find Suitable Projects**
 
-- Fork or clone the repo  
-- Create a new branch  
-- Make your changes or additions  
-- Submit a PR (or merge request)  
-- Be sure to follow the project’s contribution guidelines  
-- Maintain good PR hygiene: clear commit messages, description of what you did, link to issue (if any)  
-- Engage with maintainers: respond to feedback and revise if needed  
+- Only repositories that have opted in (i.e. have the `hacktoberfest` topic) count as eligible.
+- Many projects label beginner-friendly issues as **“good first issue”** or **“help wanted”**. These are great for newcomers.
+- You can contribute to non-code areas as well: docs, translation, design, writing, tutorials, etc.
+- Keep your eyes on Hacktoberfest’s official event listings and community shared project lists.
 
-### 4. **Ensure PRs Are Accepted / Approved**
+### 3️⃣ Make PRs
 
-For a PR to count:
+- Fork → Branch → Commit → PR
+- Follow repo _CONTRIBUTING.md_
+- Use clear _commit messages & PR descriptions_
+- Be sure to follow the project’s contribution guidelines
+- Engage with maintainers: respond to feedback and revise if needed
 
-- The repository must be eligible (have `hacktoberfest` topic)  
-- The PR must be merged, **or** labeled `hacktoberfest-accepted` by a maintainer  
-- Some PRs may be accepted after the October window within a review grace period 
-- The total needed for “completion” is currently **6 accepted PRs** in many Hacktoberfest editions. 
+### 4️⃣ Get PRs Accepted
 
-### 5. 🎁 Hacktoberfest 2025 Rewards
+✅ Repo must have hacktoberfest topic  
+✅ PR should be _merged_ or labeled hacktoberfest-accepted  
+✅ Aim for _6 accepted PRs_ in 2025
 
-- 🪪 **Holopin** — Earn a digital Hacktoberfest badge + unique Holopin sticker for socials.  
-- 👕 **Swag (T-Shirt)** — Exclusive T-shirt for **Super Contributors** (6 accepted PRs/MRs, first 10,000 only).  
-- 🌱 **TreeNation** — With the T-shirt reward, a tree is planted to support a greener planet.  
+---
+
+## 🎁 Rewards in 2025
+
+- 🪪 _Holopin Badge_ – Digital collectible for your profile
+- 👕 _Hacktoberfest T-Shirt_ – For _Super Contributors_ (first 10k who complete)
+- 🌱 _Tree Plantation_ – A tree planted in your name via TreeNation
+- 📜 _Global Recognition_ – Showcase in OSS community
 
 👉 Even if you don’t hit the T-shirt tier, every contributor gets digital recognition and a chance to showcase their journey!
 
+---
 
 ## Why You Should Join Hacktoberfest
 
 Whether you’re a seasoned developer or just starting out, Hacktoberfest offers many benefits:
 
-- **Skill growth & learning** — working on real projects improves your coding, collaboration, and review skills  
-- **Portfolio & visibility** — your GitHub contributions are public and can be shown to employers  
-- **Community & networking** — meet contributors, maintainers, and mentors worldwide  
-- **Giving back** — open-source projects power much of the tech stack we rely on  
-- **Fun & motivation** — friendly challenge, rewards, and shared energy through October  
+- **Skill growth & learning** — working on real projects improves your coding, collaboration, and review skills
+- **Portfolio & visibility** — your GitHub contributions are public and can be shown to employers
+- **Community & networking** — meet contributors, maintainers, and mentors worldwide
+- **Giving back** — open-source projects power much of the tech stack we rely on
+- **Fun & motivation** — friendly challenge, rewards, and shared energy through October
 - **Non-code opportunities** — docs, design, translation, writing, testing are also valid ways to contribute.
 
+---
 
-## Pitfalls & Best Practices (Don’t Become “Spamtoberfest”)
+## ✅ Best Practices (Avoid “Spamtoberfest”)
 
-Over the years, maintaining event integrity and quality has been a challenge. Here are things to watch out for:
+🔴 Don’t:
 
-### Common Pitfalls
+- Submit meaningless PRs (typo, whitespace only)
+- Contribute to ineligible repos
+- Ignore maintainer feedback
 
-- Submitting many trivial PRs (e.g. white-space fixes) just to hit count  
-- PRs to ineligible repos (without the `hacktoberfest` topic)  
-- Not responding to maintainer feedback, resulting in PR rejections  
-- Working on mega complex issues without understanding the project  
-- Ignoring contribution guidelines  
-- Assuming every PR will be accepted — some valid ones might still be rejected or need revisions  
+🟢 Do:
 
-### Best Practices & Tips
+- Focus on _quality, not quantity_
+- Read repo’s _guidelines_
+- Open issues / communicate before PRs
+- Write _clear PR titles & descriptions_
+- Engage with the community
 
-1. **Aim for quality over quantity** — better fewer meaningful contributions  
-2. **Choose beginner-friendly issues first**  
-3. **Communicate early** — open an issue or comment before heavy work  
-4. **Always read the project’s `CONTRIBUTING.md` / code of conduct**  
-5. **Write clear PR descriptions**: what you changed, why, link to related issue  
-6. **Be responsive to maintainer feedback & revise your code**  
-7. **Track your PRs and deadlines** — maintainers often leave reviews near the end of October  
-8. **Don’t be discouraged by rejections** — learn and try again  
+---
 
+## 🌟 Example Orgs Joining in 2025
 
-## Example Projects & Organizations Participating (2025 Highlights)
+- [Jenkins](https://www.jenkins.io/) — They encourage PRs in Jenkins repositories with `hacktoberfest` topic.
+- [Interledger](https://interledger.org/) — showing examples of non-code contributions (documentation, issues) in their repos.
+- [Defold](https://defold.com/) — flagged some repos for “good first issue” contribution during Hacktoberfest.
+- [ServiceNow](https://developer.servicenow.com/) — their community is active in Hacktoberfest, with advocacy and blogs.
 
-- **Jenkins** — They encourage PRs in Jenkins repositories with `hacktoberfest` topic. 
-- **Interledger** — showing examples of non-code contributions (documentation, issues) in their repos. 
-- **Defold** — flagged some repos for “good first issue” contribution during Hacktoberfest. 
-- **ServiceNow** — their community is active in Hacktoberfest, with advocacy and blogs. 
+...and _hundreds of community repos worldwide!_
 
-Additionally, many local and global events will run alongside Hacktoberfest (workshops, meetups, hackathons) — check the Hacktoberfest **Events** page.  
+---
 
-## Useful Resources & Repositories
+## 📚 Useful Resources
 
-Here are essential resources and repositories to kickstart your Hacktoberfest journey:
+- 🌐 [Hacktoberfest Official](https://hacktoberfest.com)
+- 🟢 [Good First Issues](https://goodfirstissue.dev/)
+- 📘 [First Contributions](https://github.com/firstcontributions/first-contributions)
+- 📖 [FreeCodeCamp](https://github.com/freeCodeCamp/freeCodeCamp)
+- 🌍 [EddieHubCommunity](https://github.com/EddieHubCommunity)
+- 🔍 [Up For Grabs](https://up-for-grabs.net/)
+- ⚡ [CodeTriage](https://www.codetriage.com/)
 
-- [Hacktoberfest Official Website](https://hacktoberfest.com) — Participation guide, FAQs, and events.  
-- [Good First Issues](https://goodfirstissue.dev/) — Curated beginner-friendly open source issues.  
+---
 
 ### Beginner-Friendly Contribution Platforms
-- [First Contributions](https://github.com/firstcontributions/first-contributions) — Beginner-friendly repo to learn contribution workflow.  
-- [Public APIs](https://github.com/public-apis/public-apis) — Large collection of free APIs for developers.  
-- [Awesome for Beginners](https://github.com/MunGell/awesome-for-beginners) — Curated list of repositories with “good first issues.”  
-- [FreeCodeCamp](https://github.com/freeCodeCamp/freeCodeCamp) — Large open-source learning platform, issues labeled for beginners.  
-- [EddieHubCommunity](https://github.com/EddieHubCommunity) — Welcoming open-source community for first-time contributors.  
-- [Mozilla’s Good First Bugs](https://github.com/mozilla) — Issues labeled “good first bug” across Mozilla repos.  
+
+- [First Contributions](https://github.com/firstcontributions/first-contributions) — Beginner-friendly repo to learn contribution workflow.
+- [Public APIs](https://github.com/public-apis/public-apis) — Large collection of free APIs for developers.
+- [Awesome for Beginners](https://github.com/MunGell/awesome-for-beginners) — Curated list of repositories with “good first issues.”
+- [FreeCodeCamp](https://github.com/freeCodeCamp/freeCodeCamp) — Large open-source learning platform, issues labeled for beginners.
+- [EddieHubCommunity](https://github.com/EddieHubCommunity) — Welcoming open-source community for first-time contributors.
+- [Mozilla’s Good First Bugs](https://github.com/mozilla) — Issues labeled “good first bug” across Mozilla repos.
+
+---
 
 ### Other Beginner Contribution Platforms
-- [Up For Grabs](https://up-for-grabs.net/) — Projects with curated tasks for new contributors.  
-- [CodeTriage](https://www.codetriage.com/) — Find open issues based on interest.  
-- [First Timers Only](https://www.firsttimersonly.com/) — Guides and issues for first-time contributors.  
-- [Contribute.dev](https://contribute.dev/) — Discover projects and their beginner-friendly issues.  
 
+- [Up For Grabs](https://up-for-grabs.net/) — Projects with curated tasks for new contributors.
+- [CodeTriage](https://www.codetriage.com/) — Find open issues based on interest.
+- [First Timers Only](https://www.firsttimersonly.com/) — Guides and issues for first-time contributors.
+- [Contribute.dev](https://contribute.dev/) — Discover projects and their beginner-friendly issues.
 
-**Join [Telegram group](https://t.me/linkforlets_code) for more resources & discussions!**
+## Quick Git Commands for Hacktoberfest
 
-### 🧰 Useful Resources for Your Placement Prep
+For beginners who are new to Git and GitHub, here are essential commands to get started:
 
-- ✅ [Free Mock Test](https://www.lets-code.co.in/dashboard/mocktest/)
-- ✅ [ATS Score Checker & Resume Optimizer](https://www.lets-code.co.in/dashboard/optimizeresume/)
-- ✅ [Previous Year Coding Questions (PYQs)](https://lets-code.co.in/previousyearcodingquestion/pyqs/)
-- ✅ [Roadmaps](https://lets-code.co.in/articles/roadmap/)
-- ✅ [Interview Questions](https://lets-code.co.in/interview/interviewquestions/)
+### Setting up your contribution
+
+```bash
+# Fork the repository on GitHub, then clone your fork
+git clone https://github.com/YOUR_USERNAME/REPO_NAME.git
+cd REPO_NAME
+
+# Add the original repository as upstream
+git remote add upstream https://github.com/ORIGINAL_OWNER/REPO_NAME.git
+
+# Create a new branch for your feature
+git checkout -b feature/your-feature-name
+```
+
+### Making changes and submitting
+
+```bash
+# Check status of your changes
+git status
+
+# Add your changes
+git add .
+
+# Commit with a meaningful message
+git commit -m "Add: brief description of changes"
+
+# Push to your fork
+git push origin feature/your-feature-name
+```
+
+### Keeping your fork updated
+
+```bash
+# Fetch changes from original repository
+git fetch upstream
+
+# Switch to main branch
+git checkout main
+
+# Merge upstream changes
+git merge upstream/main
+
+# Push updates to your fork
+git push origin main
+```
+
+---
+
+## 👥 Contributors
+
+Thanks to all the amazing contributors 💜
+
+<a href="https://github.com/avinash201199/Hacktoberfest2025/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=avinash201199/Hacktoberfest2025" />
+</a>
+
+---
+
+## 🧰 Bonus: Placement Prep Resources
+
+- ✅ [Mock Tests](https://www.lets-code.co.in/dashboard/mocktest/)
+- ✅ [Resume Optimizer](https://www.lets-code.co.in/dashboard/optimizeresume/)
+- ✅ [Roadmaps](https://www.lets-code.co.in/articles/roadmap/)
+- ✅ [Coding PYQs](https://lets-code.co.in/previousyearcodingquestion/pyqs/)
+- ✅ [Interview Questions](https://www.lets-code.co.in/interview/interviewquestions/)
+- ✅ [Free Placement Drive Materials](https://www.lets-code.co.in/articles/free-placement-google-drive-links/)
+- ✅ [3000+ Startups List](https://www.lets-code.co.in/startups-list/)
 - ✅ [Interview Experience](https://www.lets-code.co.in/interview-experience/)
-- ✅ [Resume Templates](https://www.lets-code.co.in/articles/resume/)
-- ✅ [Free Placement Materials (Google Drive)](https://www.lets-code.co.in/articles/free-placement-google-drive-links/)
-- ✅ [3000+ Startups List for job seekers](https://www.lets-code.co.in/startups-list/)
+
+---
+
+### 🎯 Final Tip
+
+Contribute with _curiosity & respect_ ❤  
+Every meaningful PR = _a step forward in your journey as an open-source contributor_ 🚀
