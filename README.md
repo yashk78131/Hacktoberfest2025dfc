@@ -1,40 +1,10 @@
-<!-- ...existing content... -->
+## How to Participate in Hacktoberfest 2025: Rewards, Repos & Beginner’s Guide
 
-> View this README as a website: <a href="index.html">Open site</a>
+## Beginner-Friendly Repositories to Contribute
 
+This is a community-driven list of beginner-friendly repositories.  
+If you know any good repository for beginners, feel free to add it to this table by creating a pull request.  
 
----
-
-> Website branch: A branch named `website-pages` contains the static site and assets for GitHub Pages deployment.
-
-## View this README as a website
-
-You can open the repository README as a static website we've added at `index.html`.
-
-To view locally (macOS / zsh):
-
-```bash
-# from the repository root
-python3 -m http.server 8000
-# then open http://localhost:8000 in your browser
-```
-
-To publish on GitHub Pages: enable Pages in your repository settings and select the `website` branch (or `main`) and `/` as the root; GitHub will serve `index.html` automatically.
-
-> To view locally: run a simple static server (example: `python3 -m http.server 8000`) and open http://localhost:8000
-
-### [Contribute by adding your or others' Beginner-Friendly Repositories here](https://github.com/avinash201199/Hacktoberfest2025/blob/main/BeginnersFriendlyRepositories.md)
-
-💡 **How to contribute:**  
-1. Fork this repository.  
-2. Add your repository in the table above.  
-3. Create a pull request.
-
----
-
-## My Beginners friendly repo's to contribute!
-Here’s a curated list of repositories that are perfect for beginners to start contributing to. Whether you want to improve your coding skills, design templates, or work on fun projects — these repos have something for everyone!
- 
 | Repo Name | URL | Tech Stack |
 |-----------|-----|------------|
 | Profile README Templates | [Link](https://github.com/avinash201199/profile-readme-templates) | HTML, CSS, Markdown |
@@ -45,6 +15,16 @@ Here’s a curated list of repositories that are perfect for beginners to start 
 | My Gallery 4u | [Link](https://github.com/avinash201199/My-Gallery-4u) | HTML, CSS, JavaScript |
 | Memory Game | [Link](https://github.com/avinash201199/Memory-Game) | HTML, CSS, JavaScript |
 | Free Programming Books | [Link](https://github.com/avinash201199/Free-programming-books) | Various |
+
+---
+
+💡 **How to contribute:**  
+1. Fork this repository.  
+2. Add your repository in the table above.  
+3. Create a pull request.  
+
+Let's build a helpful resource for beginners together! 
+
 
 ---
 
@@ -213,50 +193,17 @@ Here are essential resources and repositories to kickstart your Hacktoberfest jo
 - [First Timers Only](https://www.firsttimersonly.com/) — Guides and issues for first-time contributors.  
 - [Contribute.dev](https://contribute.dev/) — Discover projects and their beginner-friendly issues.  
 
-## Quick Git Commands for Hacktoberfest
 
-For beginners who are new to Git and GitHub, here are essential commands to get started:
+**Join [Telegram group](https://t.me/linkforlets_code) for more resources & discussions!**
 
-### Setting up your contribution
-```bash
-# Fork the repository on GitHub, then clone your fork
-git clone https://github.com/YOUR_USERNAME/REPO_NAME.git
-cd REPO_NAME
+### 🧰 Useful Resources for Your Placement Prep
 
-# Add the original repository as upstream
-git remote add upstream https://github.com/ORIGINAL_OWNER/REPO_NAME.git
-
-# Create a new branch for your feature
-git checkout -b feature/your-feature-name
-```
-
-### Making changes and submitting
-```bash
-# Check status of your changes
-git status
-
-# Add your changes
-git add .
-
-# Commit with a meaningful message
-git commit -m "Add: brief description of changes"
-
-# Push to your fork
-git push origin feature/your-feature-name
-```
-
-### Keeping your fork updated
-```bash
-# Fetch changes from original repository
-git fetch upstream
-
-# Switch to main branch
-git checkout main
-
-# Merge upstream changes
-git merge upstream/main
-
-# Push updates to your fork
-git push origin main
-```
-
+- ✅ [Free Mock Test](https://www.lets-code.co.in/dashboard/mocktest/)
+- ✅ [ATS Score Checker & Resume Optimizer](https://www.lets-code.co.in/dashboard/optimizeresume/)
+- ✅ [Previous Year Coding Questions (PYQs)](https://lets-code.co.in/previousyearcodingquestion/pyqs/)
+- ✅ [Roadmaps](https://lets-code.co.in/articles/roadmap/)
+- ✅ [Interview Questions](https://lets-code.co.in/interview/interviewquestions/)
+- ✅ [Interview Experience](https://www.lets-code.co.in/interview-experience/)
+- ✅ [Resume Templates](https://www.lets-code.co.in/articles/resume/)
+- ✅ [Free Placement Materials (Google Drive)](https://www.lets-code.co.in/articles/free-placement-google-drive-links/)
+- ✅ [3000+ Startups List for job seekers](https://www.lets-code.co.in/startups-list/)
