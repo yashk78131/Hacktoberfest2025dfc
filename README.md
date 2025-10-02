@@ -1,5 +1,43 @@
 ## How to Participate in Hacktoberfest 2025: Rewards, Repos & Beginner’s Guide
 
+
+# 🚀 Beginner-Friendly Repositories to Contribute
+
+Here are my curated list of repositories that are perfect for beginners to start contributing to. Whether you want to improve your coding skills, design templates, or work on fun projects, these repos have something for everyone!
+
+---
+
+## 📚 List of Repositories
+
+1. **[Profile README Templates](https://github.com/avinash201199/profile-readme-templates)**  
+   Beautiful and customizable README templates for GitHub profiles.
+
+2. **[Stopwatch](https://github.com/avinash201199/stopwatch)**  
+   A simple stopwatch application to practice JavaScript and UI development.
+
+3. **[Login-Signup Templates](https://github.com/avinash201199/Login-Signup-templates)**  
+   Pre-made login and signup form templates to enhance your frontend skills.
+
+4. **[Meme Generator](https://github.com/avinash201199/MemeGenerator)**  
+   Create your own memes with a simple and fun web app.
+
+5. **[Weather App](https://github.com/avinash201199/weather-app)**  
+   A weather forecast application using APIs — great for learning API integration.
+
+6. **[My Gallery 4u](https://github.com/avinash201199/My-Gallery-4u)**  
+   A personal gallery project to display images with styling and effects.
+
+7. **[Memory Game](https://github.com/avinash201199/Memory-Game)**  
+   A classic memory card matching game to practice JavaScript logic.
+
+8. **[Free Programming Books](https://github.com/avinash201199/Free-programming-books)**  
+   A collection of free programming books for learning different languages and technologies.
+
+9. **[Explore more repos on my GitHub profile](https://github.com/avinash201199?tab=repositories)
+
+---
+
+
 ## What Is Hacktoberfest?
 
 Hacktoberfest is a month-long celebration of open source, organized annually by DigitalOcean (in partnership with community sponsors) to encourage people (developers, designers, writers, and non-coders too) to get involved in open-source projects. 
