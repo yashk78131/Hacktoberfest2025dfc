@@ -1,10 +1,8 @@
 ## How to Participate in Hacktoberfest 2025: Rewards, Repos & Beginner’s Guide
 
-## Beginner-Friendly Repositories to Contribute
-
-This is a community-driven list of beginner-friendly repositories.  
-If you know any good repository for beginners, feel free to add it to this table by creating a pull request.  
-
+## My Beginners friendly repo's to contribute!
+Here’s a curated list of repositories that are perfect for beginners to start contributing to. Whether you want to improve your coding skills, design templates, or work on fun projects — these repos have something for everyone!
+ 
 | Repo Name | URL | Tech Stack |
 |-----------|-----|------------|
 | Profile README Templates | [Link](https://github.com/avinash201199/profile-readme-templates) | HTML, CSS, Markdown |
@@ -15,6 +13,9 @@ If you know any good repository for beginners, feel free to add it to this table
 | My Gallery 4u | [Link](https://github.com/avinash201199/My-Gallery-4u) | HTML, CSS, JavaScript |
 | Memory Game | [Link](https://github.com/avinash201199/Memory-Game) | HTML, CSS, JavaScript |
 | Free Programming Books | [Link](https://github.com/avinash201199/Free-programming-books) | Various |
+
+
+### [Conribute by adding yours or others Beginner-Friendly Repositories here](Beginner-Friendly Repositories to Contribute)
 
 ---
 
