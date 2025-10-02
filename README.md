@@ -245,8 +245,8 @@ Thanks to all the amazing contributors 💜
 - ✅ [Coding PYQs](https://lets-code.co.in/previousyearcodingquestion/pyqs/)
 - ✅ [Interview Questions](https://www.lets-code.co.in/interview/interviewquestions/)
 - ✅ [Free Placement Drive Materials](https://www.lets-code.co.in/articles/free-placement-google-drive-links/)
-- ✅ [3000+ Startups List]([https://www.lets-code.co.in/articles/free-placement-google-drive-links/](https://www.lets-code.co.in/startups-list/))
-- ✅ [Interview Experience]([https://www.lets-code.co.in/articles/free-placement-google-drive-links/](https://www.lets-code.co.in/interview-experience/))
+- ✅ [3000+ Startups List](https://www.lets-code.co.in/startups-list/)
+- ✅ [Interview Experience](https://www.lets-code.co.in/interview-experience/)
 
 ---
 
