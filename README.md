@@ -17,7 +17,7 @@
 
 ---
 
-## 📂 Beginner-Friendly Repositories
+## 📂 My Beginner-Friendly Repositories
 
 Here’s a curated list of projects where you can start contributing:
 
