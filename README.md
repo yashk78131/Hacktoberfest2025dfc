@@ -1,13 +1,11 @@
 ## How to Participate in Hacktoberfest 2025: Rewards, Repos & Beginner’s Guide
 
-### [Contribute by adding your or others' Beginner-Friendly Repositories here](https://github.com/avinash201199/Hacktoberfest2025/blob/main/BeginnersFriendlyRepositories.md)
-
 💡 **How to contribute:**  
 1. Fork this repository.  
 2. Add your repository in the table above.  
 3. Create a pull request.
 
-----
+---
 
 ## My Beginners friendly repo's to contribute!
 Here’s a curated list of repositories that are perfect for beginners to start contributing to. Whether you want to improve your coding skills, design templates, or work on fun projects — these repos have something for everyone!
@@ -22,12 +20,6 @@ Here’s a curated list of repositories that are perfect for beginners to start 
 | My Gallery 4u | [Link](https://github.com/avinash201199/My-Gallery-4u) | HTML, CSS, JavaScript |
 | Memory Game | [Link](https://github.com/avinash201199/Memory-Game) | HTML, CSS, JavaScript |
 | Free Programming Books | [Link](https://github.com/avinash201199/Free-programming-books) | Various |
-
-
----
-
-Let's build a helpful resource for beginners together! 
-
 
 ---
 
