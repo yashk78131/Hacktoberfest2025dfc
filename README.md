@@ -23,8 +23,7 @@ To publish on GitHub Pages: enable Pages in your repository settings and select 
 
 > To view locally: run a simple static server (example: `python3 -m http.server 8000`) and open http://localhost:8000
 
-
-### [👉Contribute by adding your or others' Beginner-Friendly Repositories here](https://github.com/avinash201199/Hacktoberfest2025/blob/main/BeginnersFriendlyRepositories.md)
+### [Contribute by adding your or others' Beginner-Friendly Repositories here](https://github.com/avinash201199/Hacktoberfest2025/blob/main/BeginnersFriendlyRepositories.md)
 
 💡 **How to contribute:**  
 1. Fork this repository.  
@@ -214,17 +213,50 @@ Here are essential resources and repositories to kickstart your Hacktoberfest jo
 - [First Timers Only](https://www.firsttimersonly.com/) — Guides and issues for first-time contributors.  
 - [Contribute.dev](https://contribute.dev/) — Discover projects and their beginner-friendly issues.  
 
+## Quick Git Commands for Hacktoberfest
 
-**Join [Telegram group](https://t.me/linkforlets_code) for more resources & discussions!**
+For beginners who are new to Git and GitHub, here are essential commands to get started:
 
-### 🧰 Useful Resources for Your Placement Prep
+### Setting up your contribution
+```bash
+# Fork the repository on GitHub, then clone your fork
+git clone https://github.com/YOUR_USERNAME/REPO_NAME.git
+cd REPO_NAME
 
-- ✅ [Free Mock Test](https://www.lets-code.co.in/dashboard/mocktest/)
-- ✅ [ATS Score Checker & Resume Optimizer](https://www.lets-code.co.in/dashboard/optimizeresume/)
-- ✅ [Previous Year Coding Questions (PYQs)](https://lets-code.co.in/previousyearcodingquestion/pyqs/)
-- ✅ [Roadmaps](https://lets-code.co.in/articles/roadmap/)
-- ✅ [Interview Questions](https://lets-code.co.in/interview/interviewquestions/)
-- ✅ [Interview Experience](https://www.lets-code.co.in/interview-experience/)
-- ✅ [Resume Templates](https://www.lets-code.co.in/articles/resume/)
-- ✅ [Free Placement Materials (Google Drive)](https://www.lets-code.co.in/articles/free-placement-google-drive-links/)
-- ✅ [3000+ Startups List for job seekers](https://www.lets-code.co.in/startups-list/)
+# Add the original repository as upstream
+git remote add upstream https://github.com/ORIGINAL_OWNER/REPO_NAME.git
+
+# Create a new branch for your feature
+git checkout -b feature/your-feature-name
+```
+
+### Making changes and submitting
+```bash
+# Check status of your changes
+git status
+
+# Add your changes
+git add .
+
+# Commit with a meaningful message
+git commit -m "Add: brief description of changes"
+
+# Push to your fork
+git push origin feature/your-feature-name
+```
+
+### Keeping your fork updated
+```bash
+# Fetch changes from original repository
+git fetch upstream
+
+# Switch to main branch
+git checkout main
+
+# Merge upstream changes
+git merge upstream/main
+
+# Push updates to your fork
+git push origin main
+```
+
