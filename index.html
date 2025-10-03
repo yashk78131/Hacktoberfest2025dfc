@@ -898,6 +898,33 @@
       const sidebar = document.getElementById('sidebar'); sidebar.classList.toggle('collapsed');
     });
 
+    // Auto-collapse sidebar on mobile and handle window resize
+    function handleSidebarResponsiveness() {
+      const sidebar = document.getElementById('sidebar');
+      const isMobile = window.innerWidth <= 900;
+      
+      if (isMobile) {
+        sidebar.classList.add('collapsed');
+      } else {
+        sidebar.classList.remove('collapsed');
+      }
+    }
+    
+    // Initial check and window resize listener
+    handleSidebarResponsiveness();
+    window.addEventListener('resize', handleSidebarResponsiveness);
+    
+    // Close sidebar when clicking outside on mobile
+    document.addEventListener('click', (e) => {
+      const sidebar = document.getElementById('sidebar');
+      const hamburger = document.getElementById('hamburger');
+      const isMobile = window.innerWidth <= 900;
+      
+      if (isMobile && !sidebar.contains(e.target) && !hamburger.contains(e.target) && !sidebar.classList.contains('collapsed')) {
+        sidebar.classList.add('collapsed');
+      }
+    });
+
     // keyboard shortcut: press '/' to focus search
     document.addEventListener('keydown', (e) => {
       if (e.key === '/' && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
