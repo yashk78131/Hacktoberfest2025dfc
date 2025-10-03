@@ -1,1019 +1,1247 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Hacktoberfest 2025 — Guide</title>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Hacktoberfest 2025 — Guide</title>
 
-  <!-- OpenGraph / Social preview -->
-  <meta property="og:title" content="How to Participate in Hacktoberfest 2025 — Guide" />
-  <meta property="og:description" content="Step-by-step guide, beginner repos, best practices and resources for Hacktoberfest 2025." />
-  <meta property="og:image" content="assets/og-image.svg" />
-  <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary_large_image" />
+    <!-- OpenGraph / Social preview -->
+    <meta
+      property="og:title"
+      content="How to Participate in Hacktoberfest 2025 — Guide"
+    />
+    <meta
+      property="og:description"
+      content="Step-by-step guide, beginner repos, best practices and resources for Hacktoberfest 2025."
+    />
+    <meta property="og:image" content="assets/og-image.svg" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
 
-  <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/style.css" />
 
-  <!-- Highlight.js and Marked (CDN) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/5.1.1/marked.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <!-- Highlight.js and Marked (CDN) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/5.1.1/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
 
-  <style>
-    :root {
-      --hf-orange: #ff8a65;
-      --hf-purple: #9b59b6;
-      --hf-dark: #183153;
-      --hf-light: #ffffff;
-      --spacing-sm: 0.5rem;
-      --spacing-md: 1rem;
-      --spacing-lg: 2rem;
-    }
-    
-    .logo-blob {
-      display: inline-block;
-      width: 2em;
-      height: 2em;
-      margin-right: 0.5em;
-      background: linear-gradient(135deg, var(--hf-orange), var(--hf-purple));
-      border-radius: 50%;
-      animation: blob 2.5s infinite ease-in-out;
-      box-shadow: 0 0 15px rgba(255, 138, 101, 0.3);
-    }
-
-    @keyframes blob {
-      0%, 100% {
-        transform: scale(1);
+    <style>
+      :root {
+        --hf-orange: #ff8a65;
+        --hf-purple: #9b59b6;
+        --hf-dark: #183153;
+        --hf-light: #ffffff;
+        --spacing-sm: 0.5rem;
+        --spacing-md: 1rem;
+        --spacing-lg: 2rem;
       }
-      50% {
-        transform: scale(1.1);
+
+      .logo-blob {
+        display: inline-block;
+        width: 2em;
+        height: 2em;
+        margin-right: 0.5em;
+        background: linear-gradient(135deg, var(--hf-orange), var(--hf-purple));
+        border-radius: 50%;
+        animation: blob 2.5s infinite ease-in-out;
+        box-shadow: 0 0 15px rgba(255, 138, 101, 0.3);
       }
-    }
 
-    .brand {
-      display: flex;
-      align-items: center;
-    }
-
-    /* Subtle shadow animation for header */
-    .site {
-      position: relative;
-    }
-
-    .site::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: linear-gradient(to right, transparent, rgba(255,255,255,0.3), transparent);
-      z-index: 1;
-      animation: shine 1.5s infinite;
-    }
-
-    @keyframes shine {
-      0% { background-position: -200% 0; }
-      100% { background-position: 200% 0; }
-    }
-
-    .bg-decor {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: 0;
-      pointer-events: none;
-      overflow: hidden;
-    }
-
-    .bg-decor svg {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      opacity: 0.1;
-      animation: float 6s ease-in-out infinite;
-    }
-
-    @keyframes float {
-      0%, 100% {
-        transform: translate(-50%, -50%) scale(1);
+      @keyframes blob {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
       }
-      50% {
-        transform: translate(-50%, -50%) scale(1.05);
+
+      .brand {
+        display: flex;
+        align-items: center;
       }
-    }
 
-    /* Top navigation bar styles */
-    .topnav {
-      background: linear-gradient(135deg, var(--hf-dark), var(--hf-purple));
-      color: var(--hf-light);
-      padding: var(--spacing-md) var(--spacing-lg);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 20px rgba(0,0,0,0.2);
-    }
+      /* Subtle shadow animation for header */
+      .site {
+        position: relative;
+      }
 
-    .topnav-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+      .site::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(
+          to right,
+          transparent,
+          rgba(255, 255, 255, 0.3),
+          transparent
+        );
+        z-index: 1;
+        animation: shine 1.5s infinite;
+      }
 
-    .nav-links {
-      display: flex;
-      gap: 1.5rem;
-    }
+      @keyframes shine {
+        0% {
+          background-position: -200% 0;
+        }
+        100% {
+          background-position: 200% 0;
+        }
+      }
 
-    .nav-links a {
-      position: relative;
-      padding: 0.5rem 1rem;
-      color: var(--hf-light);
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
+      .bg-decor {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 0;
+        pointer-events: none;
+        overflow: hidden;
+      }
 
-    .nav-links a:hover {
-      color: var(--hf-orange);
-    }
+      .bg-decor svg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0.1;
+        animation: float 6s ease-in-out infinite;
+      }
 
-    .nav-actions {
-      display: flex;
-      gap: 1rem;
-    }
+      @keyframes float {
+        0%,
+        100% {
+          transform: translate(-50%, -50%) scale(1);
+        }
+        50% {
+          transform: translate(-50%, -50%) scale(1.05);
+        }
+      }
 
-    .nav-btn {
-      background: none;
-      border: none;
-      color: #9fb1c7;
-      font-size: 1.2rem;
-      cursor: pointer;
-      transition: color 0.3s;
-    }
+      /* Top navigation bar styles */
+      .topnav {
+        background: linear-gradient(135deg, var(--hf-dark), var(--hf-purple));
+        color: var(--hf-light);
+        padding: var(--spacing-md) var(--spacing-lg);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+      }
 
-    .nav-btn:hover {
-      color: #fff;
-    }
+      .topnav-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
 
-    .nav-cta {
-      background: linear-gradient(135deg, var(--hf-orange), var(--hf-purple));
-      padding: 0.8rem 1.5rem;
-      border-radius: 50px;
-      color: var(--hf-light);
-      text-decoration: none;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(155, 89, 182, 0.3);
-    }
+      .nav-links {
+        display: flex;
+        gap: 1.5rem;
+      }
 
-    .nav-cta:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(155, 89, 182, 0.4);
-    }
+      .nav-links a {
+        position: relative;
+        padding: 0.5rem 1rem;
+        color: var(--hf-light);
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
 
-    /* Content layout and search enhancements */
-    .content {
-      padding: var(--spacing-lg);
-      background: linear-gradient(135deg, rgba(155, 89, 182, 0.1), rgba(255, 138, 101, 0.1));
-      min-height: calc(100vh - 60px);
-    }
+      .nav-links a:hover {
+        color: var(--hf-orange);
+      }
 
-    .content-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      background: rgba(255, 255, 255, 0.02);
-      backdrop-filter: blur(10px);
-      border-radius: 20px;
-      padding: var(--spacing-lg);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    }
+      .nav-actions {
+        display: flex;
+        gap: 1rem;
+      }
 
-    .search-wrapper {
-      position: relative;
-      max-width: 600px;
-      margin: var(--spacing-md) auto;
-    }
+      .nav-btn {
+        background: none;
+        border: none;
+        color: #9fb1c7;
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: color 0.3s;
+      }
 
-    .search-wrapper input {
-      width: 100%;
-      padding: 1rem 3rem 1rem 1.5rem;
-      background: rgba(255, 255, 255, 0.1);
-      border: 2px solid rgba(255, 255, 255, 0.1);
-      border-radius: 50px;
-      color: var(--hf-light);
-      font-size: 1.1rem;
-      transition: all 0.3s ease;
-    }
+      .nav-btn:hover {
+        color: #fff;
+      }
 
-    .search-wrapper input:focus {
-      background: rgba(255, 255, 255, 0.15);
-      border-color: var(--hf-purple);
-      box-shadow: 0 0 25px rgba(155, 89, 182, 0.2);
-      outline: none;
-    }
+      .nav-cta {
+        background: linear-gradient(135deg, var(--hf-orange), var(--hf-purple));
+        padding: 0.8rem 1.5rem;
+        border-radius: 50px;
+        color: var(--hf-light);
+        text-decoration: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(155, 89, 182, 0.3);
+      }
 
-    .search-ico {
-      position: absolute;
-      right: 1.2rem;
-      top: 50%;
-      transform: translateY(-50%);
-      color: var(--hf-light);
-      opacity: 0.7;
-      pointer-events: none;
-    }
+      .nav-cta:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(155, 89, 182, 0.4);
+      }
 
-    /* Improved readability */
-    #article {
-      font-size: 16px;
-      line-height: 1.8;
-      color: var(--hf-light);
-      max-width: 800px;
-      margin: 0 auto;
-    }
+      /* Content layout and search enhancements */
+      .content {
+        padding: var(--spacing-lg);
+        background: linear-gradient(
+          135deg,
+          rgba(155, 89, 182, 0.1),
+          rgba(255, 138, 101, 0.1)
+        );
+        min-height: calc(100vh - 60px);
+      }
 
-    #article h1 {
-      font-size: 2.5rem;
-      margin: 2rem 0 1.5rem;
-      color: var(--hf-orange);
-      background: linear-gradient(90deg, var(--hf-orange), var(--hf-purple));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+      .content-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0.02);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        padding: var(--spacing-lg);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      }
 
-    #article h2 {
-      font-size: 1.8rem;
-      margin: 2rem 0 1rem;
-      color: var(--hf-light);
-    }
+      .search-wrapper {
+        position: relative;
+        max-width: 600px;
+        margin: var(--spacing-md) auto;
+      }
 
-    #article h3 {
-      font-size: 1.4rem;
-      margin: 1.5rem 0 1rem;
-      color: var(--hf-orange);
-    }
+      .search-wrapper input {
+        width: 100%;
+        padding: 1rem 3rem 1rem 1.5rem;
+        background: rgba(255, 255, 255, 0.1);
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        border-radius: 50px;
+        color: var(--hf-light);
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+      }
 
-    #article p {
-      margin-bottom: 1.2rem;
-      font-size: 1.1rem;
-      color: rgba(255, 255, 255, 0.9);
-    }
+      .search-wrapper input:focus {
+        background: rgba(255, 255, 255, 0.15);
+        border-color: var(--hf-purple);
+        box-shadow: 0 0 25px rgba(155, 89, 182, 0.2);
+        outline: none;
+      }
 
-    #article ul, #article ol {
-      padding-left: 1.5rem;
-      margin-bottom: 1.2rem;
-    }
+      .search-ico {
+        position: absolute;
+        right: 1.2rem;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--hf-light);
+        opacity: 0.7;
+        pointer-events: none;
+      }
 
-    #article li {
-      margin-bottom: 0.5rem;
-    }
-
-    #article code {
-      background: rgba(155, 89, 182, 0.1);
-      padding: 0.2em 0.4em;
-      border-radius: 3px;
-      font-size: 0.9em;
-    }
-
-    #article pre {
-      margin: 1.5rem 0;
-      padding: 1rem;
-      border-radius: 8px;
-      background: rgba(0, 0, 0, 0.3);
-    }
-
-    #article table {
-      width: 100%;
-      margin: 1.5rem 0;
-      border-collapse: collapse;
-    }
-
-    #article th, #article td {
-      padding: 0.8rem;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      background: rgba(255, 255, 255, 0.02);
-    }
-
-    #article th {
-      background: rgba(155, 89, 182, 0.1);
-      color: var(--hf-orange);
-    }
-
-    /* Enhanced search results */
-    .search-highlight {
-      background: linear-gradient(120deg, rgba(255, 138, 101, 0.2), rgba(155, 89, 182, 0.2));
-      border-radius: 3px;
-      padding: 0.2em 0;
-    }
-
-    .search-wrapper input:focus + .search-ico {
-      color: var(--hf-orange);
-      opacity: 1;
-    }
-
-    /* Smooth scroll padding for header */
-    html {
-      scroll-padding-top: 80px;
-    }
-
-    /* Mobile optimizations */
-    @media (max-width: 768px) {
+      /* Improved readability */
       #article {
-        font-size: 15px;
-        padding: 0 1rem;
+        font-size: 16px;
+        line-height: 1.8;
+        color: var(--hf-light);
+        max-width: 800px;
+        margin: 0 auto;
       }
 
-      #article h1 { font-size: 2rem; }
-      #article h2 { font-size: 1.5rem; }
-      #article h3 { font-size: 1.2rem; }
-    }
+      #article h1 {
+        font-size: 2.5rem;
+        margin: 2rem 0 1.5rem;
+        color: var(--hf-orange);
+        background: linear-gradient(90deg, var(--hf-orange), var(--hf-purple));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
 
-    /* Sidebar styles for collapsed state */
-    .sidebar.collapsed {
-      width: 80px;
-    }
+      #article h2 {
+        font-size: 1.8rem;
+        margin: 2rem 0 1rem;
+        color: var(--hf-light);
+      }
 
-    .sidebar.collapsed .brand {
-      justify-content: center;
-    }
+      #article h3 {
+        font-size: 1.4rem;
+        margin: 1.5rem 0 1rem;
+        color: var(--hf-orange);
+      }
 
-    .sidebar.collapsed .brand .logo-blob {
-      margin-right: 0;
-    }
+      #article p {
+        margin-bottom: 1.2rem;
+        font-size: 1.1rem;
+        color: rgba(255, 255, 255, 0.9);
+      }
 
-    .sidebar.collapsed #toc {
-      display: none;
-    }
+      #article ul,
+      #article ol {
+        padding-left: 1.5rem;
+        margin-bottom: 1.2rem;
+      }
 
-    .sidebar.collapsed .toc-toggle {
-      display: none;
-    }
+      #article li {
+        margin-bottom: 0.5rem;
+      }
 
-    .sidebar.collapsed .sidebar-footer {
-      display: none;
-    }
+      #article code {
+        background: rgba(155, 89, 182, 0.1);
+        padding: 0.2em 0.4em;
+        border-radius: 3px;
+        font-size: 0.9em;
+      }
 
-    .sidebar.collapsed .search-wrapper {
-      display: none;
-    }
+      #article pre {
+        margin: 1.5rem 0;
+        padding: 1rem;
+        border-radius: 8px;
+        background: rgba(0, 0, 0, 0.3);
+      }
 
-    .sidebar.collapsed .nav-btn {
-      display: none;
-    }
+      #article table {
+        width: 100%;
+        margin: 1.5rem 0;
+        border-collapse: collapse;
+      }
 
-    .sidebar.collapsed .nav-cta {
-      display: none;
-    }
+      #article th,
+      #article td {
+        padding: 0.8rem;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.02);
+      }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+      #article th {
+        background: rgba(155, 89, 182, 0.1);
+        color: var(--hf-orange);
+      }
 
-    .fade-in {
-      animation: fadeIn 0.8s ease-out forwards;
-    }
+      /* Enhanced search results */
+      .search-highlight {
+        background: linear-gradient(
+          120deg,
+          rgba(255, 138, 101, 0.2),
+          rgba(155, 89, 182, 0.2)
+        );
+        border-radius: 3px;
+        padding: 0.2em 0;
+      }
 
-    /* Smooth transitions */
-    .toc-item a {
-      transition: all 0.3s ease;
-    }
+      .search-wrapper input:focus + .search-ico {
+        color: var(--hf-orange);
+        opacity: 1;
+      }
 
-    .toc-item a:hover {
-      transform: translateX(10px);
-      color: var(--hf-orange);
-    }
+      /* Smooth scroll padding for header */
+      html {
+        scroll-padding-top: 80px;
+      }
 
-    /* Active link indicator */
-    .toc-item a.active {
-      color: var(--hf-orange);
-      font-weight: 600;
-      padding-left: 1rem;
-      border-left: 3px solid var(--hf-orange);
-    }
+      /* Mobile optimizations */
+      @media (max-width: 768px) {
+        #article {
+          font-size: 15px;
+          padding: 0 1rem;
+        }
 
-    /* Search results highlight */
-    mark {
-      background: linear-gradient(120deg, var(--hf-orange), var(--hf-purple));
-      padding: 0.1em 0.3em;
-      border-radius: 3px;
-      color: var(--hf-light);
-    }
+        #article h1 {
+          font-size: 2rem;
+        }
+        #article h2 {
+          font-size: 1.5rem;
+        }
+        #article h3 {
+          font-size: 1.2rem;
+        }
+      }
 
-    /* Section highlight animation */
-    .highlight-section {
-      animation: highlight-pulse 1s ease-out;
-    }
+      /* Sidebar styles for collapsed state */
+      .sidebar.collapsed {
+        width: 80px;
+      }
 
-    @keyframes highlight-pulse {
-      0% { background: rgba(255, 138, 101, 0.2); }
-      100% { background: transparent; }
-    }
+      .sidebar.collapsed .brand {
+        justify-content: center;
+      }
 
-    /* Better sidebar positioning */
-    .sidebar {
-      position: sticky;
-      top: 60px;
-      height: calc(100vh - 60px);
-      overflow-y: auto;
-      background: rgba(24, 49, 83, 0.95);
-      backdrop-filter: blur(10px);
-      padding: 1rem;
-    }
+      .sidebar.collapsed .brand .logo-blob {
+        margin-right: 0;
+      }
 
-    /* Resources Section Styles */
-    .resources-section {
-      padding: var(--spacing-lg) 0;
-      background: linear-gradient(135deg, rgba(24,49,83,0.1), rgba(155,89,182,0.05));
-      margin: var(--spacing-lg) 0;
-      border-radius: 20px;
-    }
+      .sidebar.collapsed #toc {
+        display: none;
+      }
 
-    .resources-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: var(--spacing-lg);
-      margin-top: var(--spacing-lg);
-    }
+      .sidebar.collapsed .toc-toggle {
+        display: none;
+      }
 
-    .resource-category {
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(10px);
-      border-radius: 15px;
-      padding: var(--spacing-lg);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      transition: all 0.3s ease;
-    }
+      .sidebar.collapsed .sidebar-footer {
+        display: none;
+      }
 
-    .resource-category:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 30px rgba(155, 89, 182, 0.2);
-      border-color: rgba(255, 138, 101, 0.3);
-    }
+      .sidebar.collapsed .search-wrapper {
+        display: none;
+      }
 
-    .resource-category h4 {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin-bottom: var(--spacing-md);
-      color: var(--hf-orange);
-      font-size: 1.3rem;
-    }
+      .sidebar.collapsed .nav-btn {
+        display: none;
+      }
 
-    .resource-category h4::before {
-      content: attr(data-icon);
-      font-size: 1.5rem;
-    }
+      .sidebar.collapsed .nav-cta {
+        display: none;
+      }
 
-    .resource-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
 
-    .resource-item {
-      margin-bottom: var(--spacing-sm);
-      padding: 0.8rem;
-      background: rgba(255, 255, 255, 0.03);
-      border-radius: 8px;
-      border-left: 3px solid transparent;
-      transition: all 0.3s ease;
-    }
+      .fade-in {
+        animation: fadeIn 0.8s ease-out forwards;
+      }
 
-    .resource-item:hover {
-      background: rgba(255, 138, 101, 0.1);
-      border-left-color: var(--hf-orange);
-      transform: translateX(5px);
-    }
+      /* Smooth transitions */
+      .toc-item a {
+        transition: all 0.3s ease;
+      }
 
-    .resource-item a {
-      color: rgba(255, 255, 255, 0.9);
-      text-decoration: none;
-      display: flex;
-      align-items: flex-start;
-      gap: 0.8rem;
-      line-height: 1.5;
-    }
+      .toc-item a:hover {
+        transform: translateX(10px);
+        color: var(--hf-orange);
+      }
 
-    .resource-item a:hover {
-      color: var(--hf-light);
-    }
+      /* Active link indicator */
+      .toc-item a.active {
+        color: var(--hf-orange);
+        font-weight: 600;
+        padding-left: 1rem;
+        border-left: 3px solid var(--hf-orange);
+      }
 
-    .resource-emoji {
-      font-size: 1.2rem;
-      min-width: 1.5rem;
-    }
+      /* Search results highlight */
+      mark {
+        background: linear-gradient(120deg, var(--hf-orange), var(--hf-purple));
+        padding: 0.1em 0.3em;
+        border-radius: 3px;
+        color: var(--hf-light);
+      }
 
-    .resource-content {
-      flex: 1;
-    }
+      /* Section highlight animation */
+      .highlight-section {
+        animation: highlight-pulse 1s ease-out;
+      }
 
-    .resource-title {
-      font-weight: 600;
-      margin-bottom: 0.2rem;
-    }
+      @keyframes highlight-pulse {
+        0% {
+          background: rgba(255, 138, 101, 0.2);
+        }
+        100% {
+          background: transparent;
+        }
+      }
 
-    .resource-desc {
-      font-size: 0.9rem;
-      color: rgba(255, 255, 255, 0.7);
-      line-height: 1.4;
-    }
+      /* Better sidebar positioning */
+      .sidebar {
+        position: sticky;
+        top: 60px;
+        height: calc(100vh - 60px);
+        overflow-y: auto;
+        background: rgba(24, 49, 83, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 1rem;
+      }
 
-    .resource-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 0.5rem;
-    }
+      /* Resources Section Styles */
+      .resources-section {
+        padding: var(--spacing-lg) 0;
+        background: linear-gradient(
+          135deg,
+          rgba(24, 49, 83, 0.1),
+          rgba(155, 89, 182, 0.05)
+        );
+        margin: var(--spacing-lg) 0;
+        border-radius: 20px;
+      }
 
-    .resource-tag {
-      background: rgba(155, 89, 182, 0.2);
-      color: var(--hf-light);
-      padding: 0.2rem 0.6rem;
-      border-radius: 12px;
-      font-size: 0.75rem;
-      border: 1px solid rgba(155, 89, 182, 0.3);
-    }
+      .resources-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: var(--spacing-lg);
+        margin-top: var(--spacing-lg);
+      }
 
-    .resources-intro {
-      text-align: center;
-      margin-bottom: var(--spacing-lg);
-      padding: var(--spacing-md);
-      background: rgba(255, 138, 101, 0.1);
-      border-radius: 12px;
-      border: 1px solid rgba(255, 138, 101, 0.2);
-    }
+      .resource-category {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        padding: var(--spacing-lg);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
+      }
 
-    .resources-intro p {
-      margin: 0;
-      font-size: 1.1rem;
-      color: rgba(255, 255, 255, 0.9);
-    }
+      .resource-category:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(155, 89, 182, 0.2);
+        border-color: rgba(255, 138, 101, 0.3);
+      }
 
+      .resource-category h4 {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: var(--spacing-md);
+        color: var(--hf-orange);
+        font-size: 1.3rem;
+      }
 
+      .resource-category h4::before {
+        content: attr(data-icon);
+        font-size: 1.5rem;
+      }
 
-    /* Footer Styles */
-    .site-footer {
-      background: linear-gradient(135deg, rgba(24,49,83,0.96), rgba(155,89,182,0.92));
-      backdrop-filter: blur(12px);
-      color: var(--hf-light);
-      margin-top: var(--spacing-lg);
-      box-shadow: 0 -6px 25px rgba(0,0,0,0.22);
-      padding: var(--spacing-lg) 0 var(--spacing-md);
-    }
+      .resource-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
 
-    .footer-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 var(--spacing-lg);
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: var(--spacing-lg);
-      align-items: start;
-    }
+      .resource-item {
+        margin-bottom: var(--spacing-sm);
+        padding: 0.8rem;
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 8px;
+        border-left: 3px solid transparent;
+        transition: all 0.3s ease;
+      }
 
-    .footer-brand {
-      display: flex;
-      gap: 0.9rem;
-      align-items: flex-start;
-    }
+      .resource-item:hover {
+        background: rgba(255, 138, 101, 0.1);
+        border-left-color: var(--hf-orange);
+        transform: translateX(5px);
+      }
 
-    .footer-brand .logo-blob {
-      width: 2.4em;
-      height: 2.4em;
-      margin-right: 0;
-      box-shadow: 0 0 24px rgba(255,138,101,0.18);
-    }
+      .resource-item a {
+        color: rgba(255, 255, 255, 0.9);
+        text-decoration: none;
+        display: flex;
+        align-items: flex-start;
+        gap: 0.8rem;
+        line-height: 1.5;
+      }
 
-    .footer-col h4 {
-      margin: 0 0 var(--spacing-sm);
-      font-size: 1.15rem;
-      color: var(--hf-orange);
-    }
+      .resource-item a:hover {
+        color: var(--hf-light);
+      }
 
-    .footer-title {
-      font-size: 1.25rem;
-      font-weight: 600;
-    }
+      .resource-emoji {
+        font-size: 1.2rem;
+        min-width: 1.5rem;
+      }
 
-    .footer-desc {
-      margin: 0.45rem 0 0;
-      color: rgba(255,255,255,0.86);
-      font-size: 0.96rem;
-      line-height: 1.6;
-    }
+      .resource-content {
+        flex: 1;
+      }
 
-    .footer-links {
-      display: flex;
-      flex-direction: column;
-      gap: 0.6rem;
-      margin: 0;
-    }
+      .resource-title {
+        font-weight: 600;
+        margin-bottom: 0.2rem;
+      }
 
-    .footer-links a {
-      color: rgba(255,255,255,0.85);
-      text-decoration: none;
-      transition: color 0.22s ease, transform 0.22s ease;
-    }
+      .resource-desc {
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.7);
+        line-height: 1.4;
+      }
 
-    .footer-links a:hover {
-      color: var(--hf-orange);
-      transform: translateX(4px);
-    }
+      .resource-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 0.5rem;
+      }
 
-    .footer-socials {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
+      .resource-tag {
+        background: rgba(155, 89, 182, 0.2);
+        color: var(--hf-light);
+        padding: 0.2rem 0.6rem;
+        border-radius: 12px;
+        font-size: 0.75rem;
+        border: 1px solid rgba(155, 89, 182, 0.3);
+      }
 
-    .footer-socials a {
-      color: rgba(255,255,255,0.88);
-      text-decoration: none;
-      transition: transform 0.18s ease, color 0.18s ease;
-    }
+      .resources-intro {
+        text-align: center;
+        margin-bottom: var(--spacing-lg);
+        padding: var(--spacing-md);
+        background: rgba(255, 138, 101, 0.1);
+        border-radius: 12px;
+        border: 1px solid rgba(255, 138, 101, 0.2);
+      }
 
-    .footer-socials a:hover {
-      color: var(--hf-orange);
-      transform: translateX(6px);
-    }
+      .resources-intro p {
+        margin: 0;
+        font-size: 1.1rem;
+        color: rgba(255, 255, 255, 0.9);
+      }
 
-    .footer-bottom {
-      max-width: 1200px;
-      margin: 1.25rem auto 0;
-      padding: var(--spacing-sm) var(--spacing-lg) 0;
-      border-top: 1px solid rgba(255,255,255,0.04);
-      text-align: center;
-      color: rgba(255,255,255,0.72);
-      font-size: 0.95rem;
-    }
-  </style>
-</head>
-<body>
-  <header class="topnav" role="banner">
-    <div class="topnav-inner">
-      <a class="brand" href="./" title="Home"><span class="logo-blob" aria-hidden="true"></span><span class="brand-text">Hacktoberfest 2025</span></a>
+      /* Footer Styles */
+      .site-footer {
+        background: linear-gradient(
+          135deg,
+          rgba(24, 49, 83, 0.96),
+          rgba(155, 89, 182, 0.92)
+        );
+        backdrop-filter: blur(12px);
+        color: var(--hf-light);
+        margin-top: var(--spacing-lg);
+        box-shadow: 0 -6px 25px rgba(0, 0, 0, 0.22);
+        padding: var(--spacing-lg) 0 var(--spacing-md);
+      }
 
-      <nav class="nav-links" aria-label="Main navigation">
-        <a href="#what-is-hacktoberfest">Overview</a>
-        <a href="#my-beginners-friendly-repos-to-contribute">Projects</a>
-        <a href="#how-to-participate-step-by-step">How To</a>
-        <a href="#resources">Resources</a>
-      </nav>
+      .footer-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 var(--spacing-lg);
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: var(--spacing-lg);
+        align-items: start;
+      }
 
-      <div class="nav-actions">
-        <button id="nav-search-btn" class="nav-btn" title="Search (/)" aria-label="Open search">🔎</button>
-        <a class="nav-cta" href="https://github.com/avinash201199/Hacktoberfest2025" target="_blank" rel="noopener">GitHub</a>
-        <button id="hamburger" class="nav-btn" aria-label="Toggle sidebar">☰</button>
+      .footer-brand {
+        display: flex;
+        gap: 0.9rem;
+        align-items: flex-start;
+      }
+
+      .footer-brand .logo-blob {
+        width: 2.4em;
+        height: 2.4em;
+        margin-right: 0;
+        box-shadow: 0 0 24px rgba(255, 138, 101, 0.18);
+      }
+
+      .footer-col h4 {
+        margin: 0 0 var(--spacing-sm);
+        font-size: 1.15rem;
+        color: var(--hf-orange);
+      }
+
+      .footer-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+      }
+
+      .footer-desc {
+        margin: 0.45rem 0 0;
+        color: rgba(255, 255, 255, 0.86);
+        font-size: 0.96rem;
+        line-height: 1.6;
+      }
+
+      .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+        margin: 0;
+      }
+
+      .footer-links a {
+        color: rgba(255, 255, 255, 0.85);
+        text-decoration: none;
+        transition: color 0.22s ease, transform 0.22s ease;
+      }
+
+      .footer-links a:hover {
+        color: var(--hf-orange);
+        transform: translateX(4px);
+      }
+
+      .footer-socials {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .footer-socials a {
+        color: rgba(255, 255, 255, 0.88);
+        text-decoration: none;
+        transition: transform 0.18s ease, color 0.18s ease;
+      }
+
+      .footer-socials a:hover {
+        color: var(--hf-orange);
+        transform: translateX(6px);
+      }
+
+      .footer-bottom {
+        max-width: 1200px;
+        margin: 1.25rem auto 0;
+        padding: var(--spacing-sm) var(--spacing-lg) 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.04);
+        text-align: center;
+        color: rgba(255, 255, 255, 0.72);
+        font-size: 0.95rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topnav" role="banner">
+      <div class="topnav-inner">
+        <a class="brand" href="./" title="Home"
+          ><span class="logo-blob" aria-hidden="true"></span
+          ><span class="brand-text">Hacktoberfest 2025</span></a
+        >
+
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="#what-is-hacktoberfest">Overview</a>
+          <a href="#my-beginners-friendly-repos-to-contribute">Projects</a>
+          <a href="#how-to-participate-step-by-step">How To</a>
+          <a href="#resources">Resources</a>
+        </nav>
+
+        <div class="nav-actions">
+          <button
+            id="nav-search-btn"
+            class="nav-btn"
+            title="Search (/)"
+            aria-label="Open search"
+          >
+            🔎
+          </button>
+          <a
+            class="nav-cta"
+            href="https://github.com/avinash201199/Hacktoberfest2025"
+            target="_blank"
+            rel="noopener"
+            >GitHub</a
+          >
+          <button id="hamburger" class="nav-btn" aria-label="Toggle sidebar">
+            ☰
+          </button>
+        </div>
       </div>
+    </header>
+
+    <div class="site">
+      <aside class="sidebar" id="sidebar" aria-label="Table of contents">
+        <div class="brand">
+          <a href="./" title="Home"
+            ><span class="logo-blob" aria-hidden="true"></span>Hacktoberfest
+            2025</a
+          >
+        </div>
+
+        <div class="search-wrapper">
+          <input
+            id="search"
+            placeholder="Search headings & content..."
+            aria-label="Search README contents"
+          />
+          <svg class="search-ico" viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79L20 21.5 21.5 20l-6-6z"
+            ></path>
+          </svg>
+        </div>
+
+        <nav id="toc" class="toc">
+          <div class="toc-empty">Loading contents…</div>
+        </nav>
+
+        <button
+          id="toc-toggle"
+          class="toc-toggle"
+          aria-expanded="true"
+          aria-controls="toc"
+        >
+          Hide
+        </button>
+
+        <footer class="sidebar-footer">
+          <a class="btn" href="README.md">View raw README</a>
+        </footer>
+      </aside>
+
+      <main class="content" id="content" role="main">
+        <div class="bg-decor" aria-hidden="true">
+          <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop
+                  offset="0%"
+                  style="stop-color: var(--hf-purple); stop-opacity: 0.1"
+                />
+                <stop
+                  offset="100%"
+                  style="stop-color: var(--hf-orange); stop-opacity: 0.1"
+                />
+              </linearGradient>
+            </defs>
+            <path d="M0,0 L100,0 L100,100 L0,100 Z" fill="url(#grad)" />
+          </svg>
+        </div>
+        <div class="content-inner fade-in">
+          <article id="article">
+            <h1 class="loading-title">Loading README.md…</h1>
+          </article>
+        </div>
+      </main>
     </div>
-  </header>
 
-  <div class="site">
-    <aside class="sidebar" id="sidebar" aria-label="Table of contents">
-      <div class="brand">
-        <a href="./" title="Home"><span class="logo-blob" aria-hidden="true"></span>Hacktoberfest 2025</a>
+    <noscript>
+      <div
+        style="
+          padding: 18px;
+          max-width: 720px;
+          margin: 18px auto;
+          background: #081226;
+          border-radius: 10px;
+          color: #9fb1c7;
+        "
+      >
+        JavaScript is required to render this site preview. Open
+        <a href="README.md">README.md</a> directly to view the content.
       </div>
+    </noscript>
 
-      <div class="search-wrapper">
-        <input id="search" placeholder="Search headings & content..." aria-label="Search README contents" />
-        <svg class="search-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79L20 21.5 21.5 20l-6-6z"></path></svg>
-      </div>
+    <script>
+      // Utility: smooth-scrolling behavior
+      document.documentElement.style.scrollBehavior = "smooth";
 
-      <nav id="toc" class="toc">
-        <div class="toc-empty">Loading contents…</div>
-      </nav>
+      // Fetch and render README.md
+      async function renderReadme() {
+        try {
+          const res = await fetch("README.md");
+          if (!res.ok) throw new Error("README.md not found");
+          const md = await res.text();
 
-      <button id="toc-toggle" class="toc-toggle" aria-expanded="true" aria-controls="toc">Hide</button>
-
-      <footer class="sidebar-footer">
-        <a class="btn" href="README.md">View raw README</a>
-      </footer>
-    </aside>
-
-    <main class="content" id="content" role="main">
-      <div class="bg-decor" aria-hidden="true">
-        <svg viewBox="0 0 100 100" preserveAspectRatio="none">
-          <defs>
-            <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" style="stop-color:var(--hf-purple);stop-opacity:0.1" />
-              <stop offset="100%" style="stop-color:var(--hf-orange);stop-opacity:0.1" />
-            </linearGradient>
-          </defs>
-          <path d="M0,0 L100,0 L100,100 L0,100 Z" fill="url(#grad)" />
-        </svg>
-      </div>
-      <div class="content-inner fade-in">
-        <article id="article">
-          <h1 class="loading-title">Loading README.md…</h1>
-        </article>
-      </div>
-    </main>
-  </div>
-
-  <noscript>
-    <div style="padding:18px; max-width:720px; margin:18px auto; background:#081226; border-radius:10px; color:#9fb1c7">JavaScript is required to render this site preview. Open <a href="README.md">README.md</a> directly to view the content.</div>
-  </noscript>
-
-  <script>
-    // Utility: smooth-scrolling behavior
-    document.documentElement.style.scrollBehavior = 'smooth';
-
-    // Fetch and render README.md
-    async function renderReadme() {
-      try {
-        const res = await fetch('README.md');
-        if (!res.ok) throw new Error('README.md not found');
-        const md = await res.text();
-
-        // Configure marked and highlight
-        marked.setOptions({
-          headerIds: true,
-          mangle: false,
-          highlight: function(code, lang) {
-            try { return hljs.highlightAuto(code, lang ? [lang] : undefined).value; }
-            catch (e) { return hljs.highlightAuto(code).value; }
-          }
-        });
-
-        const html = marked.parse(md);
-        const article = document.getElementById('article');
-        article.innerHTML = html;
-
-        // Add anchors to headings and small animated anchor links
-        document.querySelectorAll('#article h1, #article h2, #article h3, #article h4, #article h5, #article h6')
-          .forEach(h => {
-            const id = h.id || h.textContent.trim().toLowerCase().replace(/[^a-z0-9]+/g,'-');
-            h.id = id;
-            const a = document.createElement('a');
-            a.className = 'heading-anchor';
-            a.href = '#' + id;
-            a.title = 'Link to ' + h.textContent.trim();
-            a.innerHTML = '¶';
-            h.appendChild(a);
+          // Configure marked and highlight
+          marked.setOptions({
+            headerIds: true,
+            mangle: false,
+            highlight: function (code, lang) {
+              try {
+                return hljs.highlightAuto(code, lang ? [lang] : undefined)
+                  .value;
+              } catch (e) {
+                return hljs.highlightAuto(code).value;
+              }
+            },
           });
 
-        buildTOC();
-        initSearch(md);
-        initActiveObserver();
-        hljs.highlightAll();
-      } catch (err) {
-        document.getElementById('article').innerHTML = '<div class="error-panel"><h2>Unable to load README</h2><p>' + err.message + '</p><p><a href="README.md">Open raw README.md</a></p></div>';
+          const html = marked.parse(md);
+          const article = document.getElementById("article");
+          article.innerHTML = html;
+
+          // Add anchors to headings and small animated anchor links
+          document
+            .querySelectorAll(
+              "#article h1, #article h2, #article h3, #article h4, #article h5, #article h6"
+            )
+            .forEach((h) => {
+              const id =
+                h.id ||
+                h.textContent
+                  .trim()
+                  .toLowerCase()
+                  .replace(/[^a-z0-9]+/g, "-");
+              h.id = id;
+              const a = document.createElement("a");
+              a.className = "heading-anchor";
+              a.href = "#" + id;
+              a.title = "Link to " + h.textContent.trim();
+              a.innerHTML = "¶";
+              h.appendChild(a);
+            });
+
+          buildTOC();
+          initSearch(md);
+          initActiveObserver();
+          hljs.highlightAll();
+        } catch (err) {
+          document.getElementById("article").innerHTML =
+            '<div class="error-panel"><h2>Unable to load README</h2><p>' +
+            err.message +
+            '</p><p><a href="README.md">Open raw README.md</a></p></div>';
+        }
       }
-    }
 
-    // Build TOC from headings
-    function buildTOC() {
-      const toc = document.getElementById('toc');
-      toc.innerHTML = '';
-      const headings = Array.from(document.querySelectorAll('#article h1, #article h2, #article h3'));
-      if (headings.length === 0) {
-        toc.innerHTML = '<div class="toc-empty">No headings found</div>';
-        return;
-      }
-
-      const list = document.createElement('ul');
-      list.className = 'toc-list';
-
-      headings.forEach(h => {
-        const li = document.createElement('li');
-        li.className = 'toc-item toc-' + h.tagName.toLowerCase();
-        const a = document.createElement('a');
-        a.href = '#' + h.id;
-        a.textContent = h.textContent.trim();
-        a.addEventListener('click', (e) => {
-          e.preventDefault();
-          const target = document.getElementById(h.id);
-          if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          history.replaceState(null, '', '#' + h.id);
-        });
-        li.appendChild(a);
-        list.appendChild(li);
-      });
-
-      toc.appendChild(list);
-
-      // Add small animated reveal for TOC items
-      const tocLinks = Array.from(document.querySelectorAll('.toc-item'));
-      tocLinks.forEach((li, i) => {
-        li.style.opacity = 0;
-        li.style.transform = 'translateX(-6px)';
-        setTimeout(() => {
-          li.style.transition = 'opacity .36s ease, transform .36s cubic-bezier(.2,.9,.2,1)';
-          li.style.opacity = 1;
-          li.style.transform = 'none';
-        }, 120 + i * 40);
-      });
-    }
-
-    // Search: client-side simple search across headings and content
-    function initSearch(mdText) {
-      const input = document.getElementById('search');
-      const toc = document.getElementById('toc');
-      const content = document.getElementById('article');
-      let searchTimeout;
-      
-      input.addEventListener('input', () => {
-        clearTimeout(searchTimeout);
-        searchTimeout = setTimeout(() => {
-        const q = input.value.trim().toLowerCase();
-        const items = Array.from(document.querySelectorAll('.toc-item'));
-
-        // Clear previous highlights
-        document.querySelectorAll('#article mark').forEach(m => { m.outerHTML = m.innerHTML; });
-
-        if (!q) {
-          items.forEach(i => i.classList.remove('dim'));
-          document.querySelectorAll('#article mark').forEach(m => m.outerHTML = m.innerHTML);
+      // Build TOC from headings
+      function buildTOC() {
+        const toc = document.getElementById("toc");
+        toc.innerHTML = "";
+        const headings = Array.from(
+          document.querySelectorAll("#article h1, #article h2, #article h3")
+        );
+        if (headings.length === 0) {
+          toc.innerHTML = '<div class="toc-empty">No headings found</div>';
           return;
         }
 
-        // Highlight matches in article text
-        const regex = new RegExp('(' + q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
-        const walker = document.createTreeWalker(document.getElementById('article'), NodeFilter.SHOW_TEXT);
-        const textNodes = [];
-        while(walker.nextNode()) textNodes.push(walker.currentNode);
+        const list = document.createElement("ul");
+        list.className = "toc-list";
 
-        textNodes.forEach(node => {
-          if (!node.parentElement.matches('code, pre, a, .heading-anchor')) {
-            const v = node.nodeValue;
-            if (v.match(regex)) {
-              const span = document.createElement('span');
-              span.innerHTML = v.replace(regex, '<mark>$1</mark>');
-              node.parentNode.replaceChild(span, node);
-            }
-          }
+        headings.forEach((h) => {
+          const li = document.createElement("li");
+          li.className = "toc-item toc-" + h.tagName.toLowerCase();
+          const a = document.createElement("a");
+          a.href = "#" + h.id;
+          a.textContent = h.textContent.trim();
+          a.addEventListener("click", (e) => {
+            e.preventDefault();
+            const target = document.getElementById(h.id);
+            if (target)
+              target.scrollIntoView({ behavior: "smooth", block: "start" });
+            history.replaceState(null, "", "#" + h.id);
+          });
+          li.appendChild(a);
+          list.appendChild(li);
         });
 
-        // Dim non-matching TOC items
-        items.forEach(i => {
-          const text = i.textContent.toLowerCase();
-          if (text.includes(q)) i.classList.remove('dim'); else i.classList.add('dim');
-        });
-        }, 300); // Debounce search for better performance
-      });
+        toc.appendChild(list);
 
-      // Allow pressing Enter to focus first match
-      input.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter') {
-          const first = document.querySelector('.toc-item:not(.dim) a');
-          if (first) first.click();
-        }
-      });
-    }
-
-    // Highlight active heading via IntersectionObserver
-    function initActiveObserver() {
-      const options = { root: null, rootMargin: '0px 0px -60% 0px', threshold: 0 };
-      const obs = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          const id = entry.target.id;
-          const tocLink = document.querySelector('.toc-item a[href="#' + id + '"]');
-          if (entry.isIntersecting) {
-            document.querySelectorAll('.toc-item a.active').forEach(a => a.classList.remove('active'));
-            if (tocLink) tocLink.classList.add('active');
-          }
-        });
-      }, options);
-
-      document.querySelectorAll('#article h1, #article h2, #article h3').forEach(h => obs.observe(h));
-    }
-
-    // TOC toggle for small screens
-    document.getElementById('toc-toggle').addEventListener('click', (e) => {
-      const sidebar = document.getElementById('sidebar');
-      const expanded = sidebar.classList.toggle('collapsed');
-      e.target.textContent = expanded ? 'Show' : 'Hide';
-      e.target.setAttribute('aria-expanded', String(!expanded));
-    });
-
-    // Navbar interactions: focus search and toggle sidebar
-    document.getElementById('nav-search-btn').addEventListener('click', () => {
-      const s = document.getElementById('search'); if (s) { s.focus(); s.scrollIntoView({behavior:'smooth', block:'center'}); }
-    });
-    document.getElementById('hamburger').addEventListener('click', () => {
-      const sidebar = document.getElementById('sidebar'); sidebar.classList.toggle('collapsed');
-    });
-
-    // keyboard shortcut: press '/' to focus search
-    document.addEventListener('keydown', (e) => {
-      if (e.key === '/' && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
-        e.preventDefault(); document.getElementById('search').focus();
-      }
-    });
-
-    // Smooth scroll for nav links
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const id = link.getAttribute('href').slice(1);
-        let element = document.getElementById(id);
-        
-        // If element not found, try to find it by searching through headings
-        if (!element) {
-          const headings = document.querySelectorAll('#article h1, #article h2, #article h3, #article h4, #article h5, #article h6');
-          for (const heading of headings) {
-            const headingText = heading.textContent.trim().toLowerCase();
-            const cleanId = headingText.replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g, '');
-            if (cleanId === id || heading.id === id) {
-              element = heading;
-              heading.id = id; // Ensure the ID is set correctly
-              break;
-            }
-          }
-        }
-        
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // Add small animated reveal for TOC items
+        const tocLinks = Array.from(document.querySelectorAll(".toc-item"));
+        tocLinks.forEach((li, i) => {
+          li.style.opacity = 0;
+          li.style.transform = "translateX(-6px)";
           setTimeout(() => {
-            history.pushState(null, '', '#' + id);
-            element.classList.add('highlight-section');
-            setTimeout(() => element.classList.remove('highlight-section'), 1000);
-          }, 100);
-        } else {
-          console.warn('Element not found for ID:', id);
-          // Fallback: just update the URL
-          history.pushState(null, '', '#' + id);
-        }
-      });
-    });
+            li.style.transition =
+              "opacity .36s ease, transform .36s cubic-bezier(.2,.9,.2,1)";
+            li.style.opacity = 1;
+            li.style.transform = "none";
+          }, 120 + i * 40);
+        });
+      }
 
+      // Search: client-side simple search across headings and content
+      function initSearch(mdText) {
+        const input = document.getElementById("search");
+        const toc = document.getElementById("toc");
+        const content = document.getElementById("article");
+        let searchTimeout;
 
+        input.addEventListener("input", () => {
+          clearTimeout(searchTimeout);
+          searchTimeout = setTimeout(() => {
+            const q = input.value.trim().toLowerCase();
+            const items = Array.from(document.querySelectorAll(".toc-item"));
 
+            // Clear previous highlights
+            document.querySelectorAll("#article mark").forEach((m) => {
+              m.outerHTML = m.innerHTML;
+            });
 
+            if (!q) {
+              items.forEach((i) => i.classList.remove("dim"));
+              document
+                .querySelectorAll("#article mark")
+                .forEach((m) => (m.outerHTML = m.innerHTML));
+              return;
+            }
 
-    // Enhanced renderReadme function
-    async function renderReadme() {
-      try {
-        const res = await fetch('README.md');
-        if (!res.ok) throw new Error('README.md not found');
-        const md = await res.text();
+            // Highlight matches in article text
+            const regex = new RegExp(
+              "(" + q.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + ")",
+              "ig"
+            );
+            const walker = document.createTreeWalker(
+              document.getElementById("article"),
+              NodeFilter.SHOW_TEXT
+            );
+            const textNodes = [];
+            while (walker.nextNode()) textNodes.push(walker.currentNode);
 
-        // Configure marked and highlight
-        marked.setOptions({
-          headerIds: true,
-          mangle: false,
-          highlight: function(code, lang) {
-            try { return hljs.highlightAuto(code, lang ? [lang] : undefined).value; }
-            catch (e) { return hljs.highlightAuto(code).value; }
-          }
+            textNodes.forEach((node) => {
+              if (
+                !node.parentElement.matches("code, pre, a, .heading-anchor")
+              ) {
+                const v = node.nodeValue;
+                if (v.match(regex)) {
+                  const span = document.createElement("span");
+                  span.innerHTML = v.replace(regex, "<mark>$1</mark>");
+                  node.parentNode.replaceChild(span, node);
+                }
+              }
+            });
+
+            // Dim non-matching TOC items
+            items.forEach((i) => {
+              const text = i.textContent.toLowerCase();
+              if (text.includes(q)) i.classList.remove("dim");
+              else i.classList.add("dim");
+            });
+          }, 300); // Debounce search for better performance
         });
 
-        const html = marked.parse(md);
-        const article = document.getElementById('article');
-        article.innerHTML = html;
+        // Allow pressing Enter to focus first match
+        input.addEventListener("keydown", (e) => {
+          if (e.key === "Enter") {
+            const first = document.querySelector(".toc-item:not(.dim) a");
+            if (first) first.click();
+          }
+        });
+      }
 
-        // Add anchors to headings and small animated anchor links
-        document.querySelectorAll('#article h1, #article h2, #article h3, #article h4, #article h5, #article h6')
-          .forEach(h => {
-            const id = h.id || h.textContent.trim().toLowerCase().replace(/[^a-z0-9]+/g,'-');
-            h.id = id;
-            const a = document.createElement('a');
-            a.className = 'heading-anchor';
-            a.href = '#' + id;
-            a.title = 'Link to ' + h.textContent.trim();
-            a.innerHTML = '¶';
-            h.appendChild(a);
+      // Highlight active heading via IntersectionObserver
+      function initActiveObserver() {
+        const options = {
+          root: null,
+          rootMargin: "0px 0px -60% 0px",
+          threshold: 0,
+        };
+        const obs = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            const id = entry.target.id;
+            const tocLink = document.querySelector(
+              '.toc-item a[href="#' + id + '"]'
+            );
+            if (entry.isIntersecting) {
+              document
+                .querySelectorAll(".toc-item a.active")
+                .forEach((a) => a.classList.remove("active"));
+              if (tocLink) tocLink.classList.add("active");
+            }
+          });
+        }, options);
+
+        document
+          .querySelectorAll("#article h1, #article h2, #article h3")
+          .forEach((h) => obs.observe(h));
+      }
+
+      // TOC toggle for small screens
+      document.getElementById("toc-toggle").addEventListener("click", (e) => {
+        const sidebar = document.getElementById("sidebar");
+        const expanded = sidebar.classList.toggle("collapsed");
+        e.target.textContent = expanded ? "Show" : "Hide";
+        e.target.setAttribute("aria-expanded", String(!expanded));
+      });
+
+      // Navbar interactions: focus search and toggle sidebar
+      document
+        .getElementById("nav-search-btn")
+        .addEventListener("click", () => {
+          const s = document.getElementById("search");
+          if (s) {
+            s.focus();
+            s.scrollIntoView({ behavior: "smooth", block: "center" });
+          }
+        });
+      document.getElementById("hamburger").addEventListener("click", () => {
+        const sidebar = document.getElementById("sidebar");
+        sidebar.classList.toggle("collapsed");
+      });
+
+      // Auto-collapse sidebar on mobile and handle window resize
+      function handleSidebarResponsiveness() {
+        const sidebar = document.getElementById("sidebar");
+        const isMobile = window.innerWidth <= 900;
+
+        if (isMobile) {
+          sidebar.classList.add("collapsed");
+        } else {
+          sidebar.classList.remove("collapsed");
+        }
+      }
+
+      // Initial check and window resize listener
+      handleSidebarResponsiveness();
+      window.addEventListener("resize", handleSidebarResponsiveness);
+
+      // Close sidebar when clicking outside on mobile
+      document.addEventListener("click", (e) => {
+        const sidebar = document.getElementById("sidebar");
+        const hamburger = document.getElementById("hamburger");
+        const isMobile = window.innerWidth <= 900;
+
+        if (
+          isMobile &&
+          !sidebar.contains(e.target) &&
+          !hamburger.contains(e.target) &&
+          !sidebar.classList.contains("collapsed")
+        ) {
+          sidebar.classList.add("collapsed");
+        }
+      });
+
+      // keyboard shortcut: press '/' to focus search
+      document.addEventListener("keydown", (e) => {
+        if (
+          e.key === "/" &&
+          document.activeElement.tagName !== "INPUT" &&
+          document.activeElement.tagName !== "TEXTAREA"
+        ) {
+          e.preventDefault();
+          document.getElementById("search").focus();
+        }
+      });
+
+      // Smooth scroll for nav links
+      document.querySelectorAll(".nav-links a").forEach((link) => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          const id = link.getAttribute("href").slice(1);
+          let element = document.getElementById(id);
+
+          // If element not found, try to find it by searching through headings
+          if (!element) {
+            const headings = document.querySelectorAll(
+              "#article h1, #article h2, #article h3, #article h4, #article h5, #article h6"
+            );
+            for (const heading of headings) {
+              const headingText = heading.textContent.trim().toLowerCase();
+              const cleanId = headingText
+                .replace(/[^a-z0-9]+/g, "-")
+                .replace(/^-+|-+$/g, "");
+              if (cleanId === id || heading.id === id) {
+                element = heading;
+                heading.id = id; // Ensure the ID is set correctly
+                break;
+              }
+            }
+          }
+
+          if (element) {
+            element.scrollIntoView({ behavior: "smooth", block: "start" });
+            setTimeout(() => {
+              history.pushState(null, "", "#" + id);
+              element.classList.add("highlight-section");
+              setTimeout(
+                () => element.classList.remove("highlight-section"),
+                1000
+              );
+            }, 100);
+          } else {
+            console.warn("Element not found for ID:", id);
+            // Fallback: just update the URL
+            history.pushState(null, "", "#" + id);
+          }
+        });
+      });
+
+      // Enhanced renderReadme function
+      async function renderReadme() {
+        try {
+          const res = await fetch("README.md");
+          if (!res.ok) throw new Error("README.md not found");
+          const md = await res.text();
+
+          // Configure marked and highlight
+          marked.setOptions({
+            headerIds: true,
+            mangle: false,
+            highlight: function (code, lang) {
+              try {
+                return hljs.highlightAuto(code, lang ? [lang] : undefined)
+                  .value;
+              } catch (e) {
+                return hljs.highlightAuto(code).value;
+              }
+            },
           });
 
-        buildTOC();
-        initSearch(md);
-        initActiveObserver();
-        hljs.highlightAll();
-      } catch (err) {
-        document.getElementById('article').innerHTML = '<div class="error-panel"><h2>Unable to load README</h2><p>' + err.message + '</p><p><a href="README.md">Open raw README.md</a></p></div>';
+          const html = marked.parse(md);
+          const article = document.getElementById("article");
+          article.innerHTML = html;
+
+          // Add anchors to headings and small animated anchor links
+          document
+            .querySelectorAll(
+              "#article h1, #article h2, #article h3, #article h4, #article h5, #article h6"
+            )
+            .forEach((h) => {
+              const id =
+                h.id ||
+                h.textContent
+                  .trim()
+                  .toLowerCase()
+                  .replace(/[^a-z0-9]+/g, "-");
+              h.id = id;
+              const a = document.createElement("a");
+              a.className = "heading-anchor";
+              a.href = "#" + id;
+              a.title = "Link to " + h.textContent.trim();
+              a.innerHTML = "¶";
+              h.appendChild(a);
+            });
+
+          buildTOC();
+          initSearch(md);
+          initActiveObserver();
+          hljs.highlightAll();
+        } catch (err) {
+          document.getElementById("article").innerHTML =
+            '<div class="error-panel"><h2>Unable to load README</h2><p>' +
+            err.message +
+            '</p><p><a href="README.md">Open raw README.md</a></p></div>';
+        }
       }
-    }
 
-    renderReadme();
-  </script>
+      renderReadme();
+    </script>
 
-  <!-- Footer Section  -->
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-col footer-brand">
-        <span class="logo-blob" aria-hidden="true"></span>
-        <span class="footer-title">Hacktoberfest 2025</span>
-      </div>
+    <!-- Footer Section  -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-col footer-brand">
+          <span class="logo-blob" aria-hidden="true"></span>
+          <span class="footer-title">Hacktoberfest 2025</span>
+        </div>
 
-      <div class="footer-col">
-        <h4>Quick Links</h4>
-        <nav class="footer-links" aria-label="Footer navigation">
-          <a href="#what-is-hacktoberfest">Overview</a>
-          <a href="https://github.com/avinash201199/Hacktoberfest2025" target="_blank" rel="noopener">Projects</a>
-          <a href="#resources">Resources</a>
-        </nav>
-      </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <nav class="footer-links" aria-label="Footer navigation">
+            <a href="#what-is-hacktoberfest">Overview</a>
+            <a
+              href="https://github.com/avinash201199/Hacktoberfest2025"
+              target="_blank"
+              rel="noopener"
+              >Projects</a
+            >
+            <a href="#resources">Resources</a>
+          </nav>
+        </div>
 
-      <div class="footer-col">
-        <h4>Stay Connected</h4>
-        <div class="footer-socials">
-          <a href="https://github.com/avinash201199/Hacktoberfest2025" target="_blank" rel="noopener" aria-label="GitHub">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="margin-right:6px;">
-              <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 
+        <div class="footer-col">
+          <h4>Stay Connected</h4>
+          <div class="footer-socials">
+            <a
+              href="https://github.com/avinash201199/Hacktoberfest2025"
+              target="_blank"
+              rel="noopener"
+              aria-label="GitHub"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                style="margin-right: 6px"
+              >
+                <path
+                  d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 
               3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 
               0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61 
               -.546-1.385-1.333-1.754-1.333-1.754-1.09-.744.084-.729.084-.729 
@@ -1027,17 +1255,20 @@
               5.92.435.375.81 1.096.81 2.22 
               0 1.606-.015 2.896-.015 3.286 
               0 .315.21.69.825.57C20.565 22.092 
-              24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
-            </svg>
-            GitHub
-          </a>
+              24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+                />
+              </svg>
+              GitHub
+            </a>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="footer-bottom">
-      <p><strong>Hacktoberfest 2025</strong>. Open-source & community-driven.</p>
-    </div>
-  </footer>
-</body>
+      <div class="footer-bottom">
+        <p>
+          <strong>Hacktoberfest 2025</strong>. Open-source & community-driven.
+        </p>
+      </div>
+    </footer>
+  </body>
 </html>
