@@ -333,39 +333,32 @@
 
     /* Sidebar styles for collapsed state */
     .sidebar.collapsed {
-      width: 80px;
+      width: 0;
+      padding: 0;
+      overflow: hidden;
+      border: none;
+      box-shadow: none;
+      margin: 0;
+      min-width: 0;
     }
 
-    .sidebar.collapsed .brand {
-      justify-content: center;
-    }
-
-    .sidebar.collapsed .brand .logo-blob {
-      margin-right: 0;
-    }
-
-    .sidebar.collapsed #toc {
+    .show-btn {
+      position: fixed;
+      left: 10px;
+      top: 80px;
+      background: rgba(24, 49, 83, 0.95);
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
       display: none;
+      backdrop-filter: blur(10px);
+      z-index: 100;
     }
 
-    .sidebar.collapsed .toc-toggle {
-      display: none;
-    }
-
-    .sidebar.collapsed .sidebar-footer {
-      display: none;
-    }
-
-    .sidebar.collapsed .search-wrapper {
-      display: none;
-    }
-
-    .sidebar.collapsed .nav-btn {
-      display: none;
-    }
-
-    .sidebar.collapsed .nav-cta {
-      display: none;
+    .sidebar.collapsed + .show-btn {
+      display: block;
     }
 
     @keyframes fadeIn {
@@ -694,6 +687,8 @@
       </footer>
     </aside>
 
+    <button id="show-sidebar" class="show-btn">Show Sidebar</button>
+
     <main class="content" id="content" role="main">
       <div class="bg-decor" aria-hidden="true">
         <svg viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -888,6 +883,12 @@
       const expanded = sidebar.classList.toggle('collapsed');
       e.target.textContent = expanded ? 'Show' : 'Hide';
       e.target.setAttribute('aria-expanded', String(!expanded));
+    });
+
+    // Show sidebar button
+    document.getElementById('show-sidebar').addEventListener('click', () => {
+      const sidebar = document.getElementById('sidebar');
+      sidebar.classList.remove('collapsed');
     });
 
     // Navbar interactions: focus search and toggle sidebar
