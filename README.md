@@ -1,6 +1,6 @@
 # 🌍 Hacktoberfest 2025 – Beginner’s Guide, Rewards & Repositories
 
-![Hacktoberfest](https://img.shields.io/badge/Hacktoberfest-2025-blueviolet?style=for-the-badge&logo=hackthebox)  
+![Hacktoberfest](https://img.shields.io/badge/Hacktoberfest-2025-blueviolet?style=for-the-bhackthebox)  
 ![Open Source](https://img.shields.io/badge/Open--Source-💻-success?style=for-the-badge)  
 ![Contributions Welcome](https://img.shields.io/badge/Contributions-Welcome-brightgreen?style=for-the-badge&logo=github)
 
@@ -145,35 +145,41 @@ Whether you’re a seasoned developer or just starting out, Hacktoberfest offers
 
 ---
 
-## 📚 Useful Resources
+## 📚 Resources
 
-- 🌐 [Hacktoberfest Official](https://hacktoberfest.com)
-- 🟢 [Good First Issues](https://goodfirstissue.dev/)
-- 📘 [First Contributions](https://github.com/firstcontributions/first-contributions)
-- 📖 [FreeCodeCamp](https://github.com/freeCodeCamp/freeCodeCamp)
-- 🌍 [EddieHubCommunity](https://github.com/EddieHubCommunity)
-- 🔍 [Up For Grabs](https://up-for-grabs.net/)
-- ⚡ [CodeTriage](https://www.codetriage.com/)
+🚀 Essential resources to kickstart your open-source journey and make the most of Hacktoberfest 2025!
+
+### 🌐 Official & Core Resources
+
+- 🎃 [Hacktoberfest Official](https://hacktoberfest.com) — The official Hacktoberfest website with rules, FAQs, and registration
+- 🏷️ [Hacktoberfest Projects on GitHub](https://github.com/topics/hacktoberfest) — Browse all repositories tagged with "hacktoberfest"
+- 🏷️ [Hacktoberfest Projects on GitLab](https://gitlab.com/explore/projects/topics/hacktoberfest) — Browse all repositories tagged with "hacktoberfest"
+- 📚 [GitHub Documentation](https://docs.github.com/en/get-started) — Complete guide to using Git and GitHub
+
+### 🔰 Beginner-Friendly Platforms
+
+- 🟢 [Good First Issues](https://goodfirstissue.dev/) — Find beginner-friendly issues across popular repositories
+- 🔍 [Up For Grabs](https://up-for-grabs.net/) — Projects with curated tasks for new contributors
+- 👶 [First Timers Only](https://www.firsttimersonly.com/) — Guides and issues specifically for first-time contributors
+- ⚡ [CodeTriage](https://www.codetriage.com/) — Find open issues based on your interests and skills
+- 🌟 [ContribHub](https://contribhub.com/) — Platform to discover and contribute to open source projects
+
+### 🏛️ Major Open Source Projects
+
+- 📖 [FreeCodeCamp](https://github.com/freeCodeCamp/freeCodeCamp) — Large open-source learning platform with beginner-friendly issues
+- 📘 [First Contributions](https://github.com/firstcontributions/first-contributions) — Beginner-friendly repo to learn the contribution workflow
+- 🌍 [EddieHub Community](https://github.com/EddieHubCommunity) — Welcoming open-source community for contributors of all levels
+- 🔌 [Public APIs](https://github.com/public-apis/public-apis) — Large collection of free APIs for developers
+
+### 🎓 Learning Resources
+
+- ⭐ [Awesome for Beginners](https://github.com/MunGell/awesome-for-beginners) — Curated list of repositories with "good first issues"
+- 🔎 [Contribute.dev](https://contribute.dev/) — Discover projects and their beginner-friendly issues
+- 📖 [Open Source Everything](https://opensourceeverything.com/) — Comprehensive guide to open source contribution
+- 🎯 [GitHub Training Manual](https://training.github.com/) — Official GitHub training resources and tutorials for Git and GitHub
+- 🔄 [Understanding the GitHub Flow](https://docs.github.com/en/get-started/using-github/github-flow) — Learn the GitHub workflow for contributing to projects
 
 ---
-
-### Beginner-Friendly Contribution Platforms
-
-- [First Contributions](https://github.com/firstcontributions/first-contributions) — Beginner-friendly repo to learn contribution workflow.
-- [Public APIs](https://github.com/public-apis/public-apis) — Large collection of free APIs for developers.
-- [Awesome for Beginners](https://github.com/MunGell/awesome-for-beginners) — Curated list of repositories with “good first issues.”
-- [FreeCodeCamp](https://github.com/freeCodeCamp/freeCodeCamp) — Large open-source learning platform, issues labeled for beginners.
-- [EddieHubCommunity](https://github.com/EddieHubCommunity) — Welcoming open-source community for first-time contributors.
-- [Mozilla’s Good First Bugs](https://github.com/mozilla) — Issues labeled “good first bug” across Mozilla repos.
-
----
-
-### Other Beginner Contribution Platforms
-
-- [Up For Grabs](https://up-for-grabs.net/) — Projects with curated tasks for new contributors.
-- [CodeTriage](https://www.codetriage.com/) — Find open issues based on interest.
-- [First Timers Only](https://www.firsttimersonly.com/) — Guides and issues for first-time contributors.
-- [Contribute.dev](https://contribute.dev/) — Discover projects and their beginner-friendly issues.
 
 ## Quick Git Commands for Hacktoberfest
 
