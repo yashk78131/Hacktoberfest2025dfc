@@ -23,16 +23,89 @@ body{
 .site{display:flex;min-height:100vh}
 
 /* Top navigation */
-.topnav{background:linear-gradient(90deg,var(--hf-left),var(--hf-right)); color:#fff; padding:12px 20px; position:sticky; top:0; z-index:60; box-shadow:0 6px 24px rgba(11,17,40,0.5)}
-.topnav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
-.topnav .brand{color:#fff;text-decoration:none;font-weight:700;font-size:1.05rem;display:flex;align-items:center;gap:10px}
-.nav-links{display:flex;gap:18px}
-.nav-links a{color:rgba(255,255,255,0.95); text-decoration:none; padding:8px 10px; border-radius:8px; transition:background .18s ease}
-.nav-links a:hover{background:rgba(255,255,255,0.06)}
-.nav-actions{display:flex;align-items:center;gap:12px}
-.nav-btn{background:transparent;border:0;color:#fff;font-size:2.05rem;cursor:pointer}
-.nav-cta{background:#021025;color:#fff;padding:8px 12px;border-radius:10px;text-decoration:none}
+/* --- Original & Base Styles --- */
+.topnav {
+    background: linear-gradient(90deg, var(--hf-left), var(--hf-right));
+    color: #fff;
+    padding: 12px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 60;
+    box-shadow: 0 6px 24px rgba(11,17,40,0.5);
+}
+.topnav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.topnav .brand {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.05rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.nav-links {
+    display: flex;
+    gap: 18px;
+}
+.nav-links a {
+    color: rgba(255, 255, 255, 0.95);
+    text-decoration: none;
+    padding: 8px 10px;
+    border-radius: 8px;
+    transition: background .18s ease;
+}
+.nav-links a:hover {
+    background: rgba(255, 255, 255, 0.06);
+}
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.nav-btn {
+    background: transparent;
+    border: 0;
+    color: #fff;
+    font-size: 2.05rem;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+.nav-cta {
+    background: #021025;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 10px;
+    text-decoration: none;
+}
 
+
+#hamburger {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    #hamburger {
+        display: block;
+    }
+}
+
+@media (max-width: 480px) {
+    #nav-search-btn {
+        display: none;
+    }
+}
 /* Sidebar */
 .sidebar{
   width:300px; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
