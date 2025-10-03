@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hacktoberfest 2025 — Beginner’s Guide</title>
+  <meta name="description" content="Complete beginner’s guide to Hacktoberfest 2025. Learn how to participate, find repositories, and claim rewards.">
+
+  <style>
+    :root {
+      --hf-purple: #6c63ff;
+      --hf-orange: #ff7043;
+      --hf-light: #f9f9f9;
+      --hf-dark: #222;
+      --hf-radius: 14px;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      background: var(--hf-light);
+      color: var(--hf-dark);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    /* Dark Mode Overrides */
+    body.dark {
+      --hf-light: #1c1c1c;
+      --hf-dark: #ffffff;
+      background: #111;
+      color: #eee;
+    }
+
+    header {
+      background: var(--hf-purple);
+      color: #fff;
+      padding: 2rem 1rem;
+      text-align: center;
+      position: relative;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      animation: fadeIn 2s ease;
+    }
+    header p {
+      margin-top: .5rem;
+      font-size: 1.2rem;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+    nav a, .nav-btn {
+      background: var(--hf-orange);
+      color: #fff;
+      padding: .6rem 1rem;
+      border-radius: var(--hf-radius);
+      text-decoration: none;
+      font-weight: 500;
+      transition: background .3s;
+      border: none;
+      cursor: pointer;
+    }
+    nav a:hover, .nav-btn:hover {
+      background: #ff5722;
+    }
+
+    section {
+      padding: 2rem 1rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    section h2 {
+      color: var(--hf-purple);
+      border-bottom: 3px solid var(--hf-orange);
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+    .card {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: var(--hf-radius);
+      margin: 1rem 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform .3s;
+    }
+    body.dark .card {
+      background: #1e1e1e;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .highlight {
+      background: var(--hf-purple);
+      color: #fff;
+      padding: .2rem .5rem;
+      border-radius: var(--hf-radius);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: var(--hf-dark);
+      color: #fff;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Shine Animation Fix */
+    .site {
+      position: relative;
+      display: inline-block;
+      color: var(--hf-orange);
+      font-weight: bold;
+      overflow: hidden;
+    }
+    .site::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(120deg, transparent, rgba(255,255,255,.6), transparent);
+      animation: shine 2s infinite;
+      background-size: 200% 100%;
+      background-position: -200% 0;
+    }
+    @keyframes shine {
+      100% { left: 100%; background-position: 200% 0; }
+    }
+
+    /* Back-to-top Button */
+    #back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: none;
+      padding: 10px 14px;
+      border-radius: 50%;
+      background: var(--hf-purple);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+      z-index: 999;
+    }
+    #back-to-top:hover { background: var(--hf-orange); }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🌟 Hacktoberfest 2025</h1>
+    <p>Your Beginner’s Guide to Rewards, Repositories & Contributions</p>
+    <nav aria-label="Main Navigation">
+      <a href="#about">About</a>
+      <a href="#rewards">Rewards</a>
+      <a href="#repos">Repositories</a>
+      <a href="#steps">How to Participate</a>
+      <a href="#tips">Tips</a>
+      <button id="dark-toggle" class="nav-btn" aria-label="Toggle Dark Mode">🌙</button>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h2>What is Hacktoberfest?</h2>
+    <div class="card">
+      Hacktoberfest is a month-long open-source festival in October where developers worldwide contribute to projects on GitHub and GitLab. It's beginner-friendly and full of rewards.
+    </div>
+  </section>
+
+  <section id="rewards">
+    <h2>🎁 Rewards</h2>
+    <div class="card">✨ Exclusive <span class="highlight">Hacktoberfest Swag</span> (T-shirts, stickers, badges)</div>
+    <div class="card">🌱 Plant a tree in your name</div>
+    <div class="card">📝 Certificate of Completion</div>
+  </section>
+
+  <section id="repos">
+    <h2>📂 Finding Beginner-Friendly Repositories</h2>
+    <div class="card">Look for <span class="highlight">good first issue</span> or <span class="highlight">Hacktoberfest</span> tags.</div>
+    <div class="card">Examples: <span class="site">awesome-for-beginners</span>, <span class="site">first-contributions</span>, <span class="site">public-apis</span></div>
+  </section>
+
+  <section id="steps">
+    <h2>🚀 How to Participate</h2>
+    <div class="card">1️⃣ Register at <a href="https://hacktoberfest.com" target="_blank">hacktoberfest.com</a></div>
+    <div class="card">2️⃣ Find a project on GitHub/GitLab with relevant tags</div>
+    <div class="card">3️⃣ Fork repo → Clone → Create branch → Commit changes</div>
+    <div class="card">4️⃣ Submit 4 valid PRs in October</div>
+    <div class="card">5️⃣ Track progress on your dashboard</div>
+  </section>
+
+  <section id="tips">
+    <h2>💡 Tips for Beginners</h2>
+    <div class="card">✔️ Start small: Fix typos, docs, or beginner issues.</div>
+    <div class="card">✔️ Join communities, ask questions, and stay consistent.</div>
+    <div class="card">✔️ Quality > Quantity: Focus on meaningful contributions.</div>
+  </section>
+
+  <footer>
+    <p>Made with ❤️ for Hacktoberfest 2025 | Happy Coding!</p>
+  </footer>
+
+  <button id="back-to-top" title="Back to top">⬆️</button>
+
+  <script>
+    // Dark Mode Toggle
+    const toggle = document.getElementById('dark-toggle');
+    toggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+    });
+
+    // Back to Top Button
+    const backBtn = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+      backBtn.style.display = window.scrollY > 400 ? 'block' : 'none';
+    });
+    backBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
