@@ -665,6 +665,9 @@
       </nav>
 
       <div class="nav-actions">
+        <button id="theme-toggle" class="nav-btn" title="Toggle theme" aria-label="Toggle light/dark theme">
+          <span class="theme-icon">🌙</span>
+        </button>
         <button id="nav-search-btn" class="nav-btn" title="Search (/)" aria-label="Open search">🔎</button>
         <a class="nav-cta" href="https://github.com/avinash201199/Hacktoberfest2025" target="_blank" rel="noopener">GitHub</a>
         <button id="hamburger" class="nav-btn" aria-label="Toggle sidebar">☰</button>
@@ -888,6 +891,32 @@
       const expanded = sidebar.classList.toggle('collapsed');
       e.target.textContent = expanded ? 'Show' : 'Hide';
       e.target.setAttribute('aria-expanded', String(!expanded));
+    });
+
+    // Theme Toggle Functionality
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = themeToggle.querySelector('.theme-icon');
+    const htmlElement = document.documentElement;
+    
+    // Check for saved theme preference or default to dark mode
+    const currentTheme = localStorage.getItem('theme') || 'dark';
+    if (currentTheme === 'light') {
+      htmlElement.classList.add('light-theme');
+      themeIcon.textContent = '☀️';
+    }
+    
+    // Theme toggle click handler
+    themeToggle.addEventListener('click', () => {
+      htmlElement.classList.toggle('light-theme');
+      
+      // Update icon and save preference
+      if (htmlElement.classList.contains('light-theme')) {
+        themeIcon.textContent = '☀️';
+        localStorage.setItem('theme', 'light');
+      } else {
+        themeIcon.textContent = '🌙';
+        localStorage.setItem('theme', 'dark');
+      }
     });
 
     // Navbar interactions: focus search and toggle sidebar
