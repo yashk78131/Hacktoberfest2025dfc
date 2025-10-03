@@ -30,7 +30,7 @@ body{
 .nav-links a{color:rgba(255,255,255,0.95); text-decoration:none; padding:8px 10px; border-radius:8px; transition:background .18s ease}
 .nav-links a:hover{background:rgba(255,255,255,0.06)}
 .nav-actions{display:flex;align-items:center;gap:12px}
-.nav-btn{background:transparent;border:0;color:#fff;font-size:1.05rem;cursor:pointer}
+.nav-btn{background:transparent;border:0;color:#fff;font-size:2.05rem;cursor:pointer}
 .nav-cta{background:#021025;color:#fff;padding:8px 12px;border-radius:10px;text-decoration:none}
 
 /* Sidebar */
