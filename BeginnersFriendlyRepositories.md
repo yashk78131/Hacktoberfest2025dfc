@@ -23,6 +23,7 @@ If you know any good repository for beginners, feel free to add it to this table
 | Vue.js | [Link](https://github.com/vuejs/vue) | JavaScript, TypeScript |
 | Axios | [Link](https://github.com/axios/axios) | JavaScript, TypeScript |
 | DEV / Forem | [Link](https://github.com/forem/forem) | Ruby on Rails, PostgreSQL, Redis, React |
+| ZenithFocus / Pomodoro timer | [Link](https://github.com/Dishant1286/zenithfocus) | HTML, CSS, JavaScript |
 
 
 ---
