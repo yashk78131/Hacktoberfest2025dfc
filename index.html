@@ -264,6 +264,7 @@
         margin: 2rem 0 1.5rem;
         color: var(--hf-orange);
         background: linear-gradient(90deg, var(--hf-orange), var(--hf-purple));
+        background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       }
@@ -380,6 +381,10 @@
         margin-right: 0;
       }
 
+      .sidebar.collapsed .brand .brand-text {
+        display: none;
+      }
+
       .sidebar.collapsed #toc {
         display: none;
       }
@@ -402,6 +407,46 @@
 
       .sidebar.collapsed .nav-cta {
         display: none;
+      }
+
+      /* Show/Hide arrow button styles */
+      .show-sidebar-btn {
+        position: fixed;
+        top: 50%;
+        left: 20px;
+        transform: translateY(-50%);
+        background: linear-gradient(135deg, var(--hf-orange), var(--hf-purple));
+        border: none;
+        color: var(--hf-light);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 1.2rem;
+        box-shadow: 0 4px 15px rgba(155, 89, 182, 0.3);
+        transition: all 0.3s ease;
+        z-index: 1001;
+        display: none;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .show-sidebar-btn:hover {
+        transform: translateY(-50%) scale(1.1);
+        box-shadow: 0 6px 20px rgba(155, 89, 182, 0.4);
+      }
+
+      .show-sidebar-btn.visible {
+        display: flex;
+      }
+
+      .show-sidebar-btn::before {
+        content: "→";
+        transition: transform 0.3s ease;
+      }
+
+      .show-sidebar-btn:hover::before {
+        transform: translateX(3px);
       }
 
       @keyframes fadeIn {
@@ -746,8 +791,8 @@
       <aside class="sidebar" id="sidebar" aria-label="Table of contents">
         <div class="brand">
           <a href="./" title="Home"
-            ><span class="logo-blob" aria-hidden="true"></span>Hacktoberfest
-            2025</a
+            ><span class="logo-blob" aria-hidden="true"></span
+            ><span class="brand-text">Hacktoberfest 2025</span></a
           >
         </div>
 
@@ -781,6 +826,14 @@
           <a class="btn" href="README.md">View raw README</a>
         </footer>
       </aside>
+
+      <!-- Show sidebar button (appears when sidebar is collapsed) -->
+      <button 
+        id="show-sidebar-btn" 
+        class="show-sidebar-btn" 
+        aria-label="Show sidebar"
+        title="Show sidebar"
+      ></button>
 
       <main class="content" id="content" role="main">
         <div class="bg-decor" aria-hidden="true">
@@ -1033,9 +1086,29 @@
       // TOC toggle for small screens
       document.getElementById("toc-toggle").addEventListener("click", (e) => {
         const sidebar = document.getElementById("sidebar");
+        const showBtn = document.getElementById("show-sidebar-btn");
         const expanded = sidebar.classList.toggle("collapsed");
         e.target.textContent = expanded ? "Show" : "Hide";
         e.target.setAttribute("aria-expanded", String(!expanded));
+        
+        // Show/hide the arrow button
+        if (expanded) {
+          showBtn.classList.add("visible");
+        } else {
+          showBtn.classList.remove("visible");
+        }
+      });
+
+      // Show sidebar button functionality
+      document.getElementById("show-sidebar-btn").addEventListener("click", () => {
+        const sidebar = document.getElementById("sidebar");
+        const showBtn = document.getElementById("show-sidebar-btn");
+        const tocToggle = document.getElementById("toc-toggle");
+        
+        sidebar.classList.remove("collapsed");
+        showBtn.classList.remove("visible");
+        tocToggle.textContent = "Hide";
+        tocToggle.setAttribute("aria-expanded", "true");
       });
 
       // Navbar interactions: focus search and toggle sidebar
@@ -1050,18 +1123,39 @@
         });
       document.getElementById("hamburger").addEventListener("click", () => {
         const sidebar = document.getElementById("sidebar");
-        sidebar.classList.toggle("collapsed");
+        const showBtn = document.getElementById("show-sidebar-btn");
+        const tocToggle = document.getElementById("toc-toggle");
+        const expanded = sidebar.classList.toggle("collapsed");
+        
+        // Update show button visibility
+        if (expanded) {
+          showBtn.classList.add("visible");
+        } else {
+          showBtn.classList.remove("visible");
+        }
+        
+        // Update TOC toggle text
+        tocToggle.textContent = expanded ? "Show" : "Hide";
+        tocToggle.setAttribute("aria-expanded", String(!expanded));
       });
 
       // Auto-collapse sidebar on mobile and handle window resize
       function handleSidebarResponsiveness() {
         const sidebar = document.getElementById("sidebar");
+        const showBtn = document.getElementById("show-sidebar-btn");
+        const tocToggle = document.getElementById("toc-toggle");
         const isMobile = window.innerWidth <= 900;
 
         if (isMobile) {
           sidebar.classList.add("collapsed");
+          showBtn.classList.add("visible");
+          tocToggle.textContent = "Show";
+          tocToggle.setAttribute("aria-expanded", "false");
         } else {
           sidebar.classList.remove("collapsed");
+          showBtn.classList.remove("visible");
+          tocToggle.textContent = "Hide";
+          tocToggle.setAttribute("aria-expanded", "true");
         }
       }
 
@@ -1073,15 +1167,21 @@
       document.addEventListener("click", (e) => {
         const sidebar = document.getElementById("sidebar");
         const hamburger = document.getElementById("hamburger");
+        const showBtn = document.getElementById("show-sidebar-btn");
+        const tocToggle = document.getElementById("toc-toggle");
         const isMobile = window.innerWidth <= 900;
 
         if (
           isMobile &&
           !sidebar.contains(e.target) &&
           !hamburger.contains(e.target) &&
+          !showBtn.contains(e.target) &&
           !sidebar.classList.contains("collapsed")
         ) {
           sidebar.classList.add("collapsed");
+          showBtn.classList.add("visible");
+          tocToggle.textContent = "Show";
+          tocToggle.setAttribute("aria-expanded", "false");
         }
       });
 
