@@ -22,6 +22,7 @@ If you know any good repository for beginners, feel free to add it to this table
 | React | [Link](https://github.com/facebook/react) | JavaScript, Flow |
 | Vue.js | [Link](https://github.com/vuejs/vue) | JavaScript, TypeScript |
 | Axios | [Link](https://github.com/axios/axios) | JavaScript, TypeScript |
+| DEV / Forem | [Link](https://github.com/forem/forem) | Ruby on Rails, PostgreSQL, Redis, React |
 
 
 ---
