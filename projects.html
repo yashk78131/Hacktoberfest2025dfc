@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Hacktoberfest 2025 – Project Explorer</title>
+<link rel="stylesheet" href="assets/style.css" />
+<style>
+  :root { --hf-orange:#ff8a65; --hf-purple:#9b59b6; --hf-dark:#0e1b33; --hf-light:#fff; }
+  body { margin:0; font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,sans-serif; background:radial-gradient(circle at 30% 30%, rgba(155,89,182,.15), transparent), linear-gradient(135deg,#182c4f,#3d2f67 60%, #532d72); color:var(--hf-light); min-height:100vh; }
+  header { text-align:center; padding:2.75rem 1rem 1.25rem; }
+  h1 { margin:0; font-size:3rem; letter-spacing:.07em; font-weight:700; text-shadow:0 4px 18px rgba(0,0,0,.45); }
+  .subtitle { margin-top:.75rem; font-size:.9rem; letter-spacing:.15em; opacity:.85; }
+  .search-panel { margin:2.5rem auto 1.25rem; max-width:780px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.12); padding:1.75rem 1.5rem 2rem; border-radius:26px; position:relative; backdrop-filter:blur(10px); box-shadow:0 10px 40px -10px rgba(0,0,0,.35); }
+  .search-panel:before { content:""; position:absolute; inset:0; border-radius:inherit; padding:1px; background:linear-gradient(135deg,rgba(255,138,101,.45),rgba(155,89,182,.45)); -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite:xor; mask-composite:exclude; pointer-events:none; }
+  .language-search-form { display:flex; width:100%; border:1px solid rgba(255,255,255,0.25); border-radius:10px; overflow:hidden; background:rgba(0,0,0,0.35); }
+  .language-search-form input { flex:1; background:transparent; border:none; padding:.9rem 1rem; color:var(--hf-light); font-size:1rem; letter-spacing:.03em; }
+  .language-search-form input:focus { outline:none; box-shadow: inset 0 0 0 2px var(--hf-purple); }
+  .language-search-form button { background:linear-gradient(135deg,var(--hf-orange),var(--hf-purple)); border:none; padding:.9rem 1.15rem; color:#fff; font-size:1rem; cursor:pointer; display:flex; align-items:center; gap:.5rem; font-weight:600; }
+  .language-search-form button:hover { filter:brightness(1.08); }
+  .language-grid-wrapper { margin-top:2rem; }
+  .language-grid-label { text-align:center; font-size:.75rem; letter-spacing:.25em; margin-bottom:1.4rem; opacity:.85; }
+  .language-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(140px,1fr)); gap:.85rem; max-width:880px; margin:0 auto; }
+  .lang-option { position:relative; list-style:none; }
+  .lang-btn { width:100%; border:1px solid rgba(255,255,255,.33); background:rgba(255,255,255,.07); backdrop-filter:blur(6px); color:var(--hf-light); padding:.85rem .7rem; border-radius:9px; font-size:.75rem; font-weight:600; letter-spacing:.05em; display:flex; align-items:center; gap:.45rem; text-transform:uppercase; cursor:pointer; transition:.28s; box-shadow:0 2px 6px -2px rgba(0,0,0,.4); }
+  .lang-btn:hover, .lang-btn:focus { border-color:var(--hf-orange); outline:none; transform:translateY(-4px); box-shadow:0 6px 18px -6px rgba(255,138,101,.6); }
+  .lang-btn span.icon { font-size:1.05rem; }
+  .more-languages-toggle { grid-column:1/-1; margin:.5rem auto 0; }
+  .section-divider { height:1px; background:linear-gradient(90deg,transparent,rgba(255,255,255,.22),transparent); margin:3rem auto 2.2rem; width:85%; }
+  .results { max-width:1180px; margin:0 auto 4rem; padding:0 1rem; }
+  .results-header { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:1rem; margin-bottom:1rem; }
+  .results-header h2 { margin:0; font-size:1.4rem; letter-spacing:.04em; }
+  .results-header small { opacity:.7; font-size:.75rem; }
+  .repos-languages-container { display:grid; gap:1.35rem; }
+  details.repo-lang-group { border:1px solid rgba(255,255,255,.12); border-radius:16px; overflow:hidden; background:rgba(255,255,255,.03); backdrop-filter:blur(8px); }
+  details.repo-lang-group summary { cursor:pointer; padding:1rem 1.2rem; font-weight:600; display:flex; justify-content:space-between; align-items:center; background:linear-gradient(90deg,rgba(255,138,101,.22),rgba(155,89,182,.25)); }
+  details.repo-lang-group summary::-webkit-details-marker { display:none; }
+  .repo-grid { display:grid; gap:1rem; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); padding:1.1rem 1.1rem 1.4rem; }
+  .repo-card { background:rgba(0,0,0,.35); border:1px solid rgba(255,255,255,.15); padding:.85rem .85rem .9rem; border-radius:14px; display:flex; flex-direction:column; gap:.55rem; position:relative; transition:.25s; }
+  .repo-card:hover { background:rgba(0,0,0,.5); border-color:var(--hf-orange); transform:translateY(-4px); box-shadow:0 10px 28px -8px rgba(0,0,0,.6); }
+  .repo-card h3 { font-size:.85rem; margin:0; line-height:1.3; font-weight:600; }
+  .repo-card h3 a { text-decoration:none; color:var(--hf-light); }
+  .repo-card h3 a:hover { color:var(--hf-orange); }
+  .repo-desc { font-size:.68rem; opacity:.78; line-height:1.3; max-height:2.6em; overflow:hidden; }
+  .repo-stats { display:flex; flex-wrap:wrap; gap:.45rem; font-size:.6rem; opacity:.85; }
+  .repo-stat { background:rgba(255,255,255,.12); padding:.25rem .5rem; border-radius:999px; display:inline-flex; align-items:center; gap:.25rem; }
+  .repo-links { margin-top:auto; display:flex; justify-content:space-between; align-items:center; font-size:.6rem; }
+  .repo-links a { color:var(--hf-orange); text-decoration:none; font-weight:600; }
+  .repo-links a:hover { text-decoration:underline; }
+  .loading { text-align:center; padding:3rem 1rem; font-size:1rem; letter-spacing:.1em; opacity:.8; animation:pulse 1.6s infinite; }
+  @keyframes pulse { 0%,100%{opacity:.45;} 50% {opacity:1;} }
+  .error-panel { max-width:640px; margin:2rem auto; background:rgba(255,0,0,.08); border:1px solid rgba(255,0,0,.3); padding:1.25rem 1.4rem; border-radius:18px; font-size:.85rem; line-height:1.5; }
+  .no-results { text-align:center; padding:2rem; opacity:.6; font-size:.8rem; }
+  footer { text-align:center; padding:2rem 1rem 3rem; font-size:.65rem; opacity:.7; }
+  .chip { background:linear-gradient(135deg,var(--hf-orange),var(--hf-purple)); padding:.25rem .6rem; border-radius:999px; font-size:.55rem; letter-spacing:.1em; text-transform:uppercase; margin-left:.6rem; }
+  @media (max-width:640px){ h1 { font-size:2.35rem;} .language-search-form { flex-direction:column; } .language-search-form button { width:100%; } }
+</style>
+</head>
+<body>
+  <header>
+    <h1>SEARCH YOUR<br/>LANGUAGE</h1>
+    <p class="subtitle">Live Hacktoberfest repositories grouped by programming language</p>
+    <div class="search-panel">
+      <form id="lang-search-form" class="language-search-form" autocomplete="off">
+        <input id="language-search-input" type="text" placeholder="Search for your language" aria-label="Programming language" />
+        <button type="submit" aria-label="Search"><span>🔍</span> Search</button>
+      </form>
+      <div class="language-grid-wrapper">
+        <div class="language-grid-label">OR SELECT THE PROGRAMMING LANGUAGE YOU WOULD LIKE TO FIND REPOSITORIES FOR.</div>
+        <ul class="language-grid" id="preset-language-grid" style="list-style:none; margin:0; padding:0;">
+        </ul>
+      </div>
+    </div>
+  </header>
+  <div class="section-divider"></div>
+  <main class="results" id="results-root">
+    <div class="results-header"><h2>Repositories</h2><small id="repo-meta">Waiting for selection…</small></div>
+    <div id="results-content"></div>
+  </main>
+  <footer>Hacktoberfest 2025 Project Explorer. <a href="index.html" style="color:var(--hf-orange);">Back to Guide</a></footer>
+<script>
+  const PRESET_LANGUAGES = [
+    { name:'JavaScript', icon:'🟨' },
+    { name:'Python', icon:'🐍' },
+    { name:'C', icon:'📘' },
+    { name:'C++', icon:'💠' },
+    { name:'Rust', icon:'🦀' },
+    { name:'HTML', icon:'🧱' },
+    { name:'TypeScript', icon:'🟦' },
+    { name:'PHP', icon:'🐘' },
+    { name:'Dart', icon:'🎯' },
+    { name:'Java', icon:'☕' },
+    { name:'Elixir', icon:'🧪' },
+    { name:'Ruby', icon:'💎' }
+  ];
+
+  const grid = document.getElementById('preset-language-grid');
+  PRESET_LANGUAGES.forEach(l => {
+    const li = document.createElement('li');
+    li.className='lang-option';
+    li.innerHTML = `<button class="lang-btn" data-lang="${l.name}"><span class="icon">${l.icon}</span>${l.name}</button>`;
+    grid.appendChild(li);
+  });
+
+  const searchForm = document.getElementById('lang-search-form');
+  const searchInput = document.getElementById('language-search-input');
+  const resultsContent = document.getElementById('results-content');
+  const meta = document.getElementById('repo-meta');
+
+  let currentLanguage = null;
+  let cache = new Map(); // language -> repos
+
+  grid.addEventListener('click', (e) => {
+    const btn = e.target.closest('button.lang-btn');
+    if(!btn) return;
+    const lang = btn.dataset.lang;
+    searchInput.value = lang;
+    handleLanguageSelect(lang);
+  });
+
+  searchForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const val = searchInput.value.trim();
+    if(!val) return;
+    handleLanguageSelect(val);
+  });
+
+  // Debounced live search on input (auto-fetch after pause)
+  function debounce(fn, delay=600){ let t; return (...args)=>{ clearTimeout(t); t=setTimeout(()=>fn(...args), delay); }; }
+  const liveSearch = debounce(() => {
+    const val = searchInput.value.trim();
+    if(!val || val === currentLanguage) return;
+    handleLanguageSelect(val);
+  }, 650);
+  searchInput.addEventListener('input', liveSearch);
+
+  function setLoading(){
+    resultsContent.innerHTML = '<div class="loading">Fetching repositories…</div>';
+  }
+  function setError(msg){
+    resultsContent.innerHTML = `<div class="error-panel"><strong>Error:</strong> ${msg}</div>`;
+  }
+
+  async function handleLanguageSelect(lang){
+    currentLanguage = lang;
+    meta.textContent = `Loading ${lang} repositories…`;
+    setLoading();
+    try {
+      let repos;
+      if(cache.has(lang.toLowerCase())){
+        repos = cache.get(lang.toLowerCase());
+      } else {
+        // GitHub search: hacktoberfest topic + language
+        const url = `https://api.github.com/search/repositories?q=topic:hacktoberfest+language:${encodeURIComponent(lang)}&sort=stars&order=desc&per_page=100`;
+        const res = await fetch(url, { headers: { 'Accept':'application/vnd.github+json' }});
+        if(res.status === 403) throw new Error('Rate limited. Try a different language or wait a minute.');
+        if(!res.ok) throw new Error('API error '+res.status);
+        const json = await res.json();
+        repos = json.items || [];
+        cache.set(lang.toLowerCase(), repos);
+      }
+      meta.textContent = `${repos.length} repository${repos.length!==1?'ies':''} found for ${lang}`;
+      renderLanguageRepos(lang, repos);
+    } catch(err){
+      setError(err.message);
+      meta.textContent = 'Error loading repositories';
+    }
+  }
+
+  function renderLanguageRepos(lang, repos){
+    if(!repos.length){ resultsContent.innerHTML = '<div class="no-results">No repositories found for this language yet.</div>'; return; }
+    // Grouping not needed here (already language scoped). We can still show description cards.
+    const grid = document.createElement('div');
+    grid.className = 'repo-grid';
+    repos.sort((a,b)=> b.stargazers_count - a.stargazers_count);
+    repos.forEach(r => {
+      const card = document.createElement('div');
+      card.className = 'repo-card';
+      card.innerHTML = `
+        <h3><a href="${r.html_url}" target="_blank" rel="noopener noreferrer">${r.full_name}</a></h3>
+        <div class="repo-desc">${(r.description||'').replace(/[<>&]/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;'}[c]))}</div>
+        <div class="repo-stats">
+          <span class="repo-stat">⭐ ${r.stargazers_count}</span>
+          <span class="repo-stat">🍴 ${r.forks_count}</span>
+          ${r.open_issues_count ? `<span class="repo-stat">🐞 ${r.open_issues_count}</span>`:''}
+          <span class="repo-stat">📅 ${r.updated_at.slice(0,10)}</span>
+        </div>
+        <div class="repo-links"><a href="${r.html_url}/issues" target="_blank" rel="noopener noreferrer">Issues</a><a href="${r.html_url}" target="_blank" rel="noopener noreferrer">Open →</a></div>`;
+      grid.appendChild(card);
+    });
+    resultsContent.innerHTML = '';
+    resultsContent.appendChild(grid);
+  }
+</script>
+</body>
+</html>
