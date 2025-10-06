@@ -163,6 +163,7 @@
         color: var(--hf-orange);
       }
 
+
       .nav-actions {
         display: flex;
         gap: 1rem;
@@ -760,7 +761,7 @@
 
         <nav class="nav-links" aria-label="Main navigation">
           <a href="#what-is-hacktoberfest">Overview</a>
-          <a href="https://finder.usmans.me/" target="_blank" rel="noopener noreferrer">Projects</a>
+          <a href="projects.html" target="_blank" rel="noopener noreferrer">Projects</a>
           <a href="#how-to-participate">How To</a>
           <a href="#resources">Resources</a>
         </nav>
@@ -1206,18 +1207,51 @@
         }
       });
 
+      // Track the currently loaded markdown file
+      let currentMarkdownFile = "README.md";
+
+      // Handle brand/logo click to return to README
+      document.querySelectorAll(".brand").forEach((brand) => {
+        brand.addEventListener("click", (e) => {
+          if (brand.tagName === "A") {
+            e.preventDefault();
+            loadMarkdownFile("README.md");
+          }
+        });
+      });
+
       // Smooth scroll for nav links
       document.querySelectorAll(".nav-links a").forEach((link) => {
         link.addEventListener("click", (e) => {
           const href = link.getAttribute("href");
           
-          // Allow external links to work normally
-          if (href.startsWith("http://") || href.startsWith("https://")) {
-            return; // Let the browser handle external links
+          // If link has target _blank or points to projects.html, let browser handle it
+          if (link.target === '_blank' || href === 'projects.html') {
+            return; // Don't intercept new-tab or projects page
+          }
+
+          // Allow fully qualified external links to work normally
+            if (href.startsWith("http://") || href.startsWith("https://")) {
+            return; // External link
+          }
+
+          // Only intercept internal hash navigation (href begins with '#')
+          if (!href.startsWith('#')) {
+            return; // Not a hash link we manage
+          }
+
+          e.preventDefault();
+
+          // For internal hash links, check if we need to reload README first
+          const id = href.slice(1);
+          
+          // If we're not on README, load it first, then scroll to the section
+          if (currentMarkdownFile !== "README.md") {
+            loadMarkdownFile("README.md", id);
+            return;
           }
           
-          e.preventDefault();
-          const id = href.slice(1);
+          // Otherwise, just scroll to the section
           let element = document.getElementById(id);
 
           // If element not found, try to find it by searching through headings
@@ -1255,6 +1289,87 @@
           }
         });
       });
+
+      // Function to load any markdown file
+      async function loadMarkdownFile(filename, scrollToId = null) {
+        try {
+          const res = await fetch(filename);
+          if (!res.ok) throw new Error(`${filename} not found`);
+          const md = await res.text();
+
+          // Configure marked and highlight
+          marked.setOptions({
+            headerIds: true,
+            mangle: false,
+            highlight: function (code, lang) {
+              try {
+                return hljs.highlightAuto(code, lang ? [lang] : undefined)
+                  .value;
+              } catch (e) {
+                return hljs.highlightAuto(code).value;
+              }
+            },
+          });
+
+          const html = marked.parse(md);
+          const article = document.getElementById("article");
+          article.innerHTML = html;
+
+          // Add anchors to headings
+          document
+            .querySelectorAll(
+              "#article h1, #article h2, #article h3, #article h4, #article h5, #article h6"
+            )
+            .forEach((h) => {
+              const id =
+                h.id ||
+                h.textContent
+                  .trim()
+                  .toLowerCase()
+                  .replace(/[^a-z0-9]+/g, "-");
+              h.id = id;
+              const a = document.createElement("a");
+              a.className = "heading-anchor";
+              a.href = "#" + id;
+              a.title = "Link to " + h.textContent.trim();
+              a.innerHTML = "¶";
+              h.appendChild(a);
+            });
+
+          // Update current file tracker
+          currentMarkdownFile = filename;
+
+          // Scroll to specific section if requested, otherwise scroll to top
+          if (scrollToId) {
+            setTimeout(() => {
+              const element = document.getElementById(scrollToId);
+              if (element) {
+                element.scrollIntoView({ behavior: "smooth", block: "start" });
+                history.pushState(null, "", "#" + scrollToId);
+                element.classList.add("highlight-section");
+                setTimeout(() => element.classList.remove("highlight-section"), 1000);
+              }
+            }, 100);
+          } else {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }
+
+          buildTOC();
+          initSearch(md);
+          initActiveObserver();
+          hljs.highlightAll();
+
+          // Update URL
+          if (!scrollToId) {
+            history.pushState(null, "", filename === "README.md" ? "./" : `?file=${filename}`);
+          }
+        } catch (err) {
+          document.getElementById("article").innerHTML =
+            `<div class="error-panel"><h2>Unable to load ${filename}</h2><p>` +
+            err.message +
+            `</p><p><a href="${filename}">Open raw ${filename}</a></p></div>`;
+        }
+      }
 
       // Enhanced renderReadme function
       async function renderReadme() {
@@ -1345,12 +1460,7 @@
           <h4>Quick Links</h4>
           <nav class="footer-links" aria-label="Footer navigation">
             <a href="#what-is-hacktoberfest">Overview</a>
-            <a
-              href="https://github.com/avinash201199/Hacktoberfest2025"
-              target="_blank"
-              rel="noopener"
-              >Projects</a
-            >
+            <a href="projects.html" target="_blank" rel="noopener">Projects</a>
             <a href="#resources">Resources</a>
           </nav>
         </div>
