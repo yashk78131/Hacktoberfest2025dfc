@@ -163,7 +163,6 @@ Whether you’re a seasoned developer or just starting out, Hacktoberfest offers
 - 🔍 [Up For Grabs](https://up-for-grabs.net/) — Projects with curated tasks for new contributors
 - 👶 [First Timers Only](https://www.firsttimersonly.com/) — Guides and issues specifically for first-time contributors
 - ⚡ [CodeTriage](https://www.codetriage.com/) — Find open issues based on your interests and skills
-- 🌟 [ContribHub](https://contribhub.com/) — Platform to discover and contribute to open source projects
 
 ### 🏛️ Major Open Source Projects
 

@@ -1312,7 +1312,7 @@ body.light-mode .footer-socials a:hover {
 
         <nav class="nav-links" aria-label="Main navigation">
           <a href="#what-is-hacktoberfest">Overview</a>
-          <a href="projects.html" target="_blank" rel="noopener noreferrer">Projects</a>
+          <a href="projects.html">Projects</a>
           <a href="#how-to-participate">How To</a>
           <a href="#resources">Resources</a>
         </nav>
@@ -2057,7 +2057,27 @@ body.light-mode .footer-socials a:hover {
         }
       }
 
-      renderReadme();
+      // If visiting index.html with a hash (e.g., index.html#resources), remember it
+      const initialHash = window.location.hash ? window.location.hash.slice(1) : null;
+
+      // Render README and, if there was an initial hash, scroll to that section after render
+      renderReadme().then(() => {
+        if (initialHash) {
+          // If the article is already rendered, try to find the element and scroll to it
+          const el = document.getElementById(initialHash);
+          if (el) {
+            setTimeout(() => {
+              el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              history.replaceState(null, '', '#' + initialHash);
+              el.classList.add('highlight-section');
+              setTimeout(() => el.classList.remove('highlight-section'), 1000);
+            }, 120);
+          } else {
+            // If element not found, ensure loadMarkdownFile handles it by reloading README and passing id
+            loadMarkdownFile('README.md', initialHash);
+          }
+        }
+      });
 
       // Theme toggle
       const themeToggle = document.getElementById('theme-toggle');
