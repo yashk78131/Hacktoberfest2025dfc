@@ -28,22 +28,7 @@ If you know any good repository for beginners, feel free to add it to this table
 | OpenSauce | [Link](https://github.com/TechnoBlogger14o3/OpenSauce) | Multiple Languages, DSA, Algorithms |
 | Awesome Lists | [Link](https://github.com/sindresorhus/awesome) | Markdown, Documentation |
 | 30 Seconds of Code | [Link](https://github.com/30-seconds/30-seconds-of-code) | JavaScript, TypeScript, Python |
-| The Algorithms | [Link](https://github.com/TheAlgorithms/Python) | Python, Algorithms, Data Structures |
-| Awesome Python | [Link](https://github.com/vinta/awesome-python) | Python, Documentation |
-| Awesome JavaScript | [Link](https://github.com/sorrycc/awesome-javascript) | JavaScript, Documentation |
-| Awesome React | [Link](https://github.com/enaqx/awesome-react) | React, JavaScript, Documentation |
-| Awesome Vue | [Link](https://github.com/vuejs/awesome-vue) | Vue.js, JavaScript, Documentation |
-| Awesome Node.js | [Link](https://github.com/sindresorhus/awesome-nodejs) | Node.js, JavaScript, Documentation |
-| Awesome Machine Learning | [Link](https://github.com/josephmisiti/awesome-machine-learning) | Machine Learning, Python, Documentation |
-| Awesome Web Development | [Link](https://github.com/markodenic/web-development-resources) | Web Development, HTML, CSS, JavaScript |
-| Awesome CSS | [Link](https://github.com/awesome-css-group/awesome-css) | CSS, Documentation |
-| Awesome HTML5 | [Link](https://github.com/diegocard/awesome-html5) | HTML5, Documentation |
-| Awesome Git | [Link](https://github.com/dictcp/awesome-git) | Git, Documentation |
-| Awesome GitHub | [Link](https://github.com/phillipadsmith/awesome-github) | GitHub, Documentation |
-| Awesome Open Source | [Link](https://github.com/OpenSourceHelpCommunity/awesome-opensource) | Open Source, Documentation |
-| Awesome Design | [Link](https://github.com/gztchan/awesome-design) | Design, UI/UX, Documentation |
-| Awesome Typography | [Link](https://github.com/Jolg42/awesome-typography) | Typography, Design, Documentation |
-| Awesome Color | [Link](https://github.com/Siddharth11/Colorful) | Colors, Design, Documentation |
+
 
 
 ---
