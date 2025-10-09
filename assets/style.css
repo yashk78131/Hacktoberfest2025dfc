@@ -68,7 +68,7 @@ body {
   justify-content: space-between;
 }
 .topnav .brand {
-  color: var(--text);
+  color: #fff;
   text-decoration: none;
   font-weight: 700;
   font-size: 1.05rem;
@@ -185,7 +185,7 @@ body {
 .brand a {
   font-weight: 700;
   font-size: 18px;
-  color: var(--text);
+  color: var(--accent);
   text-decoration: none;
 }
 
@@ -235,6 +235,7 @@ body {
 .toc-item a {
   display: block;
   padding: 8px 10px;
+  color: rgba(255, 255, 255, 0.85);
   text-decoration: none;
   border-radius: 8px;
   transition: background 0.15s ease, color 0.15s ease,
@@ -259,7 +260,12 @@ body {
   opacity: 0.45;
   transform: none;
 }
-
+.toc-item a.active {
+  background: linear-gradient(90deg, var(--hf-left), var(--hf-right));
+  color: #021025;
+  font-weight: 700;
+  transform: translateX(2px) scale(1.01);
+}
 .toc-empty {
   color: var(--muted);
   font-style: italic;

@@ -1,717 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Hacktoberfest 2025 — Guide</title>
-  <link rel="icon" type="image/png" href="assets/Favicon.png">
-
-  <!-- OpenGraph / Social preview -->
-  <meta property="og:title" content="How to Participate in Hacktoberfest 2025 — Guide" />
-  <meta property="og:description"
-    content="Step-by-step guide, beginner repos, best practices and resources for Hacktoberfest 2025." />
-  <meta property="og:image" content="assets/og-image.svg" />
-  <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary_large_image" />
-
-  <link rel="stylesheet" href="assets/style.css" />
-
-  <!-- Highlight.js and Marked (CDN) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/5.1.1/marked.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-
-  <style>
-    /* --- START: Dark/Light Mode Implementation --- */
-
-
-    /*
-  Updated theme-aware CSS (dark + light) for your site.
-  - Consolidates variables so toggling `body.light-mode` updates the whole UI.
-  - Removes hard-coded colours and maps components to variables.
-  - Improved responsive behaviour for sidebar/content/footer.
-  - Smooth transitions and accessible focus states.
-
-  Usage:
-  - Replace your existing CSS file with this file (or merge sensibly).
-  - Keep your JS toggle to add/remove `body.light-mode` (see JS snippet in chat).
-*/
-
-    /* ---------- Root variables (dark theme defaults) ---------- */
-    :root {
-      /* Accents */
-      --accent-orange: #ff8a65;
-      /* primary accent */
-      --accent-purple: #9b59b6;
-      /* secondary accent */
-      --accent-dark: #183153;
-      /* deep/nav tint */
-
-      /* Surfaces & layout */
-      --bg: #071126;
-      /* page background */
-      --surface: rgba(24, 49, 83, 0.95);
-      /* panels, sidebar */
-      --glass: rgba(255, 255, 255, 0.02);
-      /* glassy overlay */
-      --code-bg: rgba(0, 0, 0, 0.32);
-      --input-bg: rgba(255, 255, 255, 0.06);
-
-      /* Text & borders */
-      --text: #ffffff;
-      --muted: #9fb1c7;
-      --on-accent: #ffffff;
-      --border: rgba(255, 255, 255, 0.08);
-
-      /* Nav / footer backgrounds (can hold gradients) */
-      --nav-bg: linear-gradient(135deg, var(--accent-dark), var(--accent-purple));
-      --footer-start: rgba(24, 49, 83, 0.96);
-      --footer-end: rgba(155, 89, 182, 0.92);
-
-      /* Shadows */
-      --shadow: rgba(0, 0, 0, 0.25);
-      --soft-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
-
-      /* spacing */
-      --spacing-sm: 0.5rem;
-      --spacing-md: 1rem;
-      --spacing-lg: 2rem;
-
-      /* small helpers */
-      --radius-lg: 20px;
-      --radius-pill: 50px;
-    }
-
-    /* ---------- Light mode overrides ---------- */
-    body.light-mode {
-      --accent-orange: #f97316;
-      --accent-purple: #8a5cf684;
-      --accent-dark: #eaf3ff;
-      /* lighter/nav tint for subtle gradients */
-
-      --bg: #eecbff4f;
-      /* page background */
-      --surface: #ffffff;
-      /* panels */
-      --glass: rgba(0, 0, 0, 0.02);
-      /* subtle glass effect preserved */
-      --code-bg: #f3f4f6;
-      --input-bg: #fff;
-
-      --text: #111827;
-      /* body text in light mode */
-      --muted: #6b7280;
-      --on-accent: #ffffff;
-      --border: #d1d5db;
-
-      --nav-bg: linear-gradient(135deg, var(--accent-dark), var(--accent-purple));
-      --footer-start: #ffffff;
-      --footer-end: #f8f6ff;
-
-      --shadow: rgba(16, 24, 40, 0.06);
-      --soft-shadow: 0 10px 30px rgba(16, 24, 40, 0.06);
-    }
-
-    /* Backwards compatibility aliases (your previous --hf-* vars) */
-    :root {
-      --hf-orange: var(--accent-orange);
-      --hf-purple: var(--accent-purple);
-      --hf-dark: var(--accent-dark);
-      --hf-light: var(--on-accent);
-    }
-
-    /* ---------- Global styles ---------- */
-    * {
-      box-sizing: border-box
-    }
-
-    html,
-    body {
-      height: 100%;
-    }
-
-    body {
-      margin: 0;
-      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-      background: var(--bg);
-      color: var(--text);
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      transition: background 0.35s ease, color 0.35s ease;
-    }
-
-    /* Ensure many surface elements transition when theme changes */
-    body,
-    .topnav,
-    .sidebar,
-    .content-inner,
-    input,
-    button,
-    a,
-    .site-footer {
-      transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
-    }
-
-    a {
-      color: var(--accent-orange);
-    }
-
-    /* Focus states (accessibility) */
-    :focus {
-      outline: none
-    }
-
-    :focus-visible {
-      outline: 3px solid color-mix(in srgb, var(--accent-orange) 20%, var(--text));
-      outline-offset: 3px
-    }
-
-    /* ---------- Top navigation ---------- */
-    .topnav {
-      background: var(--nav-bg);
-      color: var(--on-accent);
-      padding: calc(var(--spacing-md) - 0.1rem) var(--spacing-lg);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 4px 18px var(--shadow);
-    }
-
-    .topnav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 1.25rem;
-      align-items: center
-    }
-
-    .nav-links a {
-      color: var(--on-accent);
-      text-decoration: none;
-      padding: 0.35rem 0.65rem;
-      border-radius: 8px
-    }
-
-    .nav-links a:hover {
-      color: var(--accent-orange)
-    }
-
-    .nav-actions {
-      display: flex;
-      gap: 1rem;
-      align-items: center
-    }
-
-    .nav-btn {
-      background: none;
-      border: none;
-      color: var(--muted);
-      font-size: 1.05rem;
-      cursor: pointer;
-      padding: 0.35rem;
-      border-radius: 8px
-    }
-
-    .nav-btn:hover {
-      color: var(--on-accent)
-    }
-
-    .nav-cta {
-      background: linear-gradient(135deg, var(--accent-orange), var(--accent-purple));
-      padding: 0.7rem 1.25rem;
-      border-radius: var(--radius-pill);
-      color: var(--on-accent);
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      box-shadow: var(--soft-shadow);
-    }
-
-    .nav-cta:hover {
-      transform: translateY(-3px)
-    }
-
-    /* ---------- Layout: sidebar + content ---------- */
-    .app-shell {
-      display: flex;
-      gap: 1.5rem;
-      align-items: flex-start
-    }
-
-    /* Sidebar */
-    .sidebar {
-      width: 260px;
-      min-width: 80px;
-      background: var(--surface);
-      color: var(--text);
-      border-radius: 12px;
-      padding: 1rem;
-      box-shadow: var(--soft-shadow);
-      position: sticky;
-      top: 76px;
-      height: calc(100vh - 96px);
-      overflow: auto;
-    }
-
-    /* collapsed variant */
-    .sidebar.collapsed {
-      width: 80px
-    }
-
-    .sidebar .brand {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem
-    }
-
-    .sidebar .logo-blob {
-      width: 2.1em;
-      height: 2.1em;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--accent-orange), var(--accent-purple));
-      box-shadow: 0 0 18px color-mix(in srgb, var(--accent-orange) 30%, transparent)
-    }
-
-    .sidebar .brand .brand-text {
-      font-weight: 700
-    }
-
-    /* Hide or adjust items when collapsed */
-    .sidebar.collapsed .brand-text,
-    .sidebar.collapsed #toc,
-    .sidebar.collapsed .search-wrapper,
-    .sidebar.collapsed .sidebar-footer,
-    .sidebar.collapsed .nav-cta {
-      display: none
-    }
-
-    /* content area */
-    .content {
-      flex: 1;
-      padding: var(--spacing-lg);
-      min-height: calc(100vh - 120px);
-    }
-
-    .content-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      background: linear-gradient(180deg, color-mix(in srgb, var(--surface) 80%, transparent), transparent);
-      backdrop-filter: blur(8px);
-      border-radius: var(--radius-lg);
-      padding: var(--spacing-lg);
-      box-shadow: var(--soft-shadow);
-    }
-
-    /* minor decors */
-    .bg-decor {
-      position: absolute;
-      inset: 0;
-      z-index: 0;
-      pointer-events: none
-    }
-
-    .bg-decor svg {
-      opacity: 0.06;
-      transform-origin: center;
-      animation: float 8s ease-in-out infinite
-    }
-
-    /* ---------- Search wrapper ---------- */
-    .search-wrapper {
-      position: relative;
-      max-width: 600px;
-      margin: var(--spacing-md) auto
-    }
-
-    .search-wrapper input {
-      width: 100%;
-      padding: 1rem 3rem 1rem 1.25rem;
-      border-radius: 50px;
-      border: 1px solid var(--border);
-      background: var(--input-bg);
-      color: var(--text);
-      font-size: 1.05rem;
-    }
-
-    .search-wrapper input:focus {
-      box-shadow: 0 6px 30px color-mix(in srgb, var(--accent-purple) 16%, transparent);
-      border-color: var(--accent-purple)
-    }
-
-    .search-ico {
-      position: absolute;
-      right: 1.2rem;
-      top: 50%;
-      transform: translateY(-50%);
-      opacity: 0.8
-    }
-
-    /* ---------- Article/readable content ---------- */
-    #article {
-      font-size: 16px;
-      line-height: 1.75;
-      color: var(--text);
-      max-width: 880px;
-      margin: 0 auto
-    }
-
-    #article h1 {
-      font-size: 2.4rem;
-      margin: 1.6rem 0;
-      background: linear-gradient(90deg, var(--accent-orange), var(--accent-purple));
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent
-    }
-
-    #article h2 {
-      font-size: 1.6rem;
-      margin: 1.2rem 0
-    }
-
-    #article p {
-      color: var(--muted);
-      margin-bottom: 1rem
-    }
-
-    #article code {
-      background: color-mix(in srgb, var(--accent-purple) 10%, var(--surface));
-      padding: 0.18em 0.4em;
-      border-radius: 4px
-    }
-
-    #article pre {
-      background: var(--code-bg);
-      padding: 1rem;
-      border-radius: 8px;
-      overflow: auto
-    }
-
-    #article table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 1rem 0
-    }
-
-    #article th,
-    #article td {
-      padding: 0.75rem;
-      border: 1px solid var(--border);
-      background: color-mix(in srgb, var(--surface) 70%, transparent)
-    }
-
-    #article th {
-      background: color-mix(in srgb, var(--accent-purple) 8%, var(--surface));
-      color: var(--accent-orange)
-    }
-
-    /* ---------- Resources cards/grid ---------- */
-    .resources-section {
-      padding: var(--spacing-lg) 0;
-      margin: var(--spacing-lg) 0
-    }
-
-    .resources-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: var(--spacing-lg)
-    }
-
-    .resource-category {
-      background: var(--glass);
-      border: 1px solid var(--border);
-      padding: var(--spacing-lg);
-      border-radius: 12px
-    }
-
-    .resource-category:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 14px 40px color-mix(in srgb, var(--accent-purple) 12%, transparent)
-    }
-
-    .resource-title {
-      font-weight: 600
-    }
-
-    /* ---------- Footer ---------- */
-    .site-footer {
-  background: linear-gradient(135deg, var(--footer-start), var(--footer-end));
-  color: var(--text);
-  padding: var(--spacing-lg) 0;
-  margin-top: var(--spacing-lg);
-  box-shadow: 0 -10px 30px var(--shadow);
-  border-top: 1px solid var(--border);
-  position: relative;
-  overflow: hidden;
-}
-
-.site-footer::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle at top left, var(--accent-purple) 0%, transparent 60%),
-              radial-gradient(circle at bottom right, var(--accent-orange) 0%, transparent 60%);
-  opacity: 0.1;
-}
-
-.footer-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 var(--spacing-lg);
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: var(--spacing-lg);
-  position: relative;
-  z-index: 2;
-}
-
-.footer-col h4 {
-  color: var(--accent-orange);
-  font-weight: 700;
-  margin-bottom: var(--spacing-sm);
-}
-
-.footer-links a {
-  display: block;
-  color: color-mix(in srgb, var(--text) 80%, transparent);
-  text-decoration: none;
-  margin-bottom: 0.4rem;
-  transition: all 0.25s ease;
-}
-
-.footer-links a:hover {
-  color: var(--accent-purple);
-  transform: translateX(5px);
-}
-
-.footer-socials a {
-  display: inline-flex;
-  align-items: center;
-  color: var(--text);
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.footer-socials a:hover {
-  color: var(--accent-orange);
-  transform: translateY(-2px);
-}
-
-.footer-brand {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-}
-
-.footer-brand .logo-blob {
-  width: 2.2em;
-  height: 2.2em;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent-orange), var(--accent-purple));
-  box-shadow: 0 0 20px color-mix(in srgb, var(--accent-purple) 40%, transparent);
-}
-
-.footer-title {
-  font-weight: 700;
-  font-size: 1.15rem;
-}
-
-.footer-bottom {
-  text-align: center;
-  border-top: 1px solid var(--border);
-  padding-top: var(--spacing-sm);
-  color: color-mix(in srgb, var(--text) 80%, transparent);
-  font-size: 0.95rem;
-  position: relative;
-  z-index: 2;
-}
-
-/* Light mode adjustment for a subtle purple theme */
-body.light-mode .site-footer {
-  background: linear-gradient(135deg, #f9f7ff, #ece9ff);
-  color: #1e1b4b;
-}
-
-body.light-mode .footer-col h4 {
-  color: #7c3aed;
-}
-
-body.light-mode .footer-links a:hover {
-  color: #a855f7;
-}
-
-body.light-mode .footer-socials a:hover {
-  color: #7c3aed;
-}
-
-    /* ---------- UI micro-interactions ---------- */
-    .logo-blob {
-      display: inline-block;
-      width: 2em;
-      height: 2em;
-      margin-right: 0.5em;
-      background: linear-gradient(135deg, var(--accent-orange), var(--accent-purple));
-      border-radius: 50%;
-      box-shadow: 0 0 18px color-mix(in srgb, var(--accent-orange) 30%, transparent);
-      animation: blob 2.5s infinite ease-in-out
-    }
-
-    @keyframes blob {
-
-      0%,
-      100% {
-        transform: scale(1)
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Hacktoberfest 2025 — Guide</title>
+    <link rel="icon" type="image/png" href="assets/Favicon.png">
+
+    <!-- OpenGraph / Social preview -->
+    <meta
+      property="og:title"
+      content="How to Participate in Hacktoberfest 2025 — Guide"
+    />
+    <meta
+      property="og:description"
+      content="Step-by-step guide, beginner repos, best practices and resources for Hacktoberfest 2025."
+    />
+    <meta property="og:image" content="assets/og-image.svg" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="stylesheet" href="assets/style.css" />
+
+    <!-- Highlight.js and Marked (CDN) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/5.1.1/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+
+    <style>
+      :root {
+        --hf-orange: #ff8a65;
+        --hf-purple: #9b59b6;
+        --hf-dark: #183153;
+        --hf-light: #ffffff;
+        --spacing-sm: 0.5rem;
+        --spacing-md: 1rem;
+        --spacing-lg: 2rem;
       }
 
-      50% {
-        transform: scale(1.08)
-      }
-    }
-
-    .site::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 0;
-      height: 4px;
-      background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--on-accent) 40%, transparent), transparent);
-      z-index: 1;
-      animation: shine 1.8s infinite
-    }
-
-    @keyframes shine {
-      0% {
-        background-position: -200% 0
+      .logo-blob {
+        display: inline-block;
+        width: 2em;
+        height: 2em;
+        margin-right: 0.5em;
+        background: linear-gradient(135deg, var(--hf-orange), var(--hf-purple));
+        border-radius: 50%;
+        animation: blob 2.5s infinite ease-in-out;
+        box-shadow: 0 0 15px rgba(255, 138, 101, 0.3);
       }
 
-      100% {
-        background-position: 200% 0
-      }
-    }
-
-    @keyframes float {
-
-      0%,
-      100% {
-        transform: translateY(-50%) scale(1)
+      @keyframes blob {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
       }
 
-      50% {
-        transform: translateY(-50%) scale(1.04)
-      }
-    }
-
-    /* Utilities */
-    .fade-in {
-      animation: fadeIn .8s ease-out forwards
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px)
+      .brand {
+        display: flex;
+        align-items: center;
       }
 
-      to {
-        opacity: 1;
-        transform: none
-      }
-    }
-
-    .toc-item a {
-      transition: all .28s ease
-    }
-
-    .toc-item a:hover {
-      transform: translateX(8px);
-      color: var(--accent-orange)
-    }
-
-    .toc-item a.active {
-      color: var(--accent-orange);
-      font-weight: 600;
-      padding-left: 1rem;
-      border-left: 3px solid var(--accent-orange)
-    }
-
-    mark {
-      background: linear-gradient(120deg, var(--accent-orange), var(--accent-purple));
-      color: var(--on-accent);
-      padding: 0.1em 0.3em;
-      border-radius: 3px
-    }
-
-    /* Show/hide sidebar button */
-    .show-sidebar-btn {
-      position: fixed;
-      top: 50%;
-      left: 20px;
-      transform: translateY(-50%);
-      background: linear-gradient(135deg, var(--accent-orange), var(--accent-purple));
-      border: none;
-      color: var(--on-accent);
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      box-shadow: var(--soft-shadow);
-      z-index: 1001
-    }
-
-    .show-sidebar-btn.visible {
-      display: flex
-    }
-
-    .show-sidebar-btn::before {
-      content: '→';
-      transition: transform .25s
-    }
-
-    .show-sidebar-btn:hover {
-      transform: translateY(-50%) scale(1.05)
-    }
-
-    /* ---------- Responsiveness ---------- */
-    @media (max-width: 1024px) {
-      .sidebar {
-        position: fixed;
-        left: 8px;
-        top: 76px;
-        z-index: 1002;
-        height: calc(100vh - 96px);
-        transform: translateX(0);
-        transition: transform .28s
-      }
-
-      .content {
-        padding: var(--spacing-md)
-      }
-    }
-
-    @media (max-width: 768px) {
-      .app-shell {
-        flex-direction: column
-      }
-
-      .sidebar {
-        width: 100%;
-        height: auto;
+      /* Subtle shadow animation for header */
+      .site {
         position: relative;
-        order: 2
+      }
+
+      .site::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(
+          to right,
+          transparent,
+          rgba(255, 255, 255, 0.3),
+          transparent
+        );
+        z-index: 1;
+        animation: shine 1.5s infinite;
+      }
+
+      @keyframes shine {
+        0% {
+          background-position: -200% 0;
+        }
+        100% {
+          background-position: 200% 0;
+        }
+      }
+
+      .bg-decor {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 0;
+        pointer-events: none;
+        overflow: hidden;
+      }
+
+      .bg-decor svg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0.1;
+        animation: float 6s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translate(-50%, -50%) scale(1);
+        }
+        50% {
+          transform: translate(-50%, -50%) scale(1.05);
+        }
+      }
+
+      /* Top navigation bar styles */
+      .topnav {
+        background: linear-gradient(135deg, var(--hf-dark), var(--hf-purple));
+        color: var(--hf-light);
+        padding: var(--spacing-md) var(--spacing-lg);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .topnav-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 1.5rem;
+      }
+
+      .nav-links a {
+        position: relative;
         padding: 0.5rem 1rem;
         color: var(--hf-light);
         text-decoration: none;
@@ -751,68 +192,76 @@ body.light-mode .footer-socials a:hover {
         box-shadow: 0 4px 15px rgba(155, 89, 182, 0.3);
       }
 
-      .topnav {
-        padding: 0.6rem 1rem
+      .nav-cta:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(155, 89, 182, 0.4);
       }
 
-      .show-sidebar-btn {
-        display: flex
+      /* Content layout and search enhancements */
+      .content {
+        padding: var(--spacing-lg);
+        background: linear-gradient(
+          135deg,
+          rgba(155, 89, 182, 0.1),
+          rgba(255, 138, 101, 0.1)
+        );
+        min-height: calc(100vh - 60px);
       }
 
       .content-inner {
-        padding: 1rem
+        max-width: 1200px;
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0.02);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        padding: var(--spacing-lg);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
       }
 
+      .search-wrapper {
+        position: relative;
+        max-width: 600px;
+        margin: var(--spacing-md) auto;
+      }
+
+      .search-wrapper input {
+        width: 100%;
+        padding: 1rem 3rem 1rem 1.5rem;
+        background: rgba(255, 255, 255, 0.1);
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        border-radius: 50px;
+        color: var(--hf-light);
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+      }
+
+      .search-wrapper input:focus {
+        background: rgba(255, 255, 255, 0.15);
+        border-color: var(--hf-purple);
+        box-shadow: 0 0 25px rgba(155, 89, 182, 0.2);
+        outline: none;
+      }
+
+      .search-ico {
+        position: absolute;
+        right: 1.2rem;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--hf-light);
+        opacity: 0.7;
+        pointer-events: none;
+      }
+
+      /* Improved readability */
       #article {
-        font-size: 15px
+        font-size: 16px;
+        line-height: 1.8;
+        color: var(--hf-light);
+        max-width: 800px;
+        margin: 0 auto;
       }
 
       #article h1 {
-        font-size: 1.9rem
-      }
-    }
-
-    /* ---------- Small helpers for light-mode tweaks ---------- */
-    body.light-mode .nav-links a {
-      color: var(--text)
-    }
-
-    body.light-mode .sidebar {
-      box-shadow: var(--soft-shadow)
-    }
-
-    body.light-mode #article p {
-      color: var(--muted)
-    }
-
-    /* End of file */
-  </style>
-</head>
-
-<body>
-  <header class="topnav" role="banner">
-    <div class="topnav-inner">
-      <a class="brand" href="./" title="Home"><span class="logo-blob" aria-hidden="true"></span><span
-          class="brand-text">Hacktoberfest 2025</span></a>
-
-      <nav class="nav-links" aria-label="Main navigation">
-        <a href="#what-is-hacktoberfest">Overview</a>
-        <a href="#my-beginners-friendly-repos-to-contribute">Projects</a>
-        <a href="#how-to-participate">How To</a>
-        <a href="#resources">Resources</a>
-      </nav>
-
-      <div class="nav-actions">
-        <button id="nav-search-btn" class="nav-btn" title="Search (/)" aria-label="Open search">
-          🔎
-        </button>
-        <a class="nav-cta" href="https://github.com/avinash201199/Hacktoberfest2025" target="_blank"
-          rel="noopener">GitHub</a>
-        <button id="hamburger" class="nav-btn" aria-label="Toggle sidebar">
-          ☰
-        </button>
-        <button id="theme-toggle-btn" class="nav-btn" title="Toggle theme" aria-label="Toggle theme">
-        </button>
         font-size: 2.5rem;
         margin: 2rem 0 1.5rem;
         color: var(--hf-orange);
@@ -1346,487 +795,417 @@ body.light-mode .footer-socials a:hover {
           </button>
         </div>
       </div>
+    </header>
+
+    <div class="site">
+      <aside class="sidebar" id="sidebar" aria-label="Table of contents">
+        <div class="brand">
+          <a href="./" title="Home"
+            ><span class="logo-blob" aria-hidden="true"></span
+            ><span class="brand-text">Hacktoberfest 2025</span></a
+          >
+        </div>
+
+        <div class="search-wrapper">
+          <input
+            id="search"
+            placeholder="Search headings & content..."
+            aria-label="Search README contents"
+          />
+          <svg class="search-ico" viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79L20 21.5 21.5 20l-6-6z"
+            ></path>
+          </svg>
+        </div>
+
+        <nav id="toc" class="toc">
+          <div class="toc-empty">Loading contents…</div>
+        </nav>
+
+        <button
+          id="toc-toggle"
+          class="toc-toggle"
+          aria-expanded="true"
+          aria-controls="toc"
+        >
+          Hide
+        </button>
+
+        <footer class="sidebar-footer">
+          <a class="btn" href="README.md">View raw README</a>
+        </footer>
+      </aside>
+
+      <!-- Show sidebar button (appears when sidebar is collapsed) -->
+      <button 
+        id="show-sidebar-btn" 
+        class="show-sidebar-btn" 
+        aria-label="Show sidebar"
+        title="Show sidebar"
+      ></button>
+
+      <main class="content" id="content" role="main">
+        <div class="bg-decor" aria-hidden="true">
+          <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop
+                  offset="0%"
+                  style="stop-color: var(--hf-purple); stop-opacity: 0.1"
+                />
+                <stop
+                  offset="100%"
+                  style="stop-color: var(--hf-orange); stop-opacity: 0.1"
+                />
+              </linearGradient>
+            </defs>
+            <path d="M0,0 L100,0 L100,100 L0,100 Z" fill="url(#grad)" />
+          </svg>
+        </div>
+        <div class="content-inner fade-in">
+          <article id="article">
+            <h1 class="loading-title">Loading README.md…</h1>
+          </article>
+        </div>
+      </main>
     </div>
-  </header>
 
-  <div class="site">
-    <aside class="sidebar" id="sidebar" aria-label="Table of contents">
-      <div class="brand">
-        <a href="./" title="Home"><span class="logo-blob" aria-hidden="true"></span><span
-            class="brand-text">Hacktoberfest 2025</span></a>
-      </div>
-
-      <div class="search-wrapper">
-        <input id="search" placeholder="Search headings & content..." aria-label="Search README contents" />
-        <svg class="search-ico" viewBox="0 0 24 24" aria-hidden="true">
-          <path
-            d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79L20 21.5 21.5 20l-6-6z">
-          </path>
-        </svg>
-      </div>
-
-      <nav id="toc" class="toc">
-        <div class="toc-empty">Loading contents…</div>
-      </nav>
-
-      <button id="toc-toggle" class="toc-toggle" aria-expanded="true" aria-controls="toc">
-        Hide
-      </button>
-
-      <footer class="sidebar-footer">
-        <a class="btn" href="README.md">View raw README</a>
-      </footer>
-    </aside>
-
-    <!-- Show sidebar button (appears when sidebar is collapsed) -->
-    <button id="show-sidebar-btn" class="show-sidebar-btn" aria-label="Show sidebar" title="Show sidebar"></button>
-
-    <main class="content" id="content" role="main">
-      <div class="bg-decor" aria-hidden="true">
-        <svg viewBox="0 0 100 100" preserveAspectRatio="none">
-          <defs>
-            <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" style="stop-color: var(--hf-purple); stop-opacity: 0.1" />
-              <stop offset="100%" style="stop-color: var(--hf-orange); stop-opacity: 0.1" />
-            </linearGradient>
-          </defs>
-          <path d="M0,0 L100,0 L100,100 L0,100 Z" fill="url(#grad)" />
-        </svg>
-      </div>
-      <div class="content-inner fade-in">
-        <article id="article">
-          <h1 class="loading-title">Loading README.md…</h1>
-        </article>
-      </div>
-    </main>
-  </div>
-
-  <noscript>
-    <div style="
+    <noscript>
+      <div
+        style="
           padding: 18px;
           max-width: 720px;
           margin: 18px auto;
           background: #081226;
           border-radius: 10px;
           color: #9fb1c7;
-        ">
-      JavaScript is required to render this site preview. Open
-      <a href="README.md">README.md</a> directly to view the content.
-    </div>
-  </noscript>
+        "
+      >
+        JavaScript is required to render this site preview. Open
+        <a href="README.md">README.md</a> directly to view the content.
+      </div>
+    </noscript>
 
-  <script>
+    <script>
+      // Utility: smooth-scrolling behavior
+      document.documentElement.style.scrollBehavior = "smooth";
 
-    // --- START: Dark/Light Mode JavaScript ---
+      // Fetch and render README.md
+      async function renderReadme() {
+        try {
+          const res = await fetch("README.md");
+          if (!res.ok) throw new Error("README.md not found");
+          const md = await res.text();
 
-    const themeToggleBtn = document.getElementById('theme-toggle-btn');
-    const body = document.body;
-    const moonIcon = '🌙';
-    const sunIcon = '☀️';
-
-    function applyTheme(theme) {
-      if (theme === 'light') {
-        body.classList.add('light-mode');
-        themeToggleBtn.innerHTML = sunIcon;
-        localStorage.setItem('theme', 'light');
-      } else {
-        body.classList.remove('light-mode');
-        themeToggleBtn.innerHTML = moonIcon;
-        localStorage.setItem('theme', 'dark');
-      }
-    }
-
-    themeToggleBtn.addEventListener('click', () => {
-      const currentTheme = localStorage.getItem('theme') || 'dark';
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      applyTheme(newTheme);
-    });
-
-    document.addEventListener('DOMContentLoaded', () => {
-      const savedTheme = localStorage.getItem('theme') || 'dark'; // Default dark mode hai
-      applyTheme(savedTheme);
-    });
-
-    // --- END: Dark/Light Mode JavaScript ---
-    // Utility: smooth-scrolling behavior
-    document.documentElement.style.scrollBehavior = "smooth";
-
-    // Fetch and render README.md
-    async function renderReadme() {
-      try {
-        const res = await fetch("README.md");
-        if (!res.ok) throw new Error("README.md not found");
-        const md = await res.text();
-
-        // Configure marked and highlight
-        marked.setOptions({
-          headerIds: true,
-          mangle: false,
-          highlight: function (code, lang) {
-            try {
-              return hljs.highlightAuto(code, lang ? [lang] : undefined)
-                .value;
-            } catch (e) {
-              return hljs.highlightAuto(code).value;
-            }
-          },
-        });
-
-        const html = marked.parse(md);
-        const article = document.getElementById("article");
-        article.innerHTML = html;
-
-        // Add anchors to headings and small animated anchor links
-        document
-          .querySelectorAll(
-            "#article h1, #article h2, #article h3, #article h4, #article h5, #article h6"
-          )
-          .forEach((h) => {
-            const id =
-              h.id ||
-              h.textContent
-                .trim()
-                .toLowerCase()
-                .replace(/[^a-z0-9]+/g, "-");
-            h.id = id;
-            const a = document.createElement("a");
-            a.className = "heading-anchor";
-            a.href = "#" + id;
-            a.title = "Link to " + h.textContent.trim();
-            a.innerHTML = "¶";
-            h.appendChild(a);
-          });
-
-        buildTOC();
-        initSearch(md);
-        initActiveObserver();
-        hljs.highlightAll();
-      } catch (err) {
-        document.getElementById("article").innerHTML =
-          '<div class="error-panel"><h2>Unable to load README</h2><p>' +
-          err.message +
-          '</p><p><a href="README.md">Open raw README.md</a></p></div>';
-      }
-    }
-
-    // Build TOC from headings
-    function buildTOC() {
-      const toc = document.getElementById("toc");
-      toc.innerHTML = "";
-      const headings = Array.from(
-        document.querySelectorAll("#article h1, #article h2, #article h3")
-      );
-      if (headings.length === 0) {
-        toc.innerHTML = '<div class="toc-empty">No headings found</div>';
-        return;
-      }
-
-      const list = document.createElement("ul");
-      list.className = "toc-list";
-
-      headings.forEach((h) => {
-        const li = document.createElement("li");
-        li.className = "toc-item toc-" + h.tagName.toLowerCase();
-        const a = document.createElement("a");
-        a.href = "#" + h.id;
-        a.textContent = h.textContent.trim();
-        a.addEventListener("click", (e) => {
-          e.preventDefault();
-          const target = document.getElementById(h.id);
-          if (target)
-            target.scrollIntoView({ behavior: "smooth", block: "start" });
-          history.replaceState(null, "", "#" + h.id);
-        });
-        li.appendChild(a);
-        list.appendChild(li);
-      });
-
-      toc.appendChild(list);
-
-      // Add small animated reveal for TOC items
-      const tocLinks = Array.from(document.querySelectorAll(".toc-item"));
-      tocLinks.forEach((li, i) => {
-        li.style.opacity = 0;
-        li.style.transform = "translateX(-6px)";
-        setTimeout(() => {
-          li.style.transition =
-            "opacity .36s ease, transform .36s cubic-bezier(.2,.9,.2,1)";
-          li.style.opacity = 1;
-          li.style.transform = "none";
-        }, 120 + i * 40);
-      });
-    }
-
-    // Search: client-side simple search across headings and content
-    function initSearch(mdText) {
-      const input = document.getElementById("search");
-      const toc = document.getElementById("toc");
-      const content = document.getElementById("article");
-      let searchTimeout;
-
-      input.addEventListener("input", () => {
-        clearTimeout(searchTimeout);
-        searchTimeout = setTimeout(() => {
-          const q = input.value.trim().toLowerCase();
-          const items = Array.from(document.querySelectorAll(".toc-item"));
-
-          // Clear previous highlights
-          document.querySelectorAll("#article mark").forEach((m) => {
-            m.outerHTML = m.innerHTML;
-          });
-
-          if (!q) {
-            items.forEach((i) => i.classList.remove("dim"));
-            document
-              .querySelectorAll("#article mark")
-              .forEach((m) => (m.outerHTML = m.innerHTML));
-            return;
-          }
-
-          // Highlight matches in article text
-          const regex = new RegExp(
-            "(" + q.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + ")",
-            "ig"
-          );
-          const walker = document.createTreeWalker(
-            document.getElementById("article"),
-            NodeFilter.SHOW_TEXT
-          );
-          const textNodes = [];
-          while (walker.nextNode()) textNodes.push(walker.currentNode);
-
-          textNodes.forEach((node) => {
-            if (
-              !node.parentElement.matches("code, pre, a, .heading-anchor")
-            ) {
-              const v = node.nodeValue;
-              if (v.match(regex)) {
-                const span = document.createElement("span");
-                span.innerHTML = v.replace(regex, "<mark>$1</mark>");
-                node.parentNode.replaceChild(span, node);
+          // Configure marked and highlight
+          marked.setOptions({
+            headerIds: true,
+            mangle: false,
+            highlight: function (code, lang) {
+              try {
+                return hljs.highlightAuto(code, lang ? [lang] : undefined)
+                  .value;
+              } catch (e) {
+                return hljs.highlightAuto(code).value;
               }
-            }
+            },
           });
 
-          // Dim non-matching TOC items
-          items.forEach((i) => {
-            const text = i.textContent.toLowerCase();
-            if (text.includes(q)) i.classList.remove("dim");
-            else i.classList.add("dim");
-          });
-        }, 300); // Debounce search for better performance
-      });
+          const html = marked.parse(md);
+          const article = document.getElementById("article");
+          article.innerHTML = html;
 
-      // Allow pressing Enter to focus first match
-      input.addEventListener("keydown", (e) => {
-        if (e.key === "Enter") {
-          const first = document.querySelector(".toc-item:not(.dim) a");
-          if (first) first.click();
+          // Add anchors to headings and small animated anchor links
+          document
+            .querySelectorAll(
+              "#article h1, #article h2, #article h3, #article h4, #article h5, #article h6"
+            )
+            .forEach((h) => {
+              const id =
+                h.id ||
+                h.textContent
+                  .trim()
+                  .toLowerCase()
+                  .replace(/[^a-z0-9]+/g, "-");
+              h.id = id;
+              const a = document.createElement("a");
+              a.className = "heading-anchor";
+              a.href = "#" + id;
+              a.title = "Link to " + h.textContent.trim();
+              a.innerHTML = "¶";
+              h.appendChild(a);
+            });
+
+          buildTOC();
+          initSearch(md);
+          initActiveObserver();
+          hljs.highlightAll();
+        } catch (err) {
+          document.getElementById("article").innerHTML =
+            '<div class="error-panel"><h2>Unable to load README</h2><p>' +
+            err.message +
+            '</p><p><a href="README.md">Open raw README.md</a></p></div>';
         }
-      });
-    }
+      }
 
-    // Highlight active heading via IntersectionObserver
-    function initActiveObserver() {
-      const options = {
-        root: null,
-        rootMargin: "0px 0px -60% 0px",
-        threshold: 0,
-      };
-      const obs = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          const id = entry.target.id;
-          const tocLink = document.querySelector(
-            '.toc-item a[href="#' + id + '"]'
-          );
-          if (entry.isIntersecting) {
-            document
-              .querySelectorAll(".toc-item a.active")
-              .forEach((a) => a.classList.remove("active"));
-            if (tocLink) tocLink.classList.add("active");
+      // Build TOC from headings
+      function buildTOC() {
+        const toc = document.getElementById("toc");
+        toc.innerHTML = "";
+        const headings = Array.from(
+          document.querySelectorAll("#article h1, #article h2, #article h3")
+        );
+        if (headings.length === 0) {
+          toc.innerHTML = '<div class="toc-empty">No headings found</div>';
+          return;
+        }
+
+        const list = document.createElement("ul");
+        list.className = "toc-list";
+
+        headings.forEach((h) => {
+          const li = document.createElement("li");
+          li.className = "toc-item toc-" + h.tagName.toLowerCase();
+          const a = document.createElement("a");
+          a.href = "#" + h.id;
+          a.textContent = h.textContent.trim();
+          a.addEventListener("click", (e) => {
+            e.preventDefault();
+            const target = document.getElementById(h.id);
+            if (target)
+              target.scrollIntoView({ behavior: "smooth", block: "start" });
+            history.replaceState(null, "", "#" + h.id);
+          });
+          li.appendChild(a);
+          list.appendChild(li);
+        });
+
+        toc.appendChild(list);
+
+        // Add small animated reveal for TOC items
+        const tocLinks = Array.from(document.querySelectorAll(".toc-item"));
+        tocLinks.forEach((li, i) => {
+          li.style.opacity = 0;
+          li.style.transform = "translateX(-6px)";
+          setTimeout(() => {
+            li.style.transition =
+              "opacity .36s ease, transform .36s cubic-bezier(.2,.9,.2,1)";
+            li.style.opacity = 1;
+            li.style.transform = "none";
+          }, 120 + i * 40);
+        });
+      }
+
+      // Search: client-side simple search across headings and content
+      function initSearch(mdText) {
+        const input = document.getElementById("search");
+        const toc = document.getElementById("toc");
+        const content = document.getElementById("article");
+        let searchTimeout;
+
+        input.addEventListener("input", () => {
+          clearTimeout(searchTimeout);
+          searchTimeout = setTimeout(() => {
+            const q = input.value.trim().toLowerCase();
+            const items = Array.from(document.querySelectorAll(".toc-item"));
+
+            // Clear previous highlights
+            document.querySelectorAll("#article mark").forEach((m) => {
+              m.outerHTML = m.innerHTML;
+            });
+
+            if (!q) {
+              items.forEach((i) => i.classList.remove("dim"));
+              document
+                .querySelectorAll("#article mark")
+                .forEach((m) => (m.outerHTML = m.innerHTML));
+              return;
+            }
+
+            // Highlight matches in article text
+            const regex = new RegExp(
+              "(" + q.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + ")",
+              "ig"
+            );
+            const walker = document.createTreeWalker(
+              document.getElementById("article"),
+              NodeFilter.SHOW_TEXT
+            );
+            const textNodes = [];
+            while (walker.nextNode()) textNodes.push(walker.currentNode);
+
+            textNodes.forEach((node) => {
+              if (
+                !node.parentElement.matches("code, pre, a, .heading-anchor")
+              ) {
+                const v = node.nodeValue;
+                if (v.match(regex)) {
+                  const span = document.createElement("span");
+                  span.innerHTML = v.replace(regex, "<mark>$1</mark>");
+                  node.parentNode.replaceChild(span, node);
+                }
+              }
+            });
+
+            // Dim non-matching TOC items
+            items.forEach((i) => {
+              const text = i.textContent.toLowerCase();
+              if (text.includes(q)) i.classList.remove("dim");
+              else i.classList.add("dim");
+            });
+          }, 300); // Debounce search for better performance
+        });
+
+        // Allow pressing Enter to focus first match
+        input.addEventListener("keydown", (e) => {
+          if (e.key === "Enter") {
+            const first = document.querySelector(".toc-item:not(.dim) a");
+            if (first) first.click();
           }
         });
-      }, options);
-
-      document
-        .querySelectorAll("#article h1, #article h2, #article h3")
-        .forEach((h) => obs.observe(h));
-    }
-
-    // TOC toggle for small screens
-    document.getElementById("toc-toggle").addEventListener("click", (e) => {
-      const sidebar = document.getElementById("sidebar");
-      const showBtn = document.getElementById("show-sidebar-btn");
-      const expanded = sidebar.classList.toggle("collapsed");
-      e.target.textContent = expanded ? "Show" : "Hide";
-      e.target.setAttribute("aria-expanded", String(!expanded));
-
-      // Show/hide the arrow button
-      if (expanded) {
-        showBtn.classList.add("visible");
-      } else {
-        showBtn.classList.remove("visible");
       }
-    });
 
-    // Show sidebar button functionality
-    document.getElementById("show-sidebar-btn").addEventListener("click", () => {
-      const sidebar = document.getElementById("sidebar");
-      const showBtn = document.getElementById("show-sidebar-btn");
-      const tocToggle = document.getElementById("toc-toggle");
+      // Highlight active heading via IntersectionObserver
+      function initActiveObserver() {
+        const options = {
+          root: null,
+          rootMargin: "0px 0px -60% 0px",
+          threshold: 0,
+        };
+        const obs = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            const id = entry.target.id;
+            const tocLink = document.querySelector(
+              '.toc-item a[href="#' + id + '"]'
+            );
+            if (entry.isIntersecting) {
+              document
+                .querySelectorAll(".toc-item a.active")
+                .forEach((a) => a.classList.remove("active"));
+              if (tocLink) tocLink.classList.add("active");
+            }
+          });
+        }, options);
 
-      sidebar.classList.remove("collapsed");
-      showBtn.classList.remove("visible");
-      tocToggle.textContent = "Hide";
-      tocToggle.setAttribute("aria-expanded", "true");
-    });
+        document
+          .querySelectorAll("#article h1, #article h2, #article h3")
+          .forEach((h) => obs.observe(h));
+      }
 
-    // Navbar interactions: focus search and toggle sidebar
-    document
-      .getElementById("nav-search-btn")
-      .addEventListener("click", () => {
-        const s = document.getElementById("search");
-        if (s) {
-          s.focus();
-          s.scrollIntoView({ behavior: "smooth", block: "center" });
+      // TOC toggle for small screens
+      document.getElementById("toc-toggle").addEventListener("click", (e) => {
+        const sidebar = document.getElementById("sidebar");
+        const showBtn = document.getElementById("show-sidebar-btn");
+        const expanded = sidebar.classList.toggle("collapsed");
+        e.target.textContent = expanded ? "Show" : "Hide";
+        e.target.setAttribute("aria-expanded", String(!expanded));
+        
+        // Show/hide the arrow button
+        if (expanded) {
+          showBtn.classList.add("visible");
+        } else {
+          showBtn.classList.remove("visible");
         }
       });
-    document.getElementById("hamburger").addEventListener("click", () => {
-      const sidebar = document.getElementById("sidebar");
-      const showBtn = document.getElementById("show-sidebar-btn");
-      const tocToggle = document.getElementById("toc-toggle");
-      const expanded = sidebar.classList.toggle("collapsed");
 
-      // Update show button visibility
-      if (expanded) {
-        showBtn.classList.add("visible");
-      } else {
-        showBtn.classList.remove("visible");
-      }
-
-      // Update TOC toggle text
-      tocToggle.textContent = expanded ? "Show" : "Hide";
-      tocToggle.setAttribute("aria-expanded", String(!expanded));
-    });
-
-    // Auto-collapse sidebar on mobile and handle window resize
-    function handleSidebarResponsiveness() {
-      const sidebar = document.getElementById("sidebar");
-      const showBtn = document.getElementById("show-sidebar-btn");
-      const tocToggle = document.getElementById("toc-toggle");
-      const isMobile = window.innerWidth <= 900;
-
-      if (isMobile) {
-        sidebar.classList.add("collapsed");
-        showBtn.classList.add("visible");
-        tocToggle.textContent = "Show";
-        tocToggle.setAttribute("aria-expanded", "false");
-      } else {
+      // Show sidebar button functionality
+      document.getElementById("show-sidebar-btn").addEventListener("click", () => {
+        const sidebar = document.getElementById("sidebar");
+        const showBtn = document.getElementById("show-sidebar-btn");
+        const tocToggle = document.getElementById("toc-toggle");
+        
         sidebar.classList.remove("collapsed");
         showBtn.classList.remove("visible");
         tocToggle.textContent = "Hide";
         tocToggle.setAttribute("aria-expanded", "true");
-      }
-    }
+      });
 
-    // Initial check and window resize listener
-    handleSidebarResponsiveness();
-    window.addEventListener("resize", handleSidebarResponsiveness);
-
-    // Close sidebar when clicking outside on mobile
-    document.addEventListener("click", (e) => {
-      const sidebar = document.getElementById("sidebar");
-      const hamburger = document.getElementById("hamburger");
-      const showBtn = document.getElementById("show-sidebar-btn");
-      const tocToggle = document.getElementById("toc-toggle");
-      const isMobile = window.innerWidth <= 900;
-
-      if (
-        isMobile &&
-        !sidebar.contains(e.target) &&
-        !hamburger.contains(e.target) &&
-        !showBtn.contains(e.target) &&
-        !sidebar.classList.contains("collapsed")
-      ) {
-        sidebar.classList.add("collapsed");
-        showBtn.classList.add("visible");
-        tocToggle.textContent = "Show";
-        tocToggle.setAttribute("aria-expanded", "false");
-      }
-    });
-
-    // keyboard shortcut: press '/' to focus search
-    document.addEventListener("keydown", (e) => {
-      if (
-        e.key === "/" &&
-        document.activeElement.tagName !== "INPUT" &&
-        document.activeElement.tagName !== "TEXTAREA"
-      ) {
-        e.preventDefault();
-        document.getElementById("search").focus();
-      }
-    });
-
-    // Smooth scroll for nav links
-    document.querySelectorAll(".nav-links a").forEach((link) => {
-      link.addEventListener("click", (e) => {
-        e.preventDefault();
-        const id = link.getAttribute("href").slice(1);
-        let element = document.getElementById(id);
-
-        // If element not found, try to find it by searching through headings
-        if (!element) {
-          const headings = document.querySelectorAll(
-            "#article h1, #article h2, #article h3, #article h4, #article h5, #article h6"
-          );
-          for (const heading of headings) {
-            const headingText = heading.textContent.trim().toLowerCase();
-            const cleanId = headingText
-              .replace(/[^a-z0-9]+/g, "-")
-              .replace(/^-+|-+$/g, "");
-            if (cleanId === id || heading.id === id) {
-              element = heading;
-              heading.id = id; // Ensure the ID is set correctly
-              break;
-            }
+      // Navbar interactions: focus search and toggle sidebar
+      document
+        .getElementById("nav-search-btn")
+        .addEventListener("click", () => {
+          const s = document.getElementById("search");
+          if (s) {
+            s.focus();
+            s.scrollIntoView({ behavior: "smooth", block: "center" });
           }
-        }
-
-        if (element) {
-          element.scrollIntoView({ behavior: "smooth", block: "start" });
-          setTimeout(() => {
-            history.pushState(null, "", "#" + id);
-            element.classList.add("highlight-section");
-            setTimeout(
-              () => element.classList.remove("highlight-section"),
-              1000
-            );
-          }, 100);
+        });
+      document.getElementById("hamburger").addEventListener("click", () => {
+        const sidebar = document.getElementById("sidebar");
+        const showBtn = document.getElementById("show-sidebar-btn");
+        const tocToggle = document.getElementById("toc-toggle");
+        const expanded = sidebar.classList.toggle("collapsed");
+        
+        // Update show button visibility
+        if (expanded) {
+          showBtn.classList.add("visible");
         } else {
-          console.warn("Element not found for ID:", id);
-          // Fallback: just update the URL
-          history.pushState(null, "", "#" + id);
+          showBtn.classList.remove("visible");
+        }
+        
+        // Update TOC toggle text
+        tocToggle.textContent = expanded ? "Show" : "Hide";
+        tocToggle.setAttribute("aria-expanded", String(!expanded));
+      });
+
+      // Auto-collapse sidebar on mobile and handle window resize
+      function handleSidebarResponsiveness() {
+        const sidebar = document.getElementById("sidebar");
+        const showBtn = document.getElementById("show-sidebar-btn");
+        const tocToggle = document.getElementById("toc-toggle");
+        const isMobile = window.innerWidth <= 900;
+
+        if (isMobile) {
+          sidebar.classList.add("collapsed");
+          showBtn.classList.add("visible");
+          tocToggle.textContent = "Show";
+          tocToggle.setAttribute("aria-expanded", "false");
+        } else {
+          sidebar.classList.remove("collapsed");
+          showBtn.classList.remove("visible");
+          tocToggle.textContent = "Hide";
+          tocToggle.setAttribute("aria-expanded", "true");
+        }
+      }
+
+      // Initial check and window resize listener
+      handleSidebarResponsiveness();
+      window.addEventListener("resize", handleSidebarResponsiveness);
+
+      // Close sidebar when clicking outside on mobile
+      document.addEventListener("click", (e) => {
+        const sidebar = document.getElementById("sidebar");
+        const hamburger = document.getElementById("hamburger");
+        const showBtn = document.getElementById("show-sidebar-btn");
+        const tocToggle = document.getElementById("toc-toggle");
+        const isMobile = window.innerWidth <= 900;
+
+        if (
+          isMobile &&
+          !sidebar.contains(e.target) &&
+          !hamburger.contains(e.target) &&
+          !showBtn.contains(e.target) &&
+          !sidebar.classList.contains("collapsed")
+        ) {
+          sidebar.classList.add("collapsed");
+          showBtn.classList.add("visible");
+          tocToggle.textContent = "Show";
+          tocToggle.setAttribute("aria-expanded", "false");
         }
       });
-    });
 
-    // Enhanced renderReadme function
-    async function renderReadme() {
-      try {
-        const res = await fetch("README.md");
-        if (!res.ok) throw new Error("README.md not found");
-        const md = await res.text();
-
-        // Configure marked and highlight
-        marked.setOptions({
-          headerIds: true,
-          mangle: false,
-          highlight: function (code, lang) {
-            try {
-              return hljs.highlightAuto(code, lang ? [lang] : undefined)
-                .value;
-            } catch (e) {
-              return hljs.highlightAuto(code).value;
+      // keyboard shortcut: press '/' to focus search
+      document.addEventListener("keydown", (e) => {
+        if (
+          e.key === "/" &&
+          document.activeElement.tagName !== "INPUT" &&
+          document.activeElement.tagName !== "TEXTAREA"
+        ) {
+          e.preventDefault();
+          document.getElementById("search").focus();
+        }
+      });
 
       // Track the currently loaded markdown file
       let currentMarkdownFile = "README.md";
@@ -1891,33 +1270,26 @@ body.light-mode .footer-socials a:hover {
                 break;
               }
             }
-          },
+          }
+
+          if (element) {
+            element.scrollIntoView({ behavior: "smooth", block: "start" });
+            setTimeout(() => {
+              history.pushState(null, "", "#" + id);
+              element.classList.add("highlight-section");
+              setTimeout(
+                () => element.classList.remove("highlight-section"),
+                1000
+              );
+            }, 100);
+          } else {
+            console.warn("Element not found for ID:", id);
+            // Fallback: just update the URL
+            history.pushState(null, "", "#" + id);
+          }
         });
+      });
 
-        const html = marked.parse(md);
-        const article = document.getElementById("article");
-        article.innerHTML = html;
-
-        // Add anchors to headings and small animated anchor links
-        document
-          .querySelectorAll(
-            "#article h1, #article h2, #article h3, #article h4, #article h5, #article h6"
-          )
-          .forEach((h) => {
-            const id =
-              h.id ||
-              h.textContent
-                .trim()
-                .toLowerCase()
-                .replace(/[^a-z0-9]+/g, "-");
-            h.id = id;
-            const a = document.createElement("a");
-            a.className = "heading-anchor";
-            a.href = "#" + id;
-            a.title = "Link to " + h.textContent.trim();
-            a.innerHTML = "¶";
-            h.appendChild(a);
-          });
       // Function to load any markdown file
       async function loadMarkdownFile(filename, scrollToId = null) {
         try {
@@ -2096,37 +1468,14 @@ body.light-mode .footer-socials a:hover {
       });
     </script>
 
-        buildTOC();
-        initSearch(md);
-        initActiveObserver();
-        hljs.highlightAll();
-      } catch (err) {
-        document.getElementById("article").innerHTML =
-          '<div class="error-panel"><h2>Unable to load README</h2><p>' +
-          err.message +
-          '</p><p><a href="README.md">Open raw README.md</a></p></div>';
-      }
-    }
+    <!-- Footer Section  -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-col footer-brand">
+          <span class="logo-blob" aria-hidden="true"></span>
+          <span class="footer-title">Hacktoberfest 2025</span>
+        </div>
 
-    renderReadme();
-  </script>
-
-  <!-- Footer Section  -->
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-col footer-brand">
-        <span class="logo-blob" aria-hidden="true"></span>
-        <span class="footer-title">Hacktoberfest 2025</span>
-      </div>
-
-      <div class="footer-col">
-        <h4>Quick Links</h4>
-        <nav class="footer-links" aria-label="Footer navigation">
-          <a href="#what-is-hacktoberfest">Overview</a>
-          <a href="https://github.com/avinash201199/Hacktoberfest2025" target="_blank" rel="noopener">Projects</a>
-          <a href="#resources">Resources</a>
-        </nav>
-      </div>
         <div class="footer-col">
           <h4>Quick Links</h4>
           <nav class="footer-links" aria-label="Footer navigation">
@@ -2136,14 +1485,25 @@ body.light-mode .footer-socials a:hover {
           </nav>
         </div>
 
-      <div class="footer-col">
-        <h4>Stay Connected</h4>
-        <div class="footer-socials">
-          <a href="https://github.com/avinash201199/Hacktoberfest2025" target="_blank" rel="noopener"
-            aria-label="GitHub">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"
-              style="margin-right: 6px">
-              <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 
+        <div class="footer-col">
+          <h4>Stay Connected</h4>
+          <div class="footer-socials">
+            <a
+              href="https://github.com/avinash201199/Hacktoberfest2025"
+              target="_blank"
+              rel="noopener"
+              aria-label="GitHub"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                style="margin-right: 6px"
+              >
+                <path
+                  d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 
               3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 
               0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61 
               -.546-1.385-1.333-1.754-1.333-1.754-1.09-.744.084-.729.084-.729 
@@ -2157,20 +1517,20 @@ body.light-mode .footer-socials a:hover {
               5.92.435.375.81 1.096.81 2.22 
               0 1.606-.015 2.896-.015 3.286 
               0 .315.21.69.825.57C20.565 22.092 
-              24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
-            </svg>
-            GitHub
-          </a>
+              24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+                />
+              </svg>
+              GitHub
+            </a>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="footer-bottom">
-      <p>
-        <strong>Hacktoberfest 2025</strong>. Open-source & community-driven.
-      </p>
-    </div>
-  </footer>
-</body>
-
+      <div class="footer-bottom">
+        <p>
+          <strong>Hacktoberfest 2025</strong>. Open-source & community-driven.
+        </p>
+      </div>
+    </footer>
+  </body>
 </html>
