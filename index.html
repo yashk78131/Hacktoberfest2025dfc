@@ -442,118 +442,118 @@
 
     /* ---------- Footer ---------- */
     .site-footer {
-  background: linear-gradient(135deg, var(--footer-start), var(--footer-end));
-  color: var(--text);
-  padding: var(--spacing-lg) 0;
-  margin-top: var(--spacing-lg);
-  box-shadow: 0 -10px 30px var(--shadow);
-  border-top: 1px solid var(--border);
-  position: relative;
-  overflow: hidden;
-}
+      background: linear-gradient(135deg, var(--footer-start), var(--footer-end));
+      color: var(--text);
+      padding: var(--spacing-lg) 0;
+      margin-top: var(--spacing-lg);
+      box-shadow: 0 -10px 30px var(--shadow);
+      border-top: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
 
-.site-footer::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle at top left, var(--accent-purple) 0%, transparent 60%),
-              radial-gradient(circle at bottom right, var(--accent-orange) 0%, transparent 60%);
-  opacity: 0.1;
-}
+    .site-footer::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at top left, var(--accent-purple) 0%, transparent 60%),
+        radial-gradient(circle at bottom right, var(--accent-orange) 0%, transparent 60%);
+      opacity: 0.1;
+    }
 
-.footer-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 var(--spacing-lg);
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: var(--spacing-lg);
-  position: relative;
-  z-index: 2;
-}
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--spacing-lg);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: var(--spacing-lg);
+      position: relative;
+      z-index: 2;
+    }
 
-.footer-col h4 {
-  color: var(--accent-orange);
-  font-weight: 700;
-  margin-bottom: var(--spacing-sm);
-}
+    .footer-col h4 {
+      color: var(--accent-orange);
+      font-weight: 700;
+      margin-bottom: var(--spacing-sm);
+    }
 
-.footer-links a {
-  display: block;
-  color: color-mix(in srgb, var(--text) 80%, transparent);
-  text-decoration: none;
-  margin-bottom: 0.4rem;
-  transition: all 0.25s ease;
-}
+    .footer-links a {
+      display: block;
+      color: color-mix(in srgb, var(--text) 80%, transparent);
+      text-decoration: none;
+      margin-bottom: 0.4rem;
+      transition: all 0.25s ease;
+    }
 
-.footer-links a:hover {
-  color: var(--accent-purple);
-  transform: translateX(5px);
-}
+    .footer-links a:hover {
+      color: var(--accent-purple);
+      transform: translateX(5px);
+    }
 
-.footer-socials a {
-  display: inline-flex;
-  align-items: center;
-  color: var(--text);
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease, transform 0.3s ease;
-}
+    .footer-socials a {
+      display: inline-flex;
+      align-items: center;
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
 
-.footer-socials a:hover {
-  color: var(--accent-orange);
-  transform: translateY(-2px);
-}
+    .footer-socials a:hover {
+      color: var(--accent-orange);
+      transform: translateY(-2px);
+    }
 
-.footer-brand {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-}
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
 
-.footer-brand .logo-blob {
-  width: 2.2em;
-  height: 2.2em;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent-orange), var(--accent-purple));
-  box-shadow: 0 0 20px color-mix(in srgb, var(--accent-purple) 40%, transparent);
-}
+    .footer-brand .logo-blob {
+      width: 2.2em;
+      height: 2.2em;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent-orange), var(--accent-purple));
+      box-shadow: 0 0 20px color-mix(in srgb, var(--accent-purple) 40%, transparent);
+    }
 
-.footer-title {
-  font-weight: 700;
-  font-size: 1.15rem;
-}
+    .footer-title {
+      font-weight: 700;
+      font-size: 1.15rem;
+    }
 
-.footer-bottom {
-  text-align: center;
-  border-top: 1px solid var(--border);
-  padding-top: var(--spacing-sm);
-  color: color-mix(in srgb, var(--text) 80%, transparent);
-  font-size: 0.95rem;
-  position: relative;
-  z-index: 2;
-}
+    .footer-bottom {
+      text-align: center;
+      border-top: 1px solid var(--border);
+      padding-top: var(--spacing-sm);
+      color: color-mix(in srgb, var(--text) 80%, transparent);
+      font-size: 0.95rem;
+      position: relative;
+      z-index: 2;
+    }
 
-/* Light mode adjustment for a subtle purple theme */
-body.light-mode .site-footer {
-  background: linear-gradient(135deg, #f9f7ff, #ece9ff);
-  color: #1e1b4b;
-}
+    /* Light mode adjustment for a subtle purple theme */
+    body.light-mode .site-footer {
+      background: linear-gradient(135deg, #f9f7ff, #ece9ff);
+      color: #1e1b4b;
+    }
 
-body.light-mode .footer-col h4 {
-  color: #7c3aed;
-}
+    body.light-mode .footer-col h4 {
+      color: #7c3aed;
+    }
 
-body.light-mode .footer-links a:hover {
-  color: #a855f7;
-}
+    body.light-mode .footer-links a:hover {
+      color: #a855f7;
+    }
 
-body.light-mode .footer-socials a:hover {
-  color: #7c3aed;
-}
+    body.light-mode .footer-socials a:hover {
+      color: #7c3aed;
+    }
 
     /* ---------- UI micro-interactions ---------- */
     .logo-blob {
@@ -711,8 +711,7 @@ body.light-mode .footer-socials a:hover {
         width: 100%;
         height: auto;
         position: relative;
-        order: 2
-        padding: 0.5rem 1rem;
+        order: 2 padding: 0.5rem 1rem;
         color: var(--hf-light);
         text-decoration: none;
         transition: all 0.3s ease;
@@ -790,6 +789,7 @@ body.light-mode .footer-socials a:hover {
 </head>
 
 <body>
+  <a href="#content" class="skip-link">Skip to main content</a>
   <header class="topnav" role="banner">
     <div class="topnav-inner">
       <a class="brand" href="./" title="Home"><span class="logo-blob" aria-hidden="true"></span><span
@@ -808,10 +808,10 @@ body.light-mode .footer-socials a:hover {
         </button>
         <a class="nav-cta" href="https://github.com/avinash201199/Hacktoberfest2025" target="_blank"
           rel="noopener">GitHub</a>
-        <button id="hamburger" class="nav-btn" aria-label="Toggle sidebar">
+        <button id="hamburger" class="nav-btn" aria-label="Toggle sidebar menu" aria-expanded="false">
           ☰
         </button>
-        <button id="theme-toggle-btn" class="nav-btn" title="Toggle theme" aria-label="Toggle theme">
+        <button id="theme-toggle" class="nav-btn" aria-label="Toggle between dark and light mode">
         </button>
         font-size: 2.5rem;
         margin: 2rem 0 1.5rem;
@@ -820,150 +820,150 @@ body.light-mode .footer-socials a:hover {
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-      }
+        }
 
-      #article h2 {
+        #article h2 {
         font-size: 1.8rem;
         margin: 2rem 0 1rem;
         color: var(--hf-light);
-      }
+        }
 
-      #article h3 {
+        #article h3 {
         font-size: 1.4rem;
         margin: 1.5rem 0 1rem;
         color: var(--hf-orange);
-      }
+        }
 
-      #article p {
+        #article p {
         margin-bottom: 1.2rem;
         font-size: 1.1rem;
         color: rgba(255, 255, 255, 0.9);
-      }
+        }
 
-      #article ul,
-      #article ol {
+        #article ul,
+        #article ol {
         padding-left: 1.5rem;
         margin-bottom: 1.2rem;
-      }
+        }
 
-      #article li {
+        #article li {
         margin-bottom: 0.5rem;
-      }
+        }
 
-      #article code {
+        #article code {
         background: rgba(155, 89, 182, 0.1);
         padding: 0.2em 0.4em;
         border-radius: 3px;
         font-size: 0.9em;
-      }
+        }
 
-      #article pre {
+        #article pre {
         margin: 1.5rem 0;
         padding: 1rem;
         border-radius: 8px;
         background: rgba(0, 0, 0, 0.3);
-      }
+        }
 
-      #article table {
+        #article table {
         width: 100%;
         margin: 1.5rem 0;
         border-collapse: collapse;
-      }
+        }
 
-      #article th,
-      #article td {
+        #article th,
+        #article td {
         padding: 0.8rem;
         border: 1px solid rgba(255, 255, 255, 0.1);
         background: rgba(255, 255, 255, 0.02);
-      }
+        }
 
-      #article th {
+        #article th {
         background: rgba(155, 89, 182, 0.1);
         color: var(--hf-orange);
-      }
+        }
 
-      /* Enhanced search results */
-      .search-highlight {
+        /* Enhanced search results */
+        .search-highlight {
         background: linear-gradient(
-          120deg,
-          rgba(255, 138, 101, 0.2),
-          rgba(155, 89, 182, 0.2)
+        120deg,
+        rgba(255, 138, 101, 0.2),
+        rgba(155, 89, 182, 0.2)
         );
         border-radius: 3px;
         padding: 0.2em 0;
-      }
+        }
 
-      .search-wrapper input:focus + .search-ico {
+        .search-wrapper input:focus + .search-ico {
         color: var(--hf-orange);
         opacity: 1;
-      }
+        }
 
-      /* Smooth scroll padding for header */
-      html {
+        /* Smooth scroll padding for header */
+        html {
         scroll-padding-top: 80px;
-      }
+        }
 
-      /* Mobile optimizations */
-      @media (max-width: 768px) {
+        /* Mobile optimizations */
+        @media (max-width: 768px) {
         #article {
-          font-size: 15px;
-          padding: 0 1rem;
+        font-size: 15px;
+        padding: 0 1rem;
         }
 
         #article h1 {
-          font-size: 2rem;
+        font-size: 2rem;
         }
         #article h2 {
-          font-size: 1.5rem;
+        font-size: 1.5rem;
         }
         #article h3 {
-          font-size: 1.2rem;
+        font-size: 1.2rem;
         }
-      }
+        }
 
-      /* Sidebar styles for collapsed state */
-      .sidebar.collapsed {
+        /* Sidebar styles for collapsed state */
+        .sidebar.collapsed {
         width: 80px;
-      }
+        }
 
-      .sidebar.collapsed .brand {
+        .sidebar.collapsed .brand {
         justify-content: center;
-      }
+        }
 
-      .sidebar.collapsed .brand .logo-blob {
+        .sidebar.collapsed .brand .logo-blob {
         margin-right: 0;
-      }
+        }
 
-      .sidebar.collapsed .brand .brand-text {
+        .sidebar.collapsed .brand .brand-text {
         display: none;
-      }
+        }
 
-      .sidebar.collapsed #toc {
+        .sidebar.collapsed #toc {
         display: none;
-      }
+        }
 
-      .sidebar.collapsed .toc-toggle {
+        .sidebar.collapsed .toc-toggle {
         display: none;
-      }
+        }
 
-      .sidebar.collapsed .sidebar-footer {
+        .sidebar.collapsed .sidebar-footer {
         display: none;
-      }
+        }
 
-      .sidebar.collapsed .search-wrapper {
+        .sidebar.collapsed .search-wrapper {
         display: none;
-      }
+        }
 
-      .sidebar.collapsed .nav-btn {
+        .sidebar.collapsed .nav-btn {
         display: none;
-      }
+        }
 
-      .sidebar.collapsed .nav-cta {
+        .sidebar.collapsed .nav-cta {
         display: none;
-      }
+        }
 
-      /* Show/Hide arrow button styles */
-      .show-sidebar-btn {
+        /* Show/Hide arrow button styles */
+        .show-sidebar-btn {
         position: fixed;
         top: 50%;
         left: 20px;
@@ -982,83 +982,83 @@ body.light-mode .footer-socials a:hover {
         display: none;
         align-items: center;
         justify-content: center;
-      }
+        }
 
-      .show-sidebar-btn:hover {
+        .show-sidebar-btn:hover {
         transform: translateY(-50%) scale(1.1);
         box-shadow: 0 6px 20px rgba(155, 89, 182, 0.4);
-      }
+        }
 
-      .show-sidebar-btn.visible {
+        .show-sidebar-btn.visible {
         display: flex;
-      }
+        }
 
-      .show-sidebar-btn::before {
+        .show-sidebar-btn::before {
         content: "→";
         transition: transform 0.3s ease;
-      }
+        }
 
-      .show-sidebar-btn:hover::before {
+        .show-sidebar-btn:hover::before {
         transform: translateX(3px);
-      }
+        }
 
-      @keyframes fadeIn {
+        @keyframes fadeIn {
         from {
-          opacity: 0;
-          transform: translateY(20px);
+        opacity: 0;
+        transform: translateY(20px);
         }
         to {
-          opacity: 1;
-          transform: translateY(0);
+        opacity: 1;
+        transform: translateY(0);
         }
-      }
+        }
 
-      .fade-in {
+        .fade-in {
         animation: fadeIn 0.8s ease-out forwards;
-      }
+        }
 
-      /* Smooth transitions */
-      .toc-item a {
+        /* Smooth transitions */
+        .toc-item a {
         transition: all 0.3s ease;
-      }
+        }
 
-      .toc-item a:hover {
+        .toc-item a:hover {
         transform: translateX(10px);
         color: var(--hf-orange);
-      }
+        }
 
-      /* Active link indicator */
-      .toc-item a.active {
+        /* Active link indicator */
+        .toc-item a.active {
         color: var(--hf-orange);
         font-weight: 600;
         padding-left: 1rem;
         border-left: 3px solid var(--hf-orange);
-      }
+        }
 
-      /* Search results highlight */
-      mark {
+        /* Search results highlight */
+        mark {
         background: linear-gradient(120deg, var(--hf-orange), var(--hf-purple));
         padding: 0.1em 0.3em;
         border-radius: 3px;
         color: var(--hf-light);
-      }
+        }
 
-      /* Section highlight animation */
-      .highlight-section {
+        /* Section highlight animation */
+        .highlight-section {
         animation: highlight-pulse 1s ease-out;
-      }
+        }
 
-      @keyframes highlight-pulse {
+        @keyframes highlight-pulse {
         0% {
-          background: rgba(255, 138, 101, 0.2);
+        background: rgba(255, 138, 101, 0.2);
         }
         100% {
-          background: transparent;
+        background: transparent;
         }
-      }
+        }
 
-      /* Better sidebar positioning */
-      .sidebar {
+        /* Better sidebar positioning */
+        .sidebar {
         position: sticky;
         top: 60px;
         height: calc(100vh - 60px);
@@ -1066,156 +1066,156 @@ body.light-mode .footer-socials a:hover {
         background: rgba(24, 49, 83, 0.95);
         backdrop-filter: blur(10px);
         padding: 1rem;
-      }
+        }
 
-      /* Resources Section Styles */
-      .resources-section {
+        /* Resources Section Styles */
+        .resources-section {
         padding: var(--spacing-lg) 0;
         background: linear-gradient(
-          135deg,
-          rgba(24, 49, 83, 0.1),
-          rgba(155, 89, 182, 0.05)
+        135deg,
+        rgba(24, 49, 83, 0.1),
+        rgba(155, 89, 182, 0.05)
         );
         margin: var(--spacing-lg) 0;
         border-radius: 20px;
-      }
+        }
 
-      .resources-grid {
+        .resources-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
         gap: var(--spacing-lg);
         margin-top: var(--spacing-lg);
-      }
+        }
 
-      .resource-category {
+        .resource-category {
         background: rgba(255, 255, 255, 0.05);
         backdrop-filter: blur(10px);
         border-radius: 15px;
         padding: var(--spacing-lg);
         border: 1px solid rgba(255, 255, 255, 0.1);
         transition: all 0.3s ease;
-      }
+        }
 
-      .resource-category:hover {
+        .resource-category:hover {
         transform: translateY(-5px);
         box-shadow: 0 10px 30px rgba(155, 89, 182, 0.2);
         border-color: rgba(255, 138, 101, 0.3);
-      }
+        }
 
-      .resource-category h4 {
+        .resource-category h4 {
         display: flex;
         align-items: center;
         gap: 0.5rem;
         margin-bottom: var(--spacing-md);
         color: var(--hf-orange);
         font-size: 1.3rem;
-      }
+        }
 
-      .resource-category h4::before {
+        .resource-category h4::before {
         content: attr(data-icon);
         font-size: 1.5rem;
-      }
+        }
 
-      .resource-list {
+        .resource-list {
         list-style: none;
         padding: 0;
         margin: 0;
-      }
+        }
 
-      .resource-item {
+        .resource-item {
         margin-bottom: var(--spacing-sm);
         padding: 0.8rem;
         background: rgba(255, 255, 255, 0.03);
         border-radius: 8px;
         border-left: 3px solid transparent;
         transition: all 0.3s ease;
-      }
+        }
 
-      .resource-item:hover {
+        .resource-item:hover {
         background: rgba(255, 138, 101, 0.1);
         border-left-color: var(--hf-orange);
         transform: translateX(5px);
-      }
+        }
 
-      .resource-item a {
+        .resource-item a {
         color: rgba(255, 255, 255, 0.9);
         text-decoration: none;
         display: flex;
         align-items: flex-start;
         gap: 0.8rem;
         line-height: 1.5;
-      }
+        }
 
-      .resource-item a:hover {
+        .resource-item a:hover {
         color: var(--hf-light);
-      }
+        }
 
-      .resource-emoji {
+        .resource-emoji {
         font-size: 1.2rem;
         min-width: 1.5rem;
-      }
+        }
 
-      .resource-content {
+        .resource-content {
         flex: 1;
-      }
+        }
 
-      .resource-title {
+        .resource-title {
         font-weight: 600;
         margin-bottom: 0.2rem;
-      }
+        }
 
-      .resource-desc {
+        .resource-desc {
         font-size: 0.9rem;
         color: rgba(255, 255, 255, 0.7);
         line-height: 1.4;
-      }
+        }
 
-      .resource-tags {
+        .resource-tags {
         display: flex;
         flex-wrap: wrap;
         gap: 0.5rem;
         margin-top: 0.5rem;
-      }
+        }
 
-      .resource-tag {
+        .resource-tag {
         background: rgba(155, 89, 182, 0.2);
         color: var(--hf-light);
         padding: 0.2rem 0.6rem;
         border-radius: 12px;
         font-size: 0.75rem;
         border: 1px solid rgba(155, 89, 182, 0.3);
-      }
+        }
 
-      .resources-intro {
+        .resources-intro {
         text-align: center;
         margin-bottom: var(--spacing-lg);
         padding: var(--spacing-md);
         background: rgba(255, 138, 101, 0.1);
         border-radius: 12px;
         border: 1px solid rgba(255, 138, 101, 0.2);
-      }
+        }
 
-      .resources-intro p {
+        .resources-intro p {
         margin: 0;
         font-size: 1.1rem;
         color: rgba(255, 255, 255, 0.9);
-      }
+        }
 
-      /* Footer Styles */
-      .site-footer {
+        /* Footer Styles */
+        .site-footer {
         background: linear-gradient(
-          135deg,
-          rgba(24, 49, 83, 0.96),
-          rgba(155, 89, 182, 0.92)
+        135deg,
+        rgba(24, 49, 83, 0.96),
+        rgba(155, 89, 182, 0.92)
         );
         backdrop-filter: blur(12px);
         color: var(--hf-light);
         margin-top: var(--spacing-lg);
         box-shadow: 0 -6px 25px rgba(0, 0, 0, 0.22);
         padding: var(--spacing-lg) 0 var(--spacing-md);
-      }
+        }
 
-      .footer-inner {
+        .footer-inner {
         max-width: 1200px;
         margin: 0 auto;
         padding: 0 var(--spacing-lg);
@@ -1223,75 +1223,75 @@ body.light-mode .footer-socials a:hover {
         grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
         gap: var(--spacing-lg);
         align-items: start;
-      }
+        }
 
-      .footer-brand {
+        .footer-brand {
         display: flex;
         gap: 0.9rem;
         align-items: flex-start;
-      }
+        }
 
-      .footer-brand .logo-blob {
+        .footer-brand .logo-blob {
         width: 2.4em;
         height: 2.4em;
         margin-right: 0;
         box-shadow: 0 0 24px rgba(255, 138, 101, 0.18);
-      }
+        }
 
-      .footer-col h4 {
+        .footer-col h4 {
         margin: 0 0 var(--spacing-sm);
         font-size: 1.15rem;
         color: var(--hf-orange);
-      }
+        }
 
-      .footer-title {
+        .footer-title {
         font-size: 1.25rem;
         font-weight: 600;
-      }
+        }
 
-      .footer-desc {
+        .footer-desc {
         margin: 0.45rem 0 0;
         color: rgba(255, 255, 255, 0.86);
         font-size: 0.96rem;
         line-height: 1.6;
-      }
+        }
 
-      .footer-links {
+        .footer-links {
         display: flex;
         flex-direction: column;
         gap: 0.6rem;
         margin: 0;
-      }
+        }
 
-      .footer-links a {
+        .footer-links a {
         color: rgba(255, 255, 255, 0.85);
         text-decoration: none;
         transition: color 0.22s ease, transform 0.22s ease;
-      }
+        }
 
-      .footer-links a:hover {
+        .footer-links a:hover {
         color: var(--hf-orange);
         transform: translateX(4px);
-      }
+        }
 
-      .footer-socials {
+        .footer-socials {
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
-      }
+        }
 
-      .footer-socials a {
+        .footer-socials a {
         color: rgba(255, 255, 255, 0.88);
         text-decoration: none;
         transition: transform 0.18s ease, color 0.18s ease;
-      }
+        }
 
-      .footer-socials a:hover {
+        .footer-socials a:hover {
         color: var(--hf-orange);
         transform: translateX(6px);
-      }
+        }
 
-      .footer-bottom {
+        .footer-bottom {
         max-width: 1200px;
         margin: 1.25rem auto 0;
         padding: var(--spacing-sm) var(--spacing-lg) 0;
@@ -1299,54 +1299,77 @@ body.light-mode .footer-socials a:hover {
         text-align: center;
         color: rgba(255, 255, 255, 0.72);
         font-size: 0.95rem;
-      }
-    </style>
-  </head>
-  <body>
-    <header class="topnav" role="banner">
-      <div class="topnav-inner">
-        <a class="brand" href="./" title="Home"
-          ><span class="logo-blob" aria-hidden="true"></span
-          ><span class="brand-text">Hacktoberfest 2025</span></a
-        >
+        }
 
-        <nav class="nav-links" aria-label="Main navigation">
-          <a href="#what-is-hacktoberfest">Overview</a>
-          <a href="projects.html">Projects</a>
-          <a href="#how-to-participate">How To</a>
-          <a href="#resources">Resources</a>
-        </nav>
+        /* Focus styles for accessibility */
+        :focus-visible {
+        outline: 2px solid var(--accent-orange);
+        outline-offset: 2px;
+        border-radius: 4px;
+        }
 
-        <div class="nav-actions">
-          <button
-            id="nav-search-btn"
-            class="nav-btn"
-            title="Search (/)"
-            aria-label="Open search"
-          >
-            🔎
-          </button>
-          <button
-            id="theme-toggle"
-            class="nav-btn"
-            title="Toggle theme"
-            aria-label="Toggle dark/light mode"
-          >
-            🌙
-          </button>
-          <a
-            class="nav-cta"
-            href="https://github.com/avinash201199/Hacktoberfest2025"
-            target="_blank"
-            rel="noopener"
-            >GitHub</a
-          >
-          <button id="hamburger" class="nav-btn" aria-label="Toggle sidebar">
-            ☰
-          </button>
-        </div>
+        /* For better visibility on buttons */
+        .nav-btn:focus-visible,
+        button:focus-visible {
+        outline: 2px solid var(--accent-orange);
+        outline-offset: 2px;
+        box-shadow: 0 0 0 4px rgba(255, 138, 101, 0.2);
+        }
+
+        /* For links */
+        a:focus-visible {
+        outline: 2px solid var(--accent-purple);
+        outline-offset: 2px;
+        }
+        .skip-link {
+        position: absolute;
+        top: -40px;
+        left: 0;
+        background: var(--accent-orange);
+        color: var(--on-accent);
+        padding: 8px 16px;
+        text-decoration: none;
+        border-radius: 0 0 4px 0;
+        z-index: 9999;
+        }
+
+        .skip-link:focus {
+        top: 0;
+        }
+
+
+        </style>
+        </head>
+
+        <body>
+          <a href="#content" class="skip-link">Skip to main content</a>
+          <header class="topnav" role="banner">
+            <div class="topnav-inner">
+              <a class="brand" href="./" title="Home"><span class="logo-blob" aria-hidden="true"></span><span
+                  class="brand-text">Hacktoberfest 2025</span></a>
+
+              <nav class="nav-links" aria-label="Main navigation">
+                <a href="#what-is-hacktoberfest">Overview</a>
+                <a href="projects.html">Projects</a>
+                <a href="#how-to-participate">How To</a>
+                <a href="#resources">Resources</a>
+              </nav>
+
+              <div class="nav-actions">
+                <button id="nav-search-btn" class="nav-btn" title="Search (/)" aria-label="Open search">
+                  🔎
+                </button>
+                <button id="theme-toggle" class="nav-btn" title="Toggle theme" aria-label="Toggle dark/light mode">
+                  🌙      
+                </button>
+                <a class="nav-cta" href="https://github.com/avinash201199/Hacktoberfest2025" target="_blank"
+                  rel="noopener">GitHub</a>
+                <button id="hamburger" class="nav-btn" aria-label="Toggle sidebar menu" aria-expanded="false">
+                  ☰
+                </button>
+              </div>
+            </div>
       </div>
-    </div>
   </header>
 
   <div class="site">
@@ -1369,9 +1392,8 @@ body.light-mode .footer-socials a:hover {
         <div class="toc-empty">Loading contents…</div>
       </nav>
 
-      <button id="toc-toggle" class="toc-toggle" aria-expanded="true" aria-controls="toc">
-        Hide
-      </button>
+      <button id="toc-toggle" class="toc-toggle" aria-expanded="true" aria-controls="toc"
+        aria-label="Toggle table of contents">Hide</button>
 
       <footer class="sidebar-footer">
         <a class="btn" href="README.md">View raw README</a>
@@ -1691,23 +1713,29 @@ body.light-mode .footer-socials a:hover {
           s.scrollIntoView({ behavior: "smooth", block: "center" });
         }
       });
-    document.getElementById("hamburger").addEventListener("click", () => {
-      const sidebar = document.getElementById("sidebar");
-      const showBtn = document.getElementById("show-sidebar-btn");
-      const tocToggle = document.getElementById("toc-toggle");
-      const expanded = sidebar.classList.toggle("collapsed");
+    document.getElementById('hamburger').addEventListener('click', () => {
+  const sidebar = document.getElementById('sidebar');
+  const showBtn = document.getElementById('show-sidebar-btn');
+  const tocToggle = document.getElementById('toc-toggle');
+  const hamburger = document.getElementById('hamburger');
+  
+  const expanded = sidebar.classList.toggle('collapsed');
+  
+  // Update ARIA state for hamburger button
+  hamburger.setAttribute('aria-expanded', String(!expanded));
+  
+  // Update show button visibility
+  if (expanded) {
+    showBtn.classList.add('visible');
+  } else {
+    showBtn.classList.remove('visible');
+  }
+  
+  // Update TOC toggle text
+  tocToggle.textContent = expanded ? 'Show' : 'Hide';
+  tocToggle.setAttribute('aria-expanded', String(!expanded));
+});
 
-      // Update show button visibility
-      if (expanded) {
-        showBtn.classList.add("visible");
-      } else {
-        showBtn.classList.remove("visible");
-      }
-
-      // Update TOC toggle text
-      tocToggle.textContent = expanded ? "Show" : "Hide";
-      tocToggle.setAttribute("aria-expanded", String(!expanded));
-    });
 
     // Auto-collapse sidebar on mobile and handle window resize
     function handleSidebarResponsiveness() {
@@ -1828,287 +1856,291 @@ body.light-mode .footer-socials a:hover {
             } catch (e) {
               return hljs.highlightAuto(code).value;
 
-      // Track the currently loaded markdown file
-      let currentMarkdownFile = "README.md";
+              // Track the currently loaded markdown file
+              let currentMarkdownFile = "README.md";
 
-      // Handle brand/logo click to return to README
-      document.querySelectorAll(".brand").forEach((brand) => {
-        brand.addEventListener("click", (e) => {
-          if (brand.tagName === "A") {
-            e.preventDefault();
-            loadMarkdownFile("README.md");
-          }
-        });
-      });
+              // Handle brand/logo click to return to README
+              document.querySelectorAll(".brand").forEach((brand) => {
+                brand.addEventListener("click", (e) => {
+                  if (brand.tagName === "A") {
+                    e.preventDefault();
+                    loadMarkdownFile("README.md");
+                  }
+                });
+              });
 
-      // Smooth scroll for nav links
-      document.querySelectorAll(".nav-links a").forEach((link) => {
-        link.addEventListener("click", (e) => {
-          const href = link.getAttribute("href");
-          
-          // If link has target _blank or points to projects.html, let browser handle it
-          if (link.target === '_blank' || href === 'projects.html') {
-            return; // Don't intercept new-tab or projects page
-          }
+              // Smooth scroll for nav links
+              document.querySelectorAll(".nav-links a").forEach((link) => {
+                link.addEventListener("click", (e) => {
+                  const href = link.getAttribute("href");
 
-          // Allow fully qualified external links to work normally
-            if (href.startsWith("http://") || href.startsWith("https://")) {
-            return; // External link
-          }
+                  // If link has target _blank or points to projects.html, let browser handle it
+                  if (link.target === '_blank' || href === 'projects.html') {
+                    return; // Don't intercept new-tab or projects page
+                  }
 
-          // Only intercept internal hash navigation (href begins with '#')
-          if (!href.startsWith('#')) {
-            return; // Not a hash link we manage
-          }
+                  // Allow fully qualified external links to work normally
+                  if (href.startsWith("http://") || href.startsWith("https://")) {
+                    return; // External link
+                  }
 
-          e.preventDefault();
+                  // Only intercept internal hash navigation (href begins with '#')
+                  if (!href.startsWith('#')) {
+                    return; // Not a hash link we manage
+                  }
 
-          // For internal hash links, check if we need to reload README first
-          const id = href.slice(1);
-          
-          // If we're not on README, load it first, then scroll to the section
-          if (currentMarkdownFile !== "README.md") {
-            loadMarkdownFile("README.md", id);
-            return;
-          }
-          
-          // Otherwise, just scroll to the section
-          let element = document.getElementById(id);
+                  e.preventDefault();
 
-          // If element not found, try to find it by searching through headings
-          if (!element) {
-            const headings = document.querySelectorAll(
-              "#article h1, #article h2, #article h3, #article h4, #article h5, #article h6"
-            );
-            for (const heading of headings) {
-              const headingText = heading.textContent.trim().toLowerCase();
-              const cleanId = headingText
-                .replace(/[^a-z0-9]+/g, "-")
-                .replace(/^-+|-+$/g, "");
-              if (cleanId === id || heading.id === id) {
-                element = heading;
-                heading.id = id; // Ensure the ID is set correctly
-                break;
-              }
-            }
-          },
-        });
+                  // For internal hash links, check if we need to reload README first
+                  const id = href.slice(1);
 
-        const html = marked.parse(md);
-        const article = document.getElementById("article");
-        article.innerHTML = html;
+                  // If we're not on README, load it first, then scroll to the section
+                  if (currentMarkdownFile !== "README.md") {
+                    loadMarkdownFile("README.md", id);
+                    return;
+                  }
 
-        // Add anchors to headings and small animated anchor links
-        document
-          .querySelectorAll(
-            "#article h1, #article h2, #article h3, #article h4, #article h5, #article h6"
-          )
-          .forEach((h) => {
-            const id =
-              h.id ||
-              h.textContent
-                .trim()
-                .toLowerCase()
-                .replace(/[^a-z0-9]+/g, "-");
-            h.id = id;
-            const a = document.createElement("a");
-            a.className = "heading-anchor";
-            a.href = "#" + id;
-            a.title = "Link to " + h.textContent.trim();
-            a.innerHTML = "¶";
-            h.appendChild(a);
-          });
-      // Function to load any markdown file
-      async function loadMarkdownFile(filename, scrollToId = null) {
-        try {
-          const res = await fetch(filename);
-          if (!res.ok) throw new Error(`${filename} not found`);
-          const md = await res.text();
+                  // Otherwise, just scroll to the section
+                  let element = document.getElementById(id);
 
-          // Configure marked and highlight
-          marked.setOptions({
-            headerIds: true,
-            mangle: false,
-            highlight: function (code, lang) {
-              try {
-                return hljs.highlightAuto(code, lang ? [lang] : undefined)
-                  .value;
-              } catch (e) {
-                return hljs.highlightAuto(code).value;
-              }
-            },
-          });
+                  // If element not found, try to find it by searching through headings
+                  if (!element) {
+                    const headings = document.querySelectorAll(
+                      "#article h1, #article h2, #article h3, #article h4, #article h5, #article h6"
+                    );
+                    for (const heading of headings) {
+                      const headingText = heading.textContent.trim().toLowerCase();
+                      const cleanId = headingText
+                        .replace(/[^a-z0-9]+/g, "-")
+                        .replace(/^-+|-+$/g, "");
+                      if (cleanId === id || heading.id === id) {
+                        element = heading;
+                        heading.id = id; // Ensure the ID is set correctly
+                        break;
+                      }
+                    }
+                  },
+                });
 
-          const html = marked.parse(md);
-          const article = document.getElementById("article");
-          article.innerHTML = html;
+                const html = marked.parse(md);
+                const article = document.getElementById("article");
+                article.innerHTML = html;
 
-          // Add anchors to headings
-          document
-            .querySelectorAll(
-              "#article h1, #article h2, #article h3, #article h4, #article h5, #article h6"
-            )
-            .forEach((h) => {
-              const id =
-                h.id ||
-                h.textContent
-                  .trim()
-                  .toLowerCase()
-                  .replace(/[^a-z0-9]+/g, "-");
-              h.id = id;
-              const a = document.createElement("a");
-              a.className = "heading-anchor";
-              a.href = "#" + id;
-              a.title = "Link to " + h.textContent.trim();
-              a.innerHTML = "¶";
-              h.appendChild(a);
-            });
+                // Add anchors to headings and small animated anchor links
+                document
+                  .querySelectorAll(
+                    "#article h1, #article h2, #article h3, #article h4, #article h5, #article h6"
+                  )
+                  .forEach((h) => {
+                    const id =
+                      h.id ||
+                      h.textContent
+                        .trim()
+                        .toLowerCase()
+                        .replace(/[^a-z0-9]+/g, "-");
+                    h.id = id;
+                    const a = document.createElement("a");
+                    a.className = "heading-anchor";
+                    a.href = "#" + id;
+                    a.title = "Link to " + h.textContent.trim();
+                    a.innerHTML = "¶";
+                    h.appendChild(a);
+                  });
+                // Function to load any markdown file
+                async function loadMarkdownFile(filename, scrollToId = null) {
+                  try {
+                    const res = await fetch(filename);
+                    if (!res.ok) throw new Error(`${filename} not found`);
+                    const md = await res.text();
 
-          // Update current file tracker
-          currentMarkdownFile = filename;
+                    // Configure marked and highlight
+                    marked.setOptions({
+                      headerIds: true,
+                      mangle: false,
+                      highlight: function (code, lang) {
+                        try {
+                          return hljs.highlightAuto(code, lang ? [lang] : undefined)
+                            .value;
+                        } catch (e) {
+                          return hljs.highlightAuto(code).value;
+                        }
+                      },
+                    });
 
-          // Scroll to specific section if requested, otherwise scroll to top
-          if (scrollToId) {
-            setTimeout(() => {
-              const element = document.getElementById(scrollToId);
-              if (element) {
-                element.scrollIntoView({ behavior: "smooth", block: "start" });
-                history.pushState(null, "", "#" + scrollToId);
-                element.classList.add("highlight-section");
-                setTimeout(() => element.classList.remove("highlight-section"), 1000);
-              }
-            }, 100);
-          } else {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-          }
+                    const html = marked.parse(md);
+                    const article = document.getElementById("article");
+                    article.innerHTML = html;
 
-          buildTOC();
-          initSearch(md);
-          initActiveObserver();
-          hljs.highlightAll();
+                    // Add anchors to headings
+                    document
+                      .querySelectorAll(
+                        "#article h1, #article h2, #article h3, #article h4, #article h5, #article h6"
+                      )
+                      .forEach((h) => {
+                        const id =
+                          h.id ||
+                          h.textContent
+                            .trim()
+                            .toLowerCase()
+                            .replace(/[^a-z0-9]+/g, "-");
+                        h.id = id;
+                        const a = document.createElement("a");
+                        a.className = "heading-anchor";
+                        a.href = "#" + id;
+                        a.title = "Link to " + h.textContent.trim();
+                        a.innerHTML = "¶";
+                        h.appendChild(a);
+                      });
 
-          // Update URL
-          if (!scrollToId) {
-            history.pushState(null, "", filename === "README.md" ? "./" : `?file=${filename}`);
-          }
-        } catch (err) {
-          document.getElementById("article").innerHTML =
-            `<div class="error-panel"><h2>Unable to load ${filename}</h2><p>` +
-            err.message +
-            `</p><p><a href="${filename}">Open raw ${filename}</a></p></div>`;
-        }
-      }
+                    // Update current file tracker
+                    currentMarkdownFile = filename;
 
-      // Enhanced renderReadme function
-      async function renderReadme() {
-        try {
-          const res = await fetch("README.md");
-          if (!res.ok) throw new Error("README.md not found");
-          const md = await res.text();
+                    // Scroll to specific section if requested, otherwise scroll to top
+                    if (scrollToId) {
+                      setTimeout(() => {
+                        const element = document.getElementById(scrollToId);
+                        if (element) {
+                          element.scrollIntoView({ behavior: "smooth", block: "start" });
+                          history.pushState(null, "", "#" + scrollToId);
+                          element.classList.add("highlight-section");
+                          setTimeout(() => element.classList.remove("highlight-section"), 1000);
+                        }
+                      }, 100);
+                    } else {
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                    }
 
-          // Configure marked and highlight
-          marked.setOptions({
-            headerIds: true,
-            mangle: false,
-            highlight: function (code, lang) {
-              try {
-                return hljs.highlightAuto(code, lang ? [lang] : undefined)
-                  .value;
-              } catch (e) {
-                return hljs.highlightAuto(code).value;
-              }
-            },
-          });
+                    buildTOC();
+                    initSearch(md);
+                    initActiveObserver();
+                    hljs.highlightAll();
 
-          const html = marked.parse(md);
-          const article = document.getElementById("article");
-          article.innerHTML = html;
+                    // Update URL
+                    if (!scrollToId) {
+                      history.pushState(null, "", filename === "README.md" ? "./" : `?file=${filename}`);
+                    }
+                  } catch (err) {
+                    document.getElementById("article").innerHTML =
+                      `<div class="error-panel"><h2>Unable to load ${filename}</h2><p>` +
+                      err.message +
+                      `</p><p><a href="${filename}">Open raw ${filename}</a></p></div>`;
+                  }
+                }
 
-          // Add anchors to headings and small animated anchor links
-          document
-            .querySelectorAll(
-              "#article h1, #article h2, #article h3, #article h4, #article h5, #article h6"
-            )
-            .forEach((h) => {
-              const id =
-                h.id ||
-                h.textContent
-                  .trim()
-                  .toLowerCase()
-                  .replace(/[^a-z0-9]+/g, "-");
-              h.id = id;
-              const a = document.createElement("a");
-              a.className = "heading-anchor";
-              a.href = "#" + id;
-              a.title = "Link to " + h.textContent.trim();
-              a.innerHTML = "¶";
-              h.appendChild(a);
-            });
+                // Enhanced renderReadme function
+                async function renderReadme() {
+                  try {
+                    const res = await fetch("README.md");
+                    if (!res.ok) throw new Error("README.md not found");
+                    const md = await res.text();
 
-          buildTOC();
-          initSearch(md);
-          initActiveObserver();
-          hljs.highlightAll();
-        } catch (err) {
-          document.getElementById("article").innerHTML =
-            '<div class="error-panel"><h2>Unable to load README</h2><p>' +
-            err.message +
-            '</p><p><a href="README.md">Open raw README.md</a></p></div>';
-        }
-      }
+                    // Configure marked and highlight
+                    marked.setOptions({
+                      headerIds: true,
+                      mangle: false,
+                      highlight: function (code, lang) {
+                        try {
+                          return hljs.highlightAuto(code, lang ? [lang] : undefined)
+                            .value;
+                        } catch (e) {
+                          return hljs.highlightAuto(code).value;
+                        }
+                      },
+                    });
 
-      // If visiting index.html with a hash (e.g., index.html#resources), remember it
-      const initialHash = window.location.hash ? window.location.hash.slice(1) : null;
+                    const html = marked.parse(md);
+                    const article = document.getElementById("article");
+                    article.innerHTML = html;
 
-      // Render README and, if there was an initial hash, scroll to that section after render
-      renderReadme().then(() => {
-        if (initialHash) {
-          // If the article is already rendered, try to find the element and scroll to it
-          const el = document.getElementById(initialHash);
-          if (el) {
-            setTimeout(() => {
-              el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-              history.replaceState(null, '', '#' + initialHash);
-              el.classList.add('highlight-section');
-              setTimeout(() => el.classList.remove('highlight-section'), 1000);
-            }, 120);
-          } else {
-            // If element not found, ensure loadMarkdownFile handles it by reloading README and passing id
-            loadMarkdownFile('README.md', initialHash);
-          }
-        }
-      });
+                    // Add anchors to headings and small animated anchor links
+                    document
+                      .querySelectorAll(
+                        "#article h1, #article h2, #article h3, #article h4, #article h5, #article h6"
+                      )
+                      .forEach((h) => {
+                        const id =
+                          h.id ||
+                          h.textContent
+                            .trim()
+                            .toLowerCase()
+                            .replace(/[^a-z0-9]+/g, "-");
+                        h.id = id;
+                        const a = document.createElement("a");
+                        a.className = "heading-anchor";
+                        a.href = "#" + id;
+                        a.title = "Link to " + h.textContent.trim();
+                        a.innerHTML = "¶";
+                        h.appendChild(a);
+                      });
 
-      // Theme toggle
-      const themeToggle = document.getElementById('theme-toggle');
-      const html = document.documentElement;
-      const savedTheme = localStorage.getItem('theme') || 'dark';
-      
-      html.setAttribute('data-theme', savedTheme);
-      themeToggle.textContent = savedTheme === 'dark' ? '🌙' : '☀️';
+                    buildTOC();
+                    initSearch(md);
+                    initActiveObserver();
+                    hljs.highlightAll();
+                  } catch (err) {
+                    document.getElementById("article").innerHTML =
+                      '<div class="error-panel"><h2>Unable to load README</h2><p>' +
+                      err.message +
+                      '</p><p><a href="README.md">Open raw README.md</a></p></div>';
+                  }
+                }
 
-      themeToggle.addEventListener('click', () => {
-        const current = html.getAttribute('data-theme');
-        const next = current === 'dark' ? 'light' : 'dark';
-        html.setAttribute('data-theme', next);
-        localStorage.setItem('theme', next);
-        themeToggle.textContent = next === 'dark' ? '🌙' : '☀️';
-      });
-    </script>
+                // If visiting index.html with a hash (e.g., index.html#resources), remember it
+                const initialHash = window.location.hash ? window.location.hash.slice(1) : null;
 
-        buildTOC();
-        initSearch(md);
-        initActiveObserver();
-        hljs.highlightAll();
-      } catch (err) {
-        document.getElementById("article").innerHTML =
-          '<div class="error-panel"><h2>Unable to load README</h2><p>' +
-          err.message +
-          '</p><p><a href="README.md">Open raw README.md</a></p></div>';
-      }
-    }
+                // Render README and, if there was an initial hash, scroll to that section after render
+                renderReadme().then(() => {
+                  if (initialHash) {
+                    // If the article is already rendered, try to find the element and scroll to it
+                    const el = document.getElementById(initialHash);
+                    if (el) {
+                      setTimeout(() => {
+                        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        history.replaceState(null, '', '#' + initialHash);
+                        el.classList.add('highlight-section');
+                        setTimeout(() => el.classList.remove('highlight-section'), 1000);
+                      }, 120);
+                    } else {
+                      // If element not found, ensure loadMarkdownFile handles it by reloading README and passing id
+                      loadMarkdownFile('README.md', initialHash);
+                    }
+                  }
+                });
 
-    renderReadme();
+                // Theme toggle
+                const themeToggle = document.getElementById('theme-toggle');
+                const html = document.documentElement;
+                const savedTheme = localStorage.getItem('theme') || 'dark';
+
+                html.setAttribute('data-theme', savedTheme);
+                themeToggle.textContent = savedTheme === 'dark' ? '🌙' : '☀️';
+
+                themeToggle.addEventListener('click', () => {
+                  const current = html.getAttribute('data-theme');
+                  const next = current === 'dark' ? 'light' : 'dark';
+                  html.setAttribute('data-theme', next);
+                  localStorage.setItem('theme', next);
+                  themeToggle.textContent = next === 'dark' ? '🌙' : '☀️';
+                });
+  </script>
+
+  buildTOC();
+  initSearch(md);
+  initActiveObserver();
+  hljs.highlightAll();
+  } catch (err) {
+  document.getElementById("article").innerHTML =
+  '<div class="error-panel">
+    <h2>Unable to load README</h2>
+    <p>' +
+      err.message +
+      '</p>
+    <p><a href="README.md">Open raw README.md</a></p>
+  </div>';
+  }
+  }
+
+  renderReadme();
   </script>
 
   <!-- Footer Section  -->
@@ -2127,14 +2159,14 @@ body.light-mode .footer-socials a:hover {
           <a href="#resources">Resources</a>
         </nav>
       </div>
-        <div class="footer-col">
-          <h4>Quick Links</h4>
-          <nav class="footer-links" aria-label="Footer navigation">
-            <a href="#what-is-hacktoberfest">Overview</a>
-            <a href="projects.html" target="_blank" rel="noopener">Projects</a>
-            <a href="#resources">Resources</a>
-          </nav>
-        </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="#what-is-hacktoberfest">Overview</a>
+          <a href="projects.html" target="_blank" rel="noopener">Projects</a>
+          <a href="#resources">Resources</a>
+        </nav>
+      </div>
 
       <div class="footer-col">
         <h4>Stay Connected</h4>
