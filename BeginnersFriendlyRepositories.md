@@ -25,6 +25,10 @@ If you know any good repository for beginners, feel free to add it to this table
 | DEV / Forem | [Link](https://github.com/forem/forem) | Ruby on Rails, PostgreSQL, Redis, React |
 | ZenithFocus / Pomodoro timer | [Link](https://github.com/Dishant1286/zenithfocus) | HTML, CSS, JavaScript |
 | Hacktoberfest Swag List | [Link](https://github.com/crweiner/hacktoberfest-swag-list) | Python, MkDocs, Documentation, Markdown |
+| OpenSauce | [Link](https://github.com/TechnoBlogger14o3/OpenSauce) | Multiple Languages, DSA, Algorithms |
+| Awesome Lists | [Link](https://github.com/sindresorhus/awesome) | Markdown, Documentation |
+| 30 Seconds of Code | [Link](https://github.com/30-seconds/30-seconds-of-code) | JavaScript, TypeScript, Python |
+
 
 
 ---

@@ -146,6 +146,20 @@ Whether you’re a seasoned developer or just starting out, Hacktoberfest offers
 
 ---
 
+## 📚 Additional Resources
+
+### 🛠️ Comprehensive Guides
+- **[Git Workflow Guide](GitWorkflowGuide.md)** - Complete Git and GitHub workflow for beginners
+- **[Troubleshooting Guide](TroubleshootingGuide.md)** - Solutions to common Hacktoberfest issues
+- **[Contribution Checklist](ContributionChecklist.md)** - Quality assurance checklist for contributions
+
+### 🎯 Quick Reference
+- **[Beginner-Friendly Repositories](BeginnersFriendlyRepositories.md)** - Curated list of beginner-friendly projects
+- **[Git Commands Reference](GitWorkflowGuide.md#common-commands-reference)** - Essential Git commands
+- **[Best Practices](GitWorkflowGuide.md#best-practices)** - Guidelines for quality contributions
+
+---
+
 ## 📚 Resources
 
 🚀 Essential resources to kickstart your open-source journey and make the most of Hacktoberfest 2025!
